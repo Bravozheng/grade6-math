@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>多了几分之几｜沪教版 六年级 交互课程</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='4' fill='%23F5BE2E'/%3E%3Crect x='5' y='17' width='13' height='4' fill='%23152230'/%3E%3Crect x='5' y='25' width='8' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--ink:#152230;--ink2:#5A6B7C;--line:#D7E1E9;--paper:#fff;--bg:#E9EEF3;--yellow:#F5BE2E;--gold:#C89B24;--green:#0FA97C;--mark:#FFE9A8;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --num:"Space Grotesk","Noto Sans SC",ui-sans-serif,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+.app{max-width:960px;margin:0 auto;padding:18px clamp(16px,4vw,32px) clamp(30px,5vh,48px)}
+.crumbs{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12.5px;color:var(--ink2);padding-bottom:16px}
+.crumbs .home{display:inline-flex;align-items:center;gap:5px;color:var(--ink);text-decoration:none;font-weight:700;border:1.5px solid var(--ink);border-radius:999px;padding:3px 11px 3px 8px;background:var(--paper)}
+.crumbs .home svg{width:14px;height:14px}
+.crumbs .plain{color:var(--ink2);text-decoration:none}
+.crumbs .sep{color:#AEBCC8}
+.crumbs .here{color:var(--ink);font-weight:700}
+.crumbs .unit{flex-basis:100%;margin-left:0;font-size:12px;color:var(--ink2)}
+.label{display:block;font-size:15.5px;font-weight:900;letter-spacing:.01em;color:var(--ink);background:none;border:0;border-radius:0;padding:0;margin:0 0 10px;line-height:1.4}
+.label i{font-style:normal;font-family:var(--num);font-size:12px;font-weight:700;color:#fff;background:var(--ink);border-radius:4px;padding:1px 7px;margin-right:8px;vertical-align:2px}
+.p1 .label i{background:#4E7A97}
+.p2 .label i{background:#A5821F}
+.phead{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:0 0 10px}
+.phead .label{margin:0}
+@keyframes none{}
+.hero{background:#152230;border-radius:14px;padding:17px 20px 19px;margin-bottom:14px}
+.hero .crumbs{color:#8FA3B4;padding-bottom:9px;font-size:12.5px}
+.hero .crumbs .home{color:#fff;border-color:rgba(255,255,255,.42);background:transparent}
+.hero .crumbs .plain{color:#AFC1CF}
+.hero .crumbs .sep{color:#5B7285}
+.hero .crumbs .here{color:#E8EFF4;font-weight:600}
+.ptitle{margin:0;font-size:clamp(21px,2.6vw,27px);font-weight:900;color:#fff;letter-spacing:.01em;line-height:1.35}
+.pmeta{margin:6px 0 0;font-size:12.3px;color:#93A9BA}
+.zone{border-radius:0;padding:0;margin-top:clamp(24px,3.4vh,32px);border-top:1px solid rgba(21,34,48,.11);padding-top:20px}
+.zq{background:none;border:0;border-top:0;padding-top:0;margin-top:22px}
+.zl{background:none;border:0}
+.zd{background:none;border:0}
+.problem{background:#fff;border:1.5px solid var(--ink);border-radius:10px;padding:15px 19px}
+.problem .q-tag{display:inline-block;font-size:12px;font-weight:700;color:#6B7A89;border:1px solid var(--line);border-radius:5px;padding:1px 9px;margin-bottom:9px}
+.problem p{margin:0;font-size:18px;font-weight:700;line-height:1.85;letter-spacing:.005em}
+.problem .ask{background-image:linear-gradient(rgba(245,190,46,.6),rgba(245,190,46,.6));background-repeat:no-repeat;background-size:100% .45em;background-position:0 92%;font-weight:700;padding:0 2px}
+.problem .cue{margin-top:11px;font-size:13.2px;font-weight:400;line-height:1.75;color:var(--ink2)}
+.cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:0;margin-top:clamp(18px,3vh,26px)}
+.panel{min-width:0;background:none;border:0;padding:0}
+.panel.p1{padding-right:26px;border-right:1px solid rgba(21,34,48,.11)}
+.panel.p2{padding-left:26px}
+.hint{font-size:12.5px;color:var(--ink2);margin:0 0 12px}
+.stage{display:flex;flex-direction:column;gap:11px}
+.prompt{margin:0;font-size:16.5px;font-weight:700;line-height:1.65;min-height:3.2em}
+.prompt .sm{display:block;font-size:12.5px;font-weight:400;color:var(--ink2);margin-top:3px;line-height:1.7}
+.posno{position:absolute;top:0;right:0;background:var(--ink);color:#fff;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:0 8px 0 8px;z-index:3}
+.fig{position:relative;height:196px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:18px}
+.shot{position:absolute;inset:18px;display:flex;flex-direction:column;justify-content:center;gap:11px;opacity:0;visibility:hidden;transition:opacity .3s}
+.shot:has(.rect){gap:4px}
+.fig[data-pos="1"] .shot[data-s="1"],.fig[data-pos="2"] .shot[data-s="2"],.fig[data-pos="3"] .shot[data-s="3"],.fig[data-pos="4"] .shot[data-s="4"]{opacity:1;visibility:visible}
+.rd{display:block;width:100%;height:auto}
+.mnum{font-size:11.5px;font-weight:700;line-height:1.5;text-align:center;color:#152230}
+.barwrap{display:flex;flex-direction:column;gap:9px}
+.blab{font-size:12.2px;color:var(--ink2);margin:0;line-height:1.5}
+.bar{display:flex;height:44px;border:2px solid var(--ink);border-radius:5px;overflow:hidden;background:var(--paper)}
+.bar.mid{height:34px}
+.bar.sm{height:8px;border-width:1.5px;border-radius:3px}
+.bar .c{flex:1;min-width:0;border-right:1px dashed rgba(21,34,48,.26)}
+.bar .c:last-child{border-right:0}
+.bar .c.f{background:rgba(245,190,46,.72)}
+.bar .c.hf{background:rgba(245,190,46,.34)}
+.bar .c.fg{background:rgba(15,169,124,.85)}
+.bar .c.g{border-right:2px solid var(--green)}
+.cap{font-size:13.2px;color:var(--ink2);margin:6px 0 0;line-height:1.75}
+.cap b{color:var(--ink)}
+.rect{display:grid;width:max-content;margin:0 auto;gap:3px;padding:6px;background:#fff;border:1.5px solid #C9D7E1;border-radius:7px;vertical-align:top}
+.rect i{display:block;width:var(--s,12px);height:var(--s,12px);background:#F1F5F8;border:1px solid #D8E2EA;border-radius:2px}
+.rect i.on{background:#F5BE2E;border-color:#C89B24}
+.nums{display:flex;gap:7px;flex-wrap:wrap;margin:2px 0 4px}
+.num{display:inline-block;border:1.5px solid #C9D7E1;background:#fff;border-radius:8px;padding:3px 10px;font-weight:700;font-size:13.5px}
+.num em{font-style:normal;color:#0FA97C}
+.tree{font-family:var(--num);font-size:14px;line-height:1.85;margin:0;white-space:pre;color:var(--ink)}
+.wbox{border:1.5px dashed #C89B24;border-radius:8px;padding:9px 10px 7px;margin:0 0 6px;background:rgba(255,255,255,.5)}
+.wtag{display:inline-block;font-size:11.5px;font-weight:700;color:#7A5A0E;background:rgba(245,190,46,.34);border-radius:5px;padding:1px 7px;margin-bottom:5px}
+.unitline{display:inline-block;font-size:11.5px;color:#7A5A0E;background:rgba(245,190,46,.32);border-radius:5px;padding:1px 8px;font-weight:700;margin:0;width:max-content}
+.fb{margin:0;font-size:12px;font-weight:700;color:var(--ink2);text-align:center}
+.slot{height:44px;display:flex;align-items:center;justify-content:center}
+.result{display:flex;align-items:baseline;gap:10px;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s;pointer-events:none}
+.result.on{opacity:1;transform:none}
+.result .eq{font-family:var(--num);font-size:14px;color:var(--ink2)}
+.result .big{font-family:var(--num);font-size:27px;font-weight:700;line-height:1}
+.legend{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;font-size:11.5px;color:var(--ink2);margin:0}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.legend .ly{background:rgba(245,190,46,.72)}
+.legend .lg{background:rgba(15,169,124,.85)}
+.lb{background:rgba(78,122,151,.75)}
+.playall{display:inline-flex;align-items:center;gap:6px;border:1.5px solid #C9D6E0;background:var(--paper);color:var(--ink);border-radius:8px;padding:4px 11px;font-family:var(--sans);font-size:12.5px;font-weight:700;cursor:pointer;margin:0}
+.playall:hover{background:rgba(245,190,46,.28)}
+.playall.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.step{display:grid;grid-template-columns:19px 74px minmax(0,1fr) 32px;gap:10px;align-items:center;padding:8px;border:1.5px solid transparent;border-radius:8px;cursor:pointer;transition:background .15s,border-color .15s}
+.step:hover{background:rgba(255,255,255,.6)}
+.step.active{background:rgba(245,190,46,.22);border-color:rgba(200,155,36,.55)}
+.step .sno{font-family:var(--num);font-size:11px;font-weight:700;color:var(--ink2);background:#EDF1F5;border-radius:4px;text-align:center;line-height:18px}
+.step.active .sno{background:var(--ink);color:#fff}
+.step .mfig{display:flex;flex-direction:column;gap:3px;width:74px;overflow:hidden}
+.step .mfig .nums{gap:3px}
+.step .mfig .num{font-size:11px;padding:1px 4px;border-width:1px}
+.step .mfig .bar{height:8px;border-width:1.5px;border-radius:2px}
+.step p{margin:0;font-size:12.8px;line-height:1.8}
+.step p b{font-weight:700}
+.say{border:1.5px solid var(--line);background:var(--paper);border-radius:8px;height:31px;display:grid;place-items:center;cursor:pointer;padding:0;color:var(--ink2)}
+.say:hover{border-color:var(--ink);color:var(--ink)}
+.say svg{width:15px;height:15px}
+.say.playing{background:var(--ink);border-color:var(--ink);color:#fff}
+.voicehint{display:none;font-size:12px;color:#7A5A0E;background:rgba(245,190,46,.28);border-radius:6px;padding:6px 10px;margin:10px 0 0}
+.voicehint.on{display:block}
+.note{margin-top:16px;padding:0 0 0 13px;border-left:3px solid var(--yellow);background:none;border-radius:0;font-size:12.8px;line-height:1.8;color:var(--ink)}
+.note b{display:block;width:max-content;font-size:11.5px;color:#7A5A0E;background:rgba(245,190,46,.5);border-radius:5px;padding:1px 8px;margin:0 0 6px}
+.note span{display:block}
+.transfer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 32px;margin-top:10px}
+.tcard{background:none;border:0;border-top:1px solid var(--line);border-radius:0;padding:12px 0 8px}
+.tcard h3{margin:0 0 5px;font-size:14px;font-weight:900;display:flex;align-items:baseline;gap:7px}
+.tcard h3 span{font-size:11px;font-weight:500;color:var(--ink2)}
+.tcard .tsub{margin:0 0 9px;font-size:12.3px;color:var(--ink);line-height:1.75}
+.tcard .tv{display:flex;flex-direction:column;gap:4px;margin-bottom:8px}
+.tcard .tn{margin:0;font-size:12px;color:var(--ink2);line-height:1.75}
+.tcard .tn b{color:var(--ink)}
+.pager{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:clamp(26px,4vh,40px);padding-top:14px;border-top:1.5px solid rgba(21,34,48,.2);flex-wrap:wrap}
+.pbutton{display:inline-flex;align-items:center;gap:7px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);border-radius:8px;padding:9px 15px;font-size:13px;font-weight:700;text-decoration:none}
+.pbutton:hover{background:rgba(245,190,46,.28)}
+.pnote{font-size:12px;color:var(--ink2);margin:0;max-width:22em}
+@media (max-width:880px){
+  .cols{grid-template-columns:1fr;gap:24px}
+  .p1{padding-right:0;border-right:0;border-bottom:1px solid rgba(21,34,48,.11);padding-bottom:20px}
+  .p2{padding-left:0}
+  .fig{height:186px;padding:14px}
+  .shot{inset:14px;gap:9px}
+  .bar{height:38px}
+  .bar.mid{height:30px}
+  .step{grid-template-columns:17px 58px minmax(0,1fr) 30px;gap:7px;padding:7px}
+  .step .mfig{width:64px}
+  .transfer{grid-template-columns:1fr}
+  .crumbs .unit{margin-left:0;flex-basis:100%}
+}
+@media (max-width:880px){
+  .hero{padding:14px 15px 16px;border-radius:12px}
+  .ptitle{font-size:20px}
+  .pmeta{font-size:11.6px}
+  .zone{padding:13px 12px;border-radius:12px}
+  .cols{gap:15px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="hero">
+    <nav class="crumbs">
+      <a class="home" href="index.html#p29">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 5 L7 12 L14 19"/></svg>
+        回到合集
+      </a>
+      <span class="sep">/</span>
+      <a class="plain" href="index.html#p29">六年级数学 · 分数与比</a>
+      <span class="sep">›</span>
+      <span class="here">点 29</span>
+    </nav>
+    <h1 class="ptitle">多了几分之几</h1>
+    <p class="pmeta">六年级第一学期 · 跨章专题</p>
+  </header>
+
+  <section class="zone zq">
+    <div class="phead"><span class="label"><i>①</i>典型题型</span></div>
+    <div class="problem">
+      <div class="q-tag">多 1/4</div>
+      <p>男生 <b>20</b> 人，女生比男生多 <b>1/4</b>，女生多少人？</p>
+      <p class="cue">多 1/4 是“多出男生的 1/4”，不是把分子加 1。</p>
+    </div>
+  </section>
+
+  <div class="cols zone zl">
+    <section class="panel p1">
+      <div class="phead"><span class="label"><i>②</i>学习原理　看图</span></div>
+      <p class="hint">左边看图，右边看话。点右边任何一步，左边的图就停在那一刻；点“朗读”会自己往下走。</p>
+      <div class="stage">
+        <p class="prompt" id="prompt" aria-live="polite"></p>
+        <div class="fig" id="fig" data-pos="1" role="img" aria-label="多了几分之几的图示">
+          <span class="posno" id="posno">第 1 步</span>
+
+        <div class="shot" data-s="1"><div class="barwrap"><p class="blab">先算多出来的部分</p><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span></div></div><p class="cap">20 人分成 4 份，多出的 1 份 = 5 人。</p></div>
+        <div class="shot" data-s="2"><div class="barwrap"><p class="blab">女生 = 20 + 5</p><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span></div></div><p class="cap">原来的 4 份 + 多的 1 份 = 5 份。</p></div>
+        <div class="shot" data-s="3"><div class="barwrap"><p class="blab">也可以乘 5/4</p><div class="nums"><span class="num">20 × 5/4 = 25 人</span></div></div><p class="cap">5 份就是男生的 5/4。</p></div>
+        <div class="shot" data-s="4"><div class="barwrap"><p class="blab">别写成 20 + 1</p><div class="nums"><span class="num">20 + 1 = 21 ✗</span></div></div><p class="cap">1 是分数里的 1 份，不是 1 个人。</p></div>
+        </div>
+        <p class="fb" id="fb" aria-live="polite"></p>
+        <div class="slot"><div class="result" id="result">女生 25 人</div></div>
+        <p class="legend"><span><i class="ly"></i>男生的 4 份</span><span><i class="lg"></i>多出的 1 份</span></p>
+      </div>
+    </section>
+
+    <section class="panel p2">
+      <div class="phead"><span class="label"><i>③</i>解题思路　看话</span>
+      <button class="playall" id="playAll">
+        <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M17 8c1.6 1.7 1.6 6.3 0 8"/></svg>
+        <span>朗读解题思路</span>
+      </button></div>
+      <ol class="steps" id="steps">
+        <li class="step">
+          <span class="sno">1</span>
+          <div class="mfig"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span></div></div>
+          <p>多的部分 = 男生的 1/4 = 20 ÷ 4 = 5 人。</p>
+          <button class="say" data-i="0" aria-label="朗读第1步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
+        </li>
+        <li class="step">
+          <span class="sno">2</span>
+          <div class="mfig"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span></div></div>
+          <p>女生 = 20 + 5 = 25 人。</p>
+          <button class="say" data-i="1" aria-label="朗读第2步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
+        </li>
+        <li class="step">
+          <span class="sno">3</span>
+          <div class="mfig"><div class="nums"><span class="num">20×5/4</span></div></div>
+          <p>也可以写成 女生 = 20 × 5/4 = 25 人。</p>
+          <button class="say" data-i="2" aria-label="朗读第3步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
+        </li>
+        <li class="step">
+          <span class="sno">4</span>
+          <div class="mfig"><div class="nums"><span class="num">1份≠1人</span></div></div>
+          <p>两种算法答案一样；但直接把 20 加 1，就错了。</p>
+          <button class="say" data-i="3" aria-label="朗读第4步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
+        </li>
+      </ol>
+      <p class="voicehint" id="voiceHint">当前浏览器不支持语音朗读，文字内容与上面一致。</p>
+      <div class="note"><b>家长可以这样引领思路</b><span>“多 1/4” 里的 1/4 是份数，不是 1 个。让孩子先算“多出几个人”，再算总数。</span></div>
+    </section>
+  </div>
+
+  <section class="zone zd">
+    <div class="phead"><span class="label"><i>④</i>举一反三</span></div>
+    <p class="hint" style="max-width:52em">同一个“多出几分之几”，换成多 1/3、多 2/5，动作一样。</p>
+    <div class="transfer">
+      <div class="tcard">
+        <h3>多 1/3</h3>
+        <p class="tsub">男生 30 人，女生多 1/3</p>
+        <div class="tv"><div class="nums"><span class="num">40 人</span></div></div>
+        <p class="tn">30 + 10 = 40。</p>
+      </div>
+      <div class="tcard">
+        <h3>少 1/4</h3>
+        <p class="tsub">原价 80 元，降 1/4</p>
+        <div class="tv"><div class="nums"><span class="num">60 元</span></div></div>
+        <p class="tn">80 − 20 = 60。</p>
+      </div>
+      <div class="tcard">
+        <h3>多 2/5</h3>
+        <p class="tsub">树 20 棵，今年多 2/5</p>
+        <div class="tv"><div class="nums"><span class="num">28 棵</span></div></div>
+        <p class="tn">20 + 8 = 28。</p>
+      </div>
+      <div class="tcard">
+        <h3>少 1/3</h3>
+        <p class="tsub">40 升用去 1/3</p>
+        <div class="tv"><div class="nums"><span class="num">26.7 升</span></div></div>
+        <p class="tn">40 − 13.3 = 26.7。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pager">
+    <a class="pbutton" href="index.html#p29">
+      <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M14 5 L7 12 L14 19"/></svg>
+      回到合集，继续看别的点
+    </a>
+    <p class="pnote">这一点收录在《六年级数学合集 · 沪教版》里，合集里能搜关键词，也能只看本册重点。</p>
+  </section>
+</div>
+<script>
+(function(){
+  "use strict";
+  var TEXTS = ["多的部分 = 男生的 1/4 = 20 ÷ 4 = 5 人。", "女生 = 20 + 5 = 25 人。", "也可以写成 女生 = 20 × 5/4 = 25 人。", "两种算法答案一样；但直接把 20 加 1，就错了。"], SUMMARY = ["多出的 = 5 人", "20 + 5 = 25", "20 × 5/4 = 25", "不是 20 + 1"], SPEAK = ["第一步，多四分之一，多出来的是男生的四分之一，二十除以四等于五。", "第二步，女生就是二十加五，等于二十五人。", "第三步，也可以看成女生是男生的四分之五，二十乘四分之五还是二十五。", "第四步，两种算法答案一样，但直接把二十加一就错了。"];
+  var row = 0, running = false, cancelled = false;
+  var fig = document.getElementById('fig'),
+      promptEl = document.getElementById('prompt'),
+      resultEl = document.getElementById('result'),
+      fbEl = document.getElementById('fb'),
+      steps = Array.prototype.slice.call(document.querySelectorAll('.step')),
+      says = Array.prototype.slice.call(document.querySelectorAll('.say')),
+      playAll = document.getElementById('playAll'),
+      playTxt = playAll.querySelector('span'),
+      hint = document.getElementById('voiceHint');
+
+  function apply(){
+    fig.dataset.pos = row + 1;
+    var pn = document.getElementById('posno'); if(pn) pn.textContent = '第 ' + (row + 1) + ' 步';
+    promptEl.innerHTML = TEXTS[row];
+    resultEl.classList.toggle('on', row >= 3);
+    fbEl.textContent = '第 ' + (row + 1) + ' 步 / 共 4 步 · ' + SUMMARY[row];
+  }
+  function show(r){ row = r; apply(); }
+  apply();
+
+  var synth = window.speechSynthesis, voice = null;
+  var IDLE = '朗读解题思路';
+  if(!synth){
+    hint.classList.add('on');
+    hint.textContent = '这台设备不支持语音朗读，先看文字，内容与朗读完全一致。';
+    says.forEach(function(b){ b.style.display = 'none'; });
+    playAll.style.display = 'none';
+  }
+  function pickVoice(){
+    if(!synth) return;
+    var all = synth.getVoices() || [];
+    var zh = all.filter(function(v){ return /zh|cmn|chinese/i.test(v.lang) || /Chinese/i.test(v.name); });
+    var pref = zh.filter(function(v){ return /Tingting|Ting-Ting|Meijia|Xiaoxiao|Huihui|Yaoyao|普通话/i.test(v.name); });
+    voice = pref[0] || zh[0] || null;
+  }
+  pickVoice();
+  if(synth && synth.addEventListener){ synth.addEventListener('voiceschanged', pickVoice); }
+
+  var watchdog = null;
+  function voiceFails(){
+    hint.classList.add('on');
+    hint.textContent = '这台设备没有可用的中文语音，先看文字，内容与朗读完全一致。';
+    stop();
+  }
+  function markStep(idx){
+    steps.forEach(function(s, k){ s.classList.toggle('active', k === idx); });
+    says.forEach(function(b, k){ b.classList.toggle('playing', k === idx); });
+  }
+  function clearMarks(){ markStep(-1); }
+  function setBtn(on, txt){
+    playAll.classList.toggle('on', on);
+    playTxt.textContent = txt || IDLE;
+  }
+  function stop(){
+    cancelled = true; running = false;
+    try{ synth.cancel(); }catch(e){}
+    clearMarks();
+    setBtn(false, IDLE);
+  }
+  function speakAt(i, done){
+    var started = false;
+    var u = new SpeechSynthesisUtterance(SPEAK[i]);
+    u.lang = 'zh-CN'; u.rate = 0.95; u.pitch = 1;
+    if(voice) u.voice = voice;
+    u.onstart = function(){ started = true; clearTimeout(watchdog); if(!cancelled){ markStep(i); show(i); } };
+    u.onend = function(){ clearTimeout(watchdog); if(!cancelled && done) done(); };
+    u.onerror = function(){ clearTimeout(watchdog); if(!cancelled && done) done(); };
+    clearTimeout(watchdog);
+    watchdog = setTimeout(function(){ if(!started && !cancelled) voiceFails(); }, 900);
+    synth.speak(u);
+  }
+
+  playAll.addEventListener('click', function(){
+    if(!synth) return;
+    if(running){ stop(); return; }
+    cancelled = false; running = true;
+    setBtn(true, '停止朗读');
+    clearMarks();
+    show(0);
+    var i = 0;
+    (function next(){
+      if(cancelled) return;
+      if(i >= SPEAK.length){ running = false; clearMarks(); setBtn(false, IDLE); return; }
+      speakAt(i, function(){ i++; if(!cancelled) setTimeout(next, 200); });
+    })();
+  });
+
+  says.forEach(function(btn, i){
+    btn.addEventListener('click', function(){
+      if(!synth) return;
+      if(running){ stop(); }
+      cancelled = false; running = true;
+      setBtn(false, '停止朗读');
+      show(i);
+      speakAt(i, function(){ running = false; clearMarks(); setBtn(false, IDLE); });
+    });
+  });
+
+  steps.forEach(function(li, i){
+    li.addEventListener('click', function(e){
+      if(e.target.closest('.say')) return;
+      if(running){ stop(); }
+      markStep(i);
+      show(i);
+    });
+  });
+
+  window.addEventListener('beforeunload', function(){ try{ if(synth) synth.cancel(); }catch(e){} });
+})();
+
+</script>
+</body>
+</html>

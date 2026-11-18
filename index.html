@@ -1,0 +1,498 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>六年级数学 · 分数与比｜沪教版 交互课程合集</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='3' fill='%23152230'/%3E%3Crect x='5' y='15' width='14' height='3' fill='%23F5BE2E'/%3E%3Crect x='5' y='21' width='9' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{
+  --ink:#152230; --ink2:#5A6B7C; --line:#D7E1E9; --paper:#fff;
+  --bg:#E9EEF3; --yellow:#F5BE2E; --gold:#C89B24; --green:#0FA97C; --mark:#FFE9A8;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --num:"Space Grotesk","Noto Sans SC",ui-sans-serif,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background-color:var(--bg);
+  color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+.app{max-width:960px;margin:0 auto;padding:clamp(18px,3vw,30px) clamp(16px,4vw,32px) clamp(30px,5vh,50px)}
+
+/* 头部 */
+.topbar{background:var(--ink);border-radius:14px;padding:clamp(20px,3vw,30px) clamp(18px,3vw,30px) clamp(16px,2.4vw,22px);margin-bottom:clamp(18px,2.6vh,24px)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,5vw,56px);
+  background:none;border-radius:0;padding:0;margin:0}
+.head h1{color:#fff}
+.head h1 em{background-image:none;color:var(--yellow)}
+.head .ver{background:transparent;border-color:rgba(255,255,255,.42);color:#fff}
+.head .ver b{color:#fff}
+.head .focus b{background:var(--yellow);color:#152230}
+.head .ver span{color:rgba(255,255,255,.6);border-left-color:rgba(255,255,255,.2)}
+.head .focus p{color:rgba(255,255,255,.8)}
+.hl{min-width:0}
+.brand{margin:0 0 9px;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
+.brand::before{content:"";width:14px;height:3px;background:var(--yellow);border-radius:2px}
+h1{margin:0;font-size:clamp(26px,3.4vw,38px);line-height:1.2;font-weight:900;letter-spacing:-.02em;white-space:nowrap}
+h1 em{font-style:normal;background-image:linear-gradient(rgba(245,190,46,.55),rgba(245,190,46,.55));background-repeat:no-repeat;background-size:100% .42em;background-position:0 92%;padding:0 2px}
+.ver{display:inline-flex;align-items:center;gap:8px;margin-top:11px;font-size:12.5px;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:5px 13px;background:var(--paper)}
+.ver b{font-weight:900;letter-spacing:.02em}
+.ver span{color:var(--ink2);font-weight:500;border-left:1px solid var(--line);padding-left:8px}
+.focus{flex:0 1 322px;min-width:0;margin:0;padding:2px 14px 2px 0;border-right:3px solid var(--yellow);text-align:right}
+.focus b{display:inline-block;font-size:11.5px;color:#7A5A0E;background:rgba(245,190,46,.38);border-radius:5px;padding:1px 7px;font-weight:900;margin-bottom:5px}
+.focus b.b2{margin-top:11px}
+.focus p{margin:0;font-size:12.8px;line-height:1.85;color:var(--ink)}
+
+/* 搜索 */
+.search{position:relative;margin-top:clamp(16px,2.6vh,22px);padding-top:clamp(14px,2.2vh,18px);border-top:1px solid rgba(255,255,255,.16)}
+.box{display:flex;align-items:center;gap:10px;background:var(--paper);border:0;border-radius:10px;padding:0 12px;height:52px;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.box svg{width:17px;height:17px;flex:none;color:var(--ink2)}
+#q{flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:var(--sans);font-size:15px;color:var(--ink);height:100%}
+#q::placeholder{color:#8FA0AF}
+.sbtn{flex:none;border:0;border-radius:7px;background:var(--ink);color:#fff;font-family:var(--sans);font-size:12.5px;font-weight:700;padding:7px 14px;cursor:pointer;transition:background .15s}
+.sbtn:hover{background:#23374D}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1.5px solid rgba(255,255,255,.30);background:transparent;color:rgba(255,255,255,.85);border-radius:999px;padding:6px 13px;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:#fff;color:#fff}
+.chip.on{background:var(--yellow);border-color:var(--yellow);color:#152230}
+.chip .n{font-family:var(--num);font-size:11.5px;opacity:.6;margin-left:3px}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 4px;font-size:12.5px;color:var(--ink2)}
+.meta .cnt{font-family:var(--num);letter-spacing:.02em}
+.metr{display:flex;align-items:center;gap:12px}
+.ktoggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink2);border-radius:999px;padding:5px 12px;font-family:var(--sans);font-size:12.5px;font-weight:700;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.ktoggle:hover{border-color:var(--ink);color:var(--ink)}
+.ktoggle[aria-pressed="true"]{background:rgba(245,190,46,.34);border-color:rgba(200,155,36,.85);color:#7A5A0E}
+.ktoggle .n{font-family:var(--num);font-size:11.5px;opacity:.75}
+#reset{display:none;border:0;background:transparent;color:var(--ink2);font-family:var(--sans);font-size:12.5px;text-decoration:underline;cursor:pointer;padding:0}
+#reset:hover{color:var(--ink)}
+
+/* 列表 */
+main{margin-top:6px}
+.grp{margin-top:clamp(18px,3vh,26px)}
+.grp-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:0 2px 9px;border-bottom:1.5px solid rgba(21,34,48,.35)}
+.grp-h .idx{font-family:var(--num);font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.grp-h .unit{font-size:11.5px;color:#7A8794;border:1px solid var(--line);border-radius:5px;padding:1px 7px;background:rgba(255,255,255,.7)}
+.grp-h h2{margin:0;font-size:16.5px;font-weight:900;letter-spacing:.01em}
+.grp-h .lead{margin:0;font-size:12.5px;color:var(--ink2);flex:1 1 16em}
+
+.row{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 10px 13px 8px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;position:relative;transition:background .15s}
+.row:hover{background:rgba(255,255,255,.75)}
+.row .code{font-family:var(--num);font-size:16px;font-weight:700;line-height:1.15;color:var(--ink);letter-spacing:.02em;text-align:center}
+.row .code small{display:block;font-family:var(--sans);font-size:10px;font-weight:400;color:#8C9CAA;letter-spacing:0;margin-top:2px;line-height:1.2}
+.row.live .code{color:var(--ink)}
+.row h3{margin:0;font-size:15px;font-weight:700;line-height:1.55}
+.row p{margin:2px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
+.row .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.row .tags span{font-size:11.5px;color:var(--ink2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;white-space:nowrap;background:var(--paper)}
+.row .tags .kb{font-weight:700;color:#7A5A0E;border-color:rgba(200,155,36,.75);background:rgba(245,190,46,.34)}
+.row.live{border-bottom-color:rgba(15,169,124,.35)}
+.row.live::before{content:"";position:absolute;left:-2px;top:50%;width:3px;height:26px;transform:translateY(-50%);background:var(--green);border-radius:2px}
+.row.is-hit{background:rgba(245,190,46,.26);box-shadow:inset 3px 0 0 var(--yellow)}
+.row{text-align:left}
+.row.soon{cursor:pointer}
+mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;font-weight:inherit}
+.hiderow{display:none}
+
+/* 空状态 */
+.empty{display:none;padding:clamp(26px,5vh,44px) 0;text-align:center}
+.empty.on{display:block}
+.empty .t{font-size:17px;font-weight:900;margin:0 0 6px}
+.empty .d{font-size:13px;color:var(--ink2);margin:0 0 16px}
+.empty .sg{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);background:var(--ink);color:#fff;font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:88vw;text-align:center;z-index:9}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* 下一册 */
+.nextbox{margin-top:clamp(30px,5vh,48px);padding:26px 26px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.nxt{min-width:0}
+.nxk{display:inline-block;font-size:11.5px;font-weight:900;color:var(--ink);background:var(--yellow);padding:3px 9px;border-radius:3px}
+.nextbox h2{color:#fff;font-size:26px;font-weight:900;letter-spacing:.01em;margin:11px 0 7px;line-height:1.15}
+.nextbox p{color:rgba(255,255,255,.64);font-size:13.5px;line-height:1.7;margin:0;max-width:38ch}
+.nxb{flex:0 0 auto;background:#fff;color:var(--ink);border:0;border-radius:8px;font-family:inherit;font-size:15.5px;font-weight:900;padding:16px 30px;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.nxb:hover:not([disabled]){background:var(--yellow)}
+.nxb[disabled]{background:#fff;color:#66788A;cursor:default;box-shadow:inset 0 0 0 1.5px rgba(21,34,48,.14)}
+.nxb:active{transform:translateY(1px)}
+.foot{margin-top:16px;font-size:12px;color:var(--ink2);line-height:1.8}
+.foot b{color:var(--ink);font-weight:700}
+.foot .nx{display:inline-block;margin-top:8px;color:var(--ink);border-bottom:1.5px solid var(--yellow);font-weight:700}
+
+@media (max-width:760px){
+  .head{display:block}
+  h1{white-space:normal;font-size:clamp(24px,6.2vw,30px)}
+  .focus{flex:none;margin-top:15px;padding:12px 0 12px 13px;border-right:0;border-left:3px solid var(--yellow);text-align:left}
+  .nextbox{flex-direction:column;align-items:stretch;gap:16px;padding:22px 20px}
+  .nextbox h2{font-size:22px}
+  .nxb{width:100%;padding:15px 20px;font-size:15px}
+  .row{grid-template-columns:46px minmax(0,1fr);grid-template-areas:"c t" "... k";row-gap:4px;padding:13px 6px}
+  .row .code{grid-area:c;align-self:start;padding-top:2px}
+  .row .main{grid-area:t}
+  .row .tags{grid-area:k;display:flex;justify-content:flex-start;margin-top:2px}
+  .row .tags span:not(.kb){display:none}
+  .row .tags .kb{font-size:10.5px;padding:0 6px;border-radius:4px}
+  .box{height:50px}
+  #q{font-size:15px}
+  .sbtn{padding:7px 11px;font-size:12px}
+  .grp-h .idx{order:1}
+  .grp-h h2{order:2}
+  .grp-h .unit{order:3}
+  .grp-h .lead{order:5;flex-basis:100%}
+  .empty .sg{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <section class="topbar">
+  <header class="head">
+    <div class="hl">
+      <p class="brand">小布智能教学</p>
+      <h1>六年级数学 · <em>分数与比</em></h1>
+      <div class="ver"><b>沪教版</b><span>上海 · 五四学制 · 六年级第一学期</span></div>
+    </div>
+    <div class="focus">
+      <b>本册重点</b>
+      <p>四章一条线：数的整除打底，分数是主线，比和比例、百分数接在上面，最后用圆和扇形做图形计算。</p>
+      <b class="b2">难点在哪</b>
+      <p>分数里“分的是谁”最容易说错；圆的周长量的是边，面积才是里面，π 用错就全错。</p>
+    </div>
+  </header>
+
+  <div class="search">
+    <div class="box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>
+      <input id="q" type="search" placeholder="搜题型、易错点，如越乘越小" autocomplete="off" spellcheck="false" aria-label="搜索本册内容">
+      <button class="sbtn" id="sbtn" type="button">搜索</button>
+    </div>
+    <div class="chips" id="chips" role="tablist" aria-label="按知识块筛选"></div>
+  </div>
+  </section>
+
+  <div class="meta">
+    <span class="cnt" id="count">32 个难点与典型题型</span>
+    <div class="metr">
+      <button class="ktoggle" id="keyOnly" type="button" aria-pressed="false">只看本册重点<span class="n" id="keyN">6</span></button>
+      <button id="reset" type="button">清空条件</button>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <div class="empty" id="empty">
+    <p class="t">这一册里没有匹配的内容</p>
+    <p class="d">试试少打几个字，或者用同义词。下面几个词一定搜得到。</p>
+    <div class="sg" id="sug"></div>
+  </div>
+
+  <section class="nextbox">
+    <div class="nxt">
+      <span class="nxk">下一册</span>
+      <h2>六年级第二学期</h2>
+      <p>接着本册的“分数与比”往下走，按沪教版教材编排；排期定了会写在这里。</p>
+    </div>
+    <button class="nxb" id="nxb" type="button" disabled>待更新</button>
+  </section>
+
+  <footer class="foot">沪教版（上海，五四学制）· 六年级第一学期 · 32 个难点与典型题型 · 标“拓展”的是延伸内容，不属于教材原节</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var UNITS = [
+    {k:"Z", n:"数的整除", s:"数的整除", unit:"第一章", lead:"先弄懂“谁整除谁”，后面约分、通分才有根。"},
+    {k:"A", n:"分数 · 意义和性质", s:"分数·性质", unit:"第二章 第 1 节", lead:"分数是除法写成的另一个样子。"},
+    {k:"B", n:"分数 · 运算", s:"分数·运算", unit:"第二章 第 2 节", lead:"加减先通分，乘除看“整体”。"},
+    {k:"C", n:"比和比例", s:"比和比例", unit:"第三章 第 1 节", lead:"比是除法的另一种写法；比例是两个比相等。"},
+    {k:"D", n:"百分比", s:"百分比", unit:"第三章 第 2 节", lead:"统一成 100 份，才好比大小。"},
+    {k:"G", n:"圆和扇形", s:"圆和扇形", unit:"第四章", lead:"量边用 π×直径；量里面用 π×半径×半径。"},
+    {k:"T", n:"跨章节专题", s:"跨章专题", unit:"跨章 · 拓展", lead:"教材没单独成节，但考卷上常见。"}
+  ];
+
+  var DATA = [
+    {no:"Z01", live:true, href:"l01.html", u:"Z", t:"整数和整除：什么叫“整除”", d:"整除要求商是整数、没有余数，和“除得尽”不是一回事。", tags:["概念"], a:"整除 余数 商是整数 除尽"},
+    {no:"Z02", live:true, href:"l02.html", u:"Z", t:"因数和倍数：一对互相依存的数", d:"2 是 6 的因数，6 是 2 的倍数；说一个就带出另一个。", tags:["概念"], a:"因数 倍数 相互依存"},
+    {no:"Z03", live:true, href:"l03.html", u:"Z", t:"能被 2、5 整除的数的特征", d:"看末位：个位是偶数就能被 2 整除，个位是 0 或 5 就能被 5 整除。", tags:["规律"], a:"末尾 个位 偶数 特征"},
+    {no:"Z04", live:true, href:"l04.html", u:"Z", t:"素数与合数：为什么 1 不是素数", d:"1 只有一个因数，素数要“有且只有”两个因数。", tags:["概念"], a:"素数 合数 质数 1"},
+    {no:"Z05", live:true, href:"l05.html", u:"Z", t:"分解素因数：短除法与树状图", d:"把合数一直拆到全是素数为止，两种写法都行。", tags:["计算"], a:"分解素因数 短除法 树状图"},
+    {no:"Z06", live:true, href:"l06.html", u:"Z", t:"最大公因数与最小公倍数：一个取小，一个取大", d:"公因数是两边共同的因数里最大的；公倍数是最小能被两边同时除尽的。", tags:["应用"], a:"最大公因数 最小公倍数 约分 通分"},
+
+    {no:"A01", live:true, href:"l07.html", u:"A", t:"分数与除法：为什么 a÷b 就是 a/b", d:"除号换成分数线，被除数搬到上面，除数搬到下面。", tags:["概念"], a:"分数与除法 分数线 分子 分母"},
+    {no:"A02", live:true, href:"l08.html", u:"A", t:"分数的基本性质：分子分母同乘同除，大小不变", d:"份数和取的份数同时放大，分数值没变。", tags:["概念"], a:"基本性质 同乘同除 不变"},
+    {no:"A03", live:true, href:"l09.html", u:"A", t:"约分与最简分数", d:"分子分母同时除以公因数，直到互素为止。", tags:["计算"], a:"约分 最简分数 化简"},
+    {no:"A04", u:"A", key:true, live:true, href:"l10.html", t:"通分与大小比较：分母不一样怎么比", d:"先统一成同样的份，再比分子；通分找的是最小公倍数。", tags:["计算"], a:"通分 大小比较 最小公倍数"},
+
+    {no:"B01", live:true, href:"l11.html", u:"B", t:"分数的加减法：先通分，再加减", d:"单位不同不能直接加减，先换成同样的份。", tags:["计算"], a:"加法 减法 通分 混合"},
+    {no:"B02", u:"B", key:true, live:true, href:"l12.html", t:"分数的乘法：为什么越乘越小", d:"两次“先平均分、再取”，图上永远是 1 格，所以越取越小。", tags:["意义","图示"], a:"越乘越小 变小 折纸 纸 二分之一 三分之一 1/2 1/3 yuechengyuexiao ycyx"},
+    {no:"B03", u:"B", key:true, live:true, href:"l13.html", t:"分数的除法：为什么要颠倒相乘", d:"除以 1/3 就是“里面有几个 1/3”，数格子就数得出来。", tags:["原理"], a:"颠倒 相乘 分数除法 倒数 包含几个 daoshu"},
+    {no:"B04", live:true, href:"l14.html", u:"B", t:"分数与小数的互化：什么时候化成小数更省事", d:"分母只含 2 和 5，才能化成有限小数。", tags:["计算"], a:"互化 小数 循环小数"},
+
+    {no:"C01", live:true, href:"l15.html", u:"C", t:"比的意义：比和除法、分数是什么关系", d:"a : b = a÷b = a/b，同一个关系的三种写法。", tags:["概念"], a:"比的意义 比值 除法 分数 三兄弟"},
+    {no:"C02", u:"C", key:true, live:true, href:"l16.html", t:"比的基本性质与化简比", d:"前后项同乘同除，比不变；化简后写成最简整数比。", tags:["计算"], a:"基本性质 化简 最简整数比 huajianbi"},
+    {no:"C03", live:true, href:"l17.html", u:"C", t:"比例：两个比相等，交叉相乘", d:"a:b = c:d 时，ad = bc；内项外项别放反。", tags:["概念"], a:"比例 内项 外项 交叉相乘"},
+
+    {no:"D01", live:true, href:"l18.html", u:"D", t:"百分比的意义：为什么统一切成 100 份", d:"分母不一样不好比，统一成 100 份就能直接比大小。", tags:["概念"], a:"百分比 百分数 100 意义"},
+    {no:"D02", live:true, href:"l19.html", u:"D", t:"百分比的应用（一）：折扣、成数、增长率", d:"八折 = 80%，三成 = 30%，说法不同，算法一样。", tags:["应用"], a:"折扣 八折 成数 增长率 zhekou"},
+    {no:"D03", live:true, href:"l20.html", u:"D", t:"百分比的应用（二）：利率、税率、合格率", d:"都是“部分 ÷ 整体”，先找准这两个数。", tags:["应用"], a:"利率 利息 税率 合格率 出勤率"},
+    {no:"D04", live:true, href:"l21.html", u:"D", t:"等可能事件：可能性怎么算成一个数", d:"所有结果一样可能时，用它占的比例表示。", tags:["概念"], a:"等可能事件 可能性 概率"},
+
+    {no:"G01", live:true, href:"l22.html", u:"G", t:"圆的周长：绕一圈的长度", d:"周长量的是边上一圈，用直径乘 π；给半径先乘 2。", tags:["计算","图示"], a:"圆的周长 绕一圈 直径 π 圆周率 3.14 yuanzhouzhang"},
+    {no:"G02", live:true, href:"l23.html", u:"G", t:"弧长：圆周长里的一段", d:"先算整圆周长，再看圆心角占 360° 的几分之几。", tags:["计算","图示"], a:"弧长 圆弧 圆心角 60度 90度 huchang"},
+    {no:"G03", u:"G", key:true, live:true, href:"l24.html", t:"圆的面积：πr² 怎么来的", d:"切成小扇形拼成长方形，长 πr、宽 r；r² 是乘两次。", tags:["原理","易错"], a:"圆的面积 半径平方 πr² 4乘4 yuanmiangji"},
+    {no:"G04", live:true, href:"l25.html", u:"G", t:"扇形的面积：圆的一部分", d:"整圆面积 × 圆心角 ÷ 360；90° 就是四分之一圆。", tags:["计算","图示"], a:"扇形面积 圆心角 四分之一圆 shanxing"},
+    {no:"G05", u:"G", key:true, live:true, href:"l26.html", t:"阴影部分的面积：图形题先认块", d:"整块是正方形，挖掉四分之一圆，剩下的相减；圆环、叶形同理。", tags:["图形题","易错"], a:"阴影 图形题 组合图形 圆环 叶形 正方形 相减 yinying"},
+
+    {no:"T01", u:"T", key:true, live:true, href:"l27.html", t:"这 3/4 是谁的：先把“分的是谁”定下来", d:"“的”后面那个量，就是要分成几份的那一条；定错它，算式全歪。", tags:["分的是谁"], a:"分的是谁 一整个 单位1 单位一 整体 谁是1 danwei1 跟谁比 四分之三"},
+    {no:"T02", u:"T", key:true, live:true, href:"l28.html", t:"第二次，分的是谁：连续两次取", d:"第二次分的不是全班了，是上一步取出来的那 20 人。", tags:["分两次","易错"], a:"连续 两次 换对象 果汁 巧克力 单位1变 第二次 分开"},
+    {no:"T03", live:true, href:"l29.html", u:"T", t:"“多了几分之几”和“是几分之几”不一样", d:"多 1/4 是加“整体的 1/4”，不是把分子加 1。", tags:["易错"], a:"多几分之几 是几分之几 增加 减少"},
+    {no:"T04", live:true, href:"l30.html", u:"T", t:"分数、比、百分数：同一个数三种写法怎么互化", d:"先都化成小数，再比大小；答题按题目要求的形式写。", tags:["易错"], a:"分数 比 百分数 互化 三张脸 75% 三种写法"},
+    {no:"T05", live:true, href:"l31.html", u:"T", t:"平均速度：为什么不是速度的平均", d:"总路程 ÷ 总时间；来回两段路一样长，时间却不一样。", tags:["拓展","易错"], a:"平均速度 速度 往返 总时间 pingjunsudu"},
+    {no:"T06", live:true, href:"l32.html", u:"T", t:"相遇问题：两个人一起把路走完", d:"路程和 = 速度和 × 时间，图上两条线对着走。", tags:["拓展","应用"], a:"相遇 相向 同时出发 路程和"}
+  ];
+  DATA.forEach(function(it, i){ it.p = i + 1; });;
+
+  var SUGGEST = ["越乘越小","单位 1","平均速度","化简比","折扣","倒数"];
+
+  /* ---------- 搜索：归一化 + 模糊 ---------- */
+  var IGNORE = /[\s\u3000，。、；：？！,.;:?!（）()《》【】“”‘’·\-—\/×÷+=%~]/;
+  function strip(s){ return (s || "").replace(IGNORE, ""); }
+  function scan(q, raw){
+    if(!q) return null;
+    var idx = [], qi = 0;
+    for(var i = 0; i < raw.length && qi < q.length; i++){
+      var ch = raw.charAt(i);
+      if(IGNORE.test(ch)) continue;
+      if(ch.toLowerCase() === q.charAt(qi)){ idx.push(i); qi++; }
+    }
+    return qi === q.length ? idx : null;
+  }
+  function contiguous(idx){
+    for(var i = 1; i < idx.length; i++){ if(idx[i] !== idx[i-1] + 1) return false; }
+    return true;
+  }
+  function mark(text, idx){
+    if(!idx || !idx.length) return text;
+    var out = "", last = 0;
+    idx.forEach(function(p){
+      if(p >= last){ out += text.slice(last, p) + "<mark>" + text.charAt(p) + "</mark>"; last = p + 1; }
+    });
+    return out + text.slice(last);
+  }
+
+  var ITEMS = DATA.map(function(it){
+    var unit = UNITS.filter(function(u){ return u.k === it.u; })[0];
+    var hay = "点" + it.p + " 第" + it.p + "点 " + it.t + " " + it.d + " " + it.tags.join(" ") + " " + (it.a || "") + " " + unit.n + " " + unit.unit + (it.key ? " 本册重点 重点" : "");
+    /* 版本词单独放：避免“人/教/版”这类字被拼成才匹配出假结果 */
+    var hv = "沪教版 上海 五四学制 六上 六年级第一学期 六上数学";
+    return {d:it, unit:unit, hay:hay, hv:hv, tl:it.t, dl:it.d, al:(it.a || "")};
+  });
+
+  /* ---------- 渲染 ---------- */
+  var list = document.getElementById("list");
+  var tpl = ITEMS.map(function(it){
+    var i = it.d;
+    var tag = i.live ? "a" : "div";
+    var cls = "row" + (i.live ? " live" : " soon");
+    var attr = i.live ? ' href="' + i.href + '"' : '';
+    return {it:it, html:'<' + tag + ' class="' + cls + '" id="p' + i.p + '" data-no="p' + i.p + '"' + attr + '>'
+      + '<span class="code">' + i.p + '<small>六上</small></span>'
+      + '<div class="main"><h3>' + i.t + '</h3><p>' + i.d + '</p></div>'
+      + '<div class="tags">' + (i.key ? '<span class="kb">本册重点</span>' : '') + i.tags.map(function(t){ return '<span>' + t + '</span>'; }).join("") + '</div>'
+      + '</' + tag + '>'};
+  });
+
+  var groups = [];
+  UNITS.forEach(function(u){
+    var rows = tpl.filter(function(x){ return x.it.d.u === u.k; });
+    var g = document.createElement("section");
+    g.className = "grp";
+    g.dataset.unit = u.k;
+    g.innerHTML = '<div class="grp-h"><h2>' + u.n
+      + '</h2><span class="unit">' + u.unit + '</span><p class="lead">' + u.lead + '</p></div>'
+      + rows.map(function(x){ return x.html; }).join("");
+    list.appendChild(g);
+    groups.push(g);
+  });
+
+
+  /* ---------- 筛选 chip ---------- */
+  var chips = document.getElementById("chips");
+  var curUnit = "ALL";
+  function buildChips(){
+    var all = {k:"ALL", n:"全部", c:DATA.length};
+    var arr = [all].concat(UNITS.map(function(u){
+      return {k:u.k, n:u.s, c:DATA.filter(function(x){ return x.u === u.k; }).length};
+    }));
+    chips.innerHTML = arr.map(function(c){
+      return '<button class="chip' + (c.k === curUnit ? " on" : "") + '" data-u="' + c.k + '" role="tab" aria-selected="' + (c.k === curUnit) + '">'
+        + c.n + '<span class="n">' + c.c + '</span></button>';
+    }).join("");
+  }
+  chips.addEventListener("click", function(e){
+    var b = e.target.closest(".chip");
+    if(!b) return;
+    curUnit = b.dataset.u;
+    buildChips();
+    apply();
+  });
+
+  /* ---------- 应用筛选/搜索 ---------- */
+  var qEl = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var resetEl = document.getElementById("reset");
+  var emptyEl = document.getElementById("empty");
+  var sugs = document.getElementById("sug");
+  sugs.innerHTML = SUGGEST.map(function(s){ return '<button class="chip" data-sug="1">' + s + '</button>'; }).join("");
+  sugs.addEventListener("click", function(e){
+    var b = e.target.closest(".chip");
+    if(!b) return;
+    qEl.value = b.textContent;
+    qEl.focus();
+    apply();
+  });
+
+  var rows = Array.prototype.slice.call(document.querySelectorAll(".row"));
+  var keyOnly = false;
+  var keyBtn = document.getElementById("keyOnly");
+  var keyN = document.getElementById("keyN");
+  var keyTotal = DATA.filter(function(x){ return x.key; }).length;
+  keyN.textContent = keyTotal;
+  keyBtn.addEventListener("click", function(){
+    keyOnly = !keyOnly;
+    keyBtn.setAttribute("aria-pressed", keyOnly ? "true" : "false");
+    apply();
+  });
+
+  function apply(){
+    var raw = qEl.value.trim();
+    var tokens = raw.split(/\s+/).filter(Boolean).map(function(t){ return strip(t).toLowerCase(); });
+    var shown = 0;
+
+    rows.forEach(function(row){
+      var it = ITEMS.filter(function(x){ return 'p' + x.d.p === row.dataset.no; })[0];
+      var unitOk = (curUnit === "ALL" || it.d.u === curUnit);
+      var keyOk = (!keyOnly || !!it.d.key);
+      var hit = true, score = 0, tIdx = null, dIdx = null;
+
+      var numQ = raw.match(/^(?:点|第)?\s*(\d{1,2})\s*(?:点)?$/);
+      if(numQ){
+        hit = (it.d.p === parseInt(numQ[1], 10));
+        if(hit) score = 4;
+      } else if(tokens.length){
+        hit = tokens.every(function(tk){ return scan(tk, it.hay) !== null || scan(tk, it.hv) !== null; });
+        if(hit){
+          tokens.forEach(function(tk){
+            var a = scan(tk, it.tl), b = scan(tk, it.dl);
+            if(a){ score += 2; if(tIdx === null) tIdx = a; }
+            if(b){ score += 1; if(dIdx === null) dIdx = b; }
+            if(tIdx && contiguous(tIdx)) score += 1;
+          });
+        }
+      }
+
+      var show = unitOk && keyOk && hit;
+      row.classList.toggle("hiderow", !show);
+      if(show) shown++;
+
+      var h3 = row.querySelector("h3"), p = row.querySelector("p");
+      h3.innerHTML = mark(it.tl, tIdx);
+      p.innerHTML = mark(it.dl, dIdx);
+    });
+
+    groups.forEach(function(g){
+      var any = Array.prototype.slice.call(g.querySelectorAll(".row")).some(function(r){ return !r.classList.contains("hiderow"); });
+      g.style.display = any ? "" : "none";
+    });
+
+    countEl.textContent = (tokens.length || curUnit !== "ALL" || keyOnly)
+      ? (keyOnly && !tokens.length && curUnit === "ALL" ? "本册重点 " + shown + " 个" : "筛出 " + shown + " 个")
+      : "32 个难点与典型题型";
+    resetEl.style.display = (tokens.length || curUnit !== "ALL" || keyOnly) ? "inline" : "none";
+    var dEl = emptyEl.querySelector(".d");
+    dEl.textContent = (shown === 0 && /百分数|人教版|全国版|扇形统计图|圆柱|圆锥/.test(raw))
+      ? "本册是沪教版六年级第一学期：这里的“百分数”叫“百分比”，圆与统计不在本册。"
+      : "试试少打几个字，或者用同义词。下面几个词一定搜得到。";
+    emptyEl.classList.toggle("on", shown === 0);
+  }
+
+  var timer = null;
+  qEl.addEventListener("input", function(){
+    clearTimeout(timer);
+    timer = setTimeout(apply, 90);
+  });
+  qEl.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ qEl.value = ""; apply(); }
+    if(e.key === "Enter"){ e.preventDefault(); apply(); qEl.blur(); }
+  });
+  var sBtn = document.getElementById("sbtn");
+  if(sBtn){
+    sBtn.addEventListener("click", function(){
+      clearTimeout(timer);
+      apply();
+    });
+  }
+  resetEl.addEventListener("click", function(){
+    qEl.value = ""; curUnit = "ALL"; keyOnly = false;
+    keyBtn.setAttribute("aria-pressed", "false");
+    buildChips(); apply(); qEl.focus();
+  });
+
+  /* ---------- 下一册：待更新，不可点 ---------- */
+
+  var toastEl = document.getElementById("toast");
+  var tt = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    clearTimeout(tt);
+    tt = setTimeout(function(){ toastEl.classList.remove("on"); }, 2200);
+  }
+
+  rows.forEach(function(row){
+    if(row.classList.contains("live")) return;
+    row.addEventListener("click", function(e){
+      e.preventDefault();
+      var it = DATA.filter(function(x){ return 'p' + x.p === row.dataset.no; })[0];
+      toast("点 " + it.p + "「" + it.t.split("：")[0] + "」还没上线，正在排期。");
+    });
+  });
+
+  /* ---------- 快捷聚焦 ---------- */
+  document.addEventListener("keydown", function(e){
+    if(e.key === "/" && document.activeElement !== qEl){ e.preventDefault(); qEl.focus(); }
+  });
+
+  function jumpToHash(){
+    var h = (location.hash || "").replace("#", "");
+    if(!h) return;
+    var row = document.querySelector('.row[data-no="' + h + '"]');
+    if(!row){
+      /* 兼容旧链接：#B02 这类字母号仍能定位到对应的“点” */
+      var old = DATA.filter(function(x){ return x.no === h; })[0];
+      if(old) row = document.querySelector('.row[data-no="p' + old.p + '"]');
+    }
+    if(!row) return;
+    if(curUnit !== "ALL"){ curUnit = "ALL"; buildChips(); apply(); }
+    setTimeout(function(){
+      row.scrollIntoView({block:"center"});
+      row.classList.add("is-hit");
+      setTimeout(function(){ row.classList.remove("is-hit"); }, 2800);
+    }, 80);
+  }
+  window.addEventListener("hashchange", jumpToHash);
+
+  buildChips();
+  apply();
+  jumpToHash();
+})();
+</script>
+</body>
+</html>
