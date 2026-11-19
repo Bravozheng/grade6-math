@@ -5,211 +5,307 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>结课出卷 · 六年级数学</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='3' fill='%23152230'/%3E%3Crect x='5' y='15' width='14' height='3' fill='%23F5BE2E'/%3E%3Crect x='5' y='21' width='9' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Noto+Serif+SC:wght@600;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
-:root{--ink:#152230;--ink2:#5A6B7C;--line:#D7E1E9;--paper:#fff;--bg:#E9EEF3;--yellow:#F5BE2E;--gold:#C89B24;--green:#0FA97C;--red:#C8503C;
+:root{--ink:#12212C;--ink2:#5A6C7C;--ink3:#8B9AA8;--line:#DCE4EB;--paper:#FFFCF6;
+  --bg:#0C1821;--red:#C4402E;--gold:#E7B23C;--green:#0E9B76;
   --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --serif:"Noto Serif SC","Songti SC","Source Han Serif SC",serif;
   --num:"Space Grotesk","Noto Sans SC",ui-sans-serif,sans-serif}
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
-.app{max-width:960px;margin:0 auto;padding:clamp(18px,3vw,30px) clamp(16px,4vw,32px) 56px}
-.topbar{background:var(--ink);border-radius:14px;padding:clamp(20px,3vw,30px);color:#fff}
-.brand{margin:0 0 9px;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
-.brand::before{content:"";width:14px;height:3px;background:var(--yellow);border-radius:2px}
-h1{margin:0;font-size:clamp(24px,3.2vw,34px);font-weight:900;line-height:1.24;letter-spacing:-.01em}
-h1 em{font-style:normal;color:var(--yellow)}
-.sub{margin:11px 0 0;font-size:13px;line-height:1.85;color:rgba(255,255,255,.72);max-width:62ch}
-.card{background:var(--paper);border-radius:12px;padding:clamp(16px,2.4vw,22px);margin-top:14px}
-.ph{display:flex;align-items:baseline;gap:9px;margin:0 0 12px;padding-bottom:9px;border-bottom:1.5px solid rgba(21,34,48,.16)}
-.ph .n{font-family:var(--num);font-size:11.5px;font-weight:700;color:#fff;background:var(--ink);border-radius:4px;padding:1px 6px;flex:none}
-.ph h2{margin:0;font-size:16.5px;font-weight:900;flex:none}
-.ph .hint{margin:0 0 0 auto;font-size:11.6px;color:var(--ink2)}
-.lbl{font-size:12.5px;color:var(--ink2);margin:0 0 6px;font-weight:700}
-.opts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
-.opt{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--ink);cursor:pointer}
-.opt.on{background:var(--yellow);border-color:var(--gold);color:#152230}
-.input{width:100%;max-width:300px;border:1.5px solid var(--line);border-radius:8px;padding:9px 12px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
-.input:focus{outline:0;border-color:var(--gold)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:9px;background:var(--ink);color:#fff;font-family:inherit;font-size:15px;font-weight:900;padding:12px 20px;cursor:pointer;min-height:46px;text-decoration:none}
-.btn:hover{background:#23374D}
-.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
-.btn.ghost:hover{background:rgba(245,190,46,.3)}
-.btn.y{background:var(--yellow);color:#152230}
-.btn.y:hover{background:#E9AE1C}
-.btn:disabled{opacity:.45;cursor:default}
-.row2{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
-.reg{margin:0 0 8px;font-size:12.4px;color:var(--ink2);line-height:1.75}
-.reg b{color:var(--ink)}
-.regbox{background:rgba(15,169,124,.1);border:1px solid rgba(15,169,124,.35);border-radius:10px;padding:10px 13px;font-size:12.4px;color:#0B5E47;line-height:1.75;margin-top:10px}
+body{background-color:#0B1620;
+  background-image:
+    radial-gradient(780px 360px at 50% 0%,rgba(56,98,126,.5) 0%,rgba(56,98,126,0) 72%),
+    linear-gradient(180deg,#19323F 0%,#0F202A 360px,#0B1620 720px);
+  background-repeat:no-repeat;background-size:100% 720px,100% 720px;
+  color:#E9EFF4;font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+.app{max-width:1000px;margin:0 auto;padding:0 clamp(14px,3.2vw,28px) 0}
 
-/* 卷面 */
-.sheet{background:#fff;border-radius:12px;padding:clamp(18px,3vw,30px) clamp(16px,3.4vw,32px) clamp(22px,3vw,30px);margin-top:14px;box-shadow:0 1px 0 rgba(21,34,48,.08)}
-.shead{text-align:center;border-bottom:2px solid var(--ink);padding-bottom:12px}
-.sk{font-size:11px;letter-spacing:.2em;color:var(--ink2);margin:0 0 5px}
-.st{font-size:clamp(19px,2.5vw,25px);font-weight:900;margin:0 0 11px;letter-spacing:.02em}
-.sline{display:flex;gap:16px 22px;justify-content:center;flex-wrap:wrap;font-size:12.2px;color:var(--ink2)}
-.sline u{text-decoration:none;border-bottom:1px solid rgba(21,34,48,.7);display:inline-block;min-width:66px;text-align:center;color:var(--ink)}
-.part{margin-top:22px}
-.part-h{display:flex;align-items:baseline;gap:10px;border-bottom:1px solid var(--line);padding-bottom:7px;margin-bottom:4px}
-.part-h h3{margin:0;font-size:15.5px;font-weight:900}
-.part-h span{font-size:11.4px;color:var(--ink2);margin-left:auto}
-.q{padding:13px 0 15px;border-bottom:1px dashed rgba(21,34,48,.14)}
-.q:last-child{border-bottom:0}
-.qn{font-family:var(--num);font-size:13px;font-weight:700;color:var(--ink2)}
-.qn em{font-style:normal;font-size:10.8px;color:#8C9CAA;margin-left:5px;font-family:var(--sans)}
-.qt{font-size:14.6px;line-height:1.85;margin:4px 0 9px}
-.qt .kpt{display:inline-block;font-size:10.4px;font-weight:700;color:#4A5C6E;background:#EDF1F5;border-radius:4px;padding:0 6px;margin-right:7px;vertical-align:1px}
-.ops{display:grid;grid-template-columns:1fr 1fr;gap:9px 20px;margin:9px 0 0}
-.op{display:flex;align-items:center;gap:9px;cursor:pointer;font-size:14px;padding:2px 0}
-.op input{display:none}
-.ring{width:23px;height:23px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--num);font-size:12px;font-weight:700;flex:none;transition:background .12s,color .12s}
+/* ===== 页头 ===== */
+.top{padding:clamp(22px,3.4vw,34px) 2px 0}
+.brand{margin:0 0 14px;font-size:11.5px;font-weight:700;letter-spacing:.2em;color:rgba(255,255,255,.52);display:flex;align-items:center;gap:9px}
+.brand .dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex:none;box-shadow:0 0 0 3px rgba(196,64,46,.16)}
+h1{margin:0;font-family:var(--serif);font-size:clamp(25px,3.3vw,37px);font-weight:700;line-height:1.32;letter-spacing:.03em;color:#fff}
+h1 .slash{color:var(--red);margin:0 .14em;font-weight:600}
+h1 .lt{font-size:.72em;font-weight:600;color:rgba(255,255,255,.62);letter-spacing:.1em}
+.sub{margin:14px 0 0;font-size:12.8px;line-height:1.95;color:rgba(255,255,255,.6);max-width:64ch}
+.steps{display:flex;flex-wrap:wrap;gap:6px 26px;margin:20px 0 0;padding-bottom:1px;border-bottom:1px solid rgba(255,255,255,.1)}
+.steps .st{display:inline-flex;align-items:baseline;gap:7px;font-size:11.6px;font-weight:700;letter-spacing:.05em;color:rgba(255,255,255,.38);padding-bottom:9px;border-bottom:2px solid transparent;margin-bottom:-1px}
+.steps .st b{font-family:var(--num);font-size:10.6px;font-weight:700}
+.steps .st.on{color:#fff;border-bottom-color:var(--red)}
+.steps .st.done{color:rgba(255,255,255,.66);border-bottom-color:rgba(255,255,255,.2)}
+
+/* ===== 纸面板 ===== */
+.panel{background:var(--paper);color:var(--ink);border-radius:5px;padding:clamp(17px,2.7vw,26px);margin-top:16px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.ph{display:flex;align-items:baseline;gap:9px;margin:0 0 15px;padding-bottom:10px;border-bottom:1px solid var(--line);font-size:16px;font-weight:900;letter-spacing:.01em}
+.ph b{font-family:var(--num);font-size:11px;font-weight:700;color:var(--red);letter-spacing:.08em}
+.ph span{margin-left:auto;font-size:11.4px;font-weight:500;color:var(--ink3);letter-spacing:0}
+.lbl{font-size:12.2px;color:var(--ink2);margin:0 0 7px;font-weight:700;letter-spacing:.04em}
+.lbl+.seg{margin-bottom:16px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line);border-radius:6px;overflow:hidden;background:#fff}
+.seg .opt{border:0;border-right:1.5px solid var(--line);border-radius:0;background:#fff;color:#40566A;font-family:inherit;font-size:13.2px;font-weight:700;padding:10px 8px;min-height:46px;cursor:pointer;line-height:1.45;transition:background .14s,color .14s}
+.seg .opt:last-child{border-right:0}
+.seg .opt span{display:block;font-size:10.6px;font-weight:500;opacity:.62;margin-top:1px}
+.seg .opt:hover{background:#F4F7FA}
+.seg .opt.on{background:var(--ink);color:#fff}
+.seg .opt.on span{opacity:.7}
+.seg .opt.on:hover{background:#1B3040}
+.seg .opt:disabled{opacity:.4!important;cursor:default}
+.input{width:100%;max-width:320px;border:1.5px solid var(--line);border-radius:6px;padding:10px 13px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+.input:focus{outline:0;border-color:var(--ink);box-shadow:0 0 0 3px rgba(18,33,44,.06)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:6px;font-family:inherit;font-size:14.5px;font-weight:900;letter-spacing:.02em;padding:12px 22px;min-height:46px;cursor:pointer;text-decoration:none;transition:background .14s,transform .08s,border-color .14s}
+.btn:active{transform:translateY(1px)}
+.btn.main{background:var(--ink);color:#fff}
+.btn.main:hover{background:#20374A}
+.btn.accent{background:var(--red);color:#fff}
+.btn.accent:hover{background:#AB3626}
+.btn.line{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.btn.line:hover{border-color:var(--ink)}
+.btn.light{background:transparent;color:#DCE6EE;border:1.5px solid rgba(255,255,255,.26);font-weight:700}
+.btn.light:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.5)}
+.btn.sm{min-height:36px;padding:7px 14px;font-size:12.8px;font-weight:700}
+.btn:disabled{opacity:.42;cursor:default;transform:none}
+.row2{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:14px}
+.regbox{background:#F1F8F4;border:1px solid rgba(14,155,118,.3);border-left:3px solid var(--green);border-radius:0 5px 5px 0;padding:10px 13px;font-size:12.4px;color:#12513F;line-height:1.8;margin-top:12px}
+.cap{margin:0 0 14px;font-size:12.4px;color:var(--ink2);line-height:1.8}
+
+/* ===== 卷纸 ===== */
+#sheetWrap{margin-top:22px;padding-bottom:8px}
+.paper{background:var(--paper);color:var(--ink);border-radius:4px;box-shadow:0 20px 50px rgba(0,0,0,.45);position:relative}
+.sheet{padding:clamp(24px,3.6vw,38px) clamp(19px,4vw,42px) 26px;position:relative}
+.sk{text-align:center;font-size:10.6px;letter-spacing:.26em;color:var(--ink3);margin:0 0 9px}
+.st{text-align:center;font-family:var(--serif);font-size:clamp(20px,2.6vw,26px);font-weight:700;letter-spacing:.08em;margin:0 0 14px;line-height:1.4}
+.sline{display:flex;justify-content:center;gap:8px 26px;flex-wrap:wrap;font-size:12px;color:var(--ink2);border-top:1px solid var(--line);border-bottom:2px solid var(--ink);padding:9px 0}
+.sline u{text-decoration:none;border-bottom:1px solid rgba(18,33,44,.72);display:inline-block;min-width:70px;text-align:center;color:var(--ink);font-weight:500}
+.part{margin-top:24px}
+.part-h{display:flex;align-items:baseline;gap:8px;margin:0 0 2px;padding-bottom:7px;border-bottom:1px solid var(--line)}
+.part-h h3{margin:0;font-family:var(--serif);font-size:16px;font-weight:700;letter-spacing:.05em;display:flex;align-items:center;gap:8px}
+.part-h h3::before{content:"";width:3px;height:14px;background:var(--red);flex:none;border-radius:1px}
+.part-h span{margin-left:auto;font-family:var(--num);font-size:11px;color:var(--ink3);letter-spacing:.04em}
+.q{padding:13px 0 14px;border-bottom:1px solid #EEF2F6}
+.q:last-child{border-bottom:0;padding-bottom:6px}
+.qn{font-family:var(--num);font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:baseline;gap:8px}
+.qn em{font-style:normal;font-size:10.6px;color:var(--ink3);font-family:var(--sans);font-weight:500}
+.qt{font-size:14.8px;line-height:1.95;margin:5px 0 10px;color:#1A2B37}
+.qt .kpt{display:inline-block;font-size:10.4px;font-weight:700;color:#63788A;background:#F0F4F8;border-radius:3px;padding:1px 6px;margin-right:8px;vertical-align:2px;letter-spacing:.02em}
+.ops{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;margin:9px 0 0}
+.op{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:14px;padding:4px 0;border-radius:4px}
+.op input{position:absolute;opacity:0;width:1px;height:1px}
+.ring{width:24px;height:24px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--num);font-size:12px;font-weight:700;flex:none;transition:background .13s,color .13s}
 .op input:checked + .ring{background:var(--ink);color:#fff}
-.blank{display:flex;align-items:center;gap:9px;margin:7px 0 0;flex-wrap:wrap}
-.blank input{border:0;border-bottom:1.5px solid var(--ink);background:none;font-family:inherit;font-size:15px;padding:4px 6px;min-width:160px;max-width:260px}
-.blank input:focus{outline:0;border-bottom-color:var(--gold);background:rgba(245,190,46,.12)}
-.blank span{font-size:11.4px;color:#8C9CAA}
-.work textarea{width:100%;min-height:104px;border:1.5px dashed rgba(21,34,48,.26);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.95;resize:vertical;background:rgba(255,255,255,.7);color:var(--ink)}
-.work textarea:focus{outline:0;border-color:var(--gold)}
+.op:hover .ring{background:rgba(18,33,44,.06)}
+.op input:checked + .ring{background:var(--ink)}
+.blank{display:flex;align-items:baseline;gap:10px;margin:8px 0 0;flex-wrap:wrap}
+.blank input{border:0;border-bottom:1.5px solid var(--ink);background:none;font-family:var(--sans);font-size:15.5px;color:var(--ink);padding:3px 6px;min-width:180px;max-width:280px;transition:background .14s,border-color .14s}
+.blank input:focus{outline:0;border-bottom-color:var(--red);background:rgba(196,64,46,.05)}
+.blank span{font-size:11px;color:var(--ink3)}
+.work textarea{display:block;width:100%;min-height:98px;border:1.5px dashed #CBD7E1;border-radius:5px;padding:10px 12px;font-family:inherit;font-size:14px;line-height:2.05;resize:vertical;background:#FDFDFB;color:var(--ink)}
+.work textarea:focus{outline:0;border-color:var(--ink);border-style:solid}
 .shoot{display:flex;align-items:center;gap:10px;margin-top:9px;flex-wrap:wrap}
-.shoot input{display:none}
-.shoot label{border:1.5px solid var(--line);border-radius:8px;padding:7px 12px;font-size:12.2px;font-weight:700;cursor:pointer;background:#fff}
+.shoot input{position:absolute;opacity:0;width:1px;height:1px}
+.shoot label{border:1.5px solid var(--line);border-radius:5px;padding:7px 12px;font-size:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--ink);min-height:34px;display:inline-flex;align-items:center}
 .shoot label:hover{border-color:var(--ink)}
-.shoot .thumb{width:72px;height:72px;object-fit:cover;border-radius:8px;border:1px solid var(--line);display:none}
-.shoot .snap-note{font-size:10.8px;color:#90A0AE}
-.fb{margin:10px 0 0;padding-top:9px;border-top:1px dashed rgba(21,34,48,.16);font-size:12.6px;line-height:1.8;color:var(--ink2)}
-.fb b{color:var(--ink)}
+.shoot .thumb{width:66px;height:66px;object-fit:cover;border-radius:5px;border:1px solid var(--line);display:none}
+.shoot .snap-note{font-size:10.6px;color:var(--ink3)}
+.fb{margin:12px 0 0;padding:10px 12px;background:#F6F8FA;border-left:3px solid var(--line);border-radius:0 4px 4px 0;font-size:12.8px;line-height:1.85;color:#3E5262}
+.q.right .fb{border-left-color:var(--green);background:#F2F9F6}
+.q.wrong .fb{border-left-color:var(--red);background:#FCF4F3}
 .fb .ok{color:var(--green);font-weight:900}
 .fb .no{color:var(--red);font-weight:900}
-.fb .src{display:block;font-size:10.4px;color:#90A0AE;margin-top:5px}
-.selfrow{display:flex;gap:8px;margin-top:9px;flex-wrap:wrap}
-.selfrow button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:6px 13px;font-size:12.2px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--ink)}
-.selfrow button.on[data-ok="1"]{background:rgba(15,169,124,.18);border-color:var(--green);color:#0B5E47}
-.selfrow button.on[data-ok="0"]{background:rgba(200,80,60,.13);border-color:var(--red);color:#8E2F20}
+.fb .src{display:block;font-size:10.2px;color:var(--ink3);margin-top:5px}
+.selfrow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.selfrow button{border:1.5px solid var(--line);background:#fff;border-radius:5px;padding:8px 15px;font-size:12.2px;font-weight:700;cursor:pointer;font-family:inherit;color:var(--ink);min-height:36px}
+.selfrow button:hover{border-color:var(--ink)}
+.selfrow button.on[data-ok="1"]{background:#EAF7F1;border-color:var(--green);color:#0B5B45}
+.selfrow button.on[data-ok="0"]{background:#FBEDEA;border-color:var(--red);color:#8E2F20}
+.sheetfoot{margin:18px 0 0;padding-top:11px;border-top:1px dashed var(--line);text-align:center;font-size:10.6px;color:var(--ink3);letter-spacing:.04em}
+.sheet.marked::after{content:"已批改";position:absolute;top:26px;right:-6px;transform:rotate(-8deg);font-family:var(--serif);font-size:13px;letter-spacing:.14em;color:var(--red);border:2px solid var(--red);border-radius:3px;padding:3px 10px;opacity:.85}
 
-/* 报告 */
-.sc{background:var(--ink);color:#fff;border-radius:12px;padding:18px 20px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
-.sc .big{font-family:var(--num);font-size:36px;font-weight:700;line-height:1}
-.sc .of{font-family:var(--num);font-size:14px;color:rgba(255,255,255,.6)}
-.sc .tag{margin-left:auto;font-size:13px;font-weight:900;color:var(--yellow);background:rgba(245,190,46,.14);border-radius:6px;padding:3px 9px}
-.sc p{margin:6px 0 0;flex-basis:100%;font-size:12.8px;color:rgba(255,255,255,.78);line-height:1.8}
-.wk{margin:14px 0 0;padding:0;list-style:none}
-.wk li{display:flex;align-items:baseline;gap:9px;padding:8px 0;border-bottom:1px solid var(--line);font-size:13.4px}
+/* ===== 交卷工具条 ===== */
+.toolbar{position:sticky;bottom:0;z-index:20;display:flex;align-items:center;gap:14px;padding:10px 2px 12px;margin-top:0;
+  background:rgba(11,22,32,.96);border-top:1px solid rgba(255,255,255,.1);backdrop-filter:blur(6px)}
+#sheetWrap{padding-bottom:0}
+.sheet{padding-bottom:30px}
+.toolbar .prog{font-family:var(--num);font-size:12.4px;font-weight:600;color:rgba(255,255,255,.68);letter-spacing:.04em;flex:none}
+.toolbar .prog b{color:#fff;font-weight:700}
+.toolbar .btns{display:flex;align-items:center;gap:9px;margin-left:auto}
+
+/* ===== 成绩单 ===== */
+.score{background:var(--ink);color:#fff;border-radius:5px;padding:20px 22px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;position:relative;overflow:hidden}
+.score .num{font-family:var(--num);font-size:46px;font-weight:700;line-height:1;color:#fff}
+.score .num i{font-style:normal;font-family:var(--num);font-size:13px;color:rgba(255,255,255,.5);margin-left:7px}
+.score .tag{margin-left:auto;font-size:13px;font-weight:900;color:#FFD27A;background:rgba(231,178,60,.16);border:1px solid rgba(231,178,60,.42);padding:4px 11px;border-radius:3px;letter-spacing:.06em}
+.score p{margin:10px 0 0;flex-basis:100%;font-size:12.8px;line-height:1.85;color:rgba(255,255,255,.78)}
+.wk{margin:12px 0 0;padding:0;list-style:none}
+.wk li{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid #EEF2F6;font-size:13.2px;flex-wrap:wrap}
 .wk li:last-child{border-bottom:0}
-.wk .kp{font-weight:700;min-width:74px}
-.wk a{color:var(--ink);text-decoration:none;font-size:12.8px;border-bottom:1.5px solid var(--yellow);font-weight:700}
-.wk span.e{font-size:12px;color:var(--ink2)}
-.fbar{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 12px}
-.fbar button{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:8px 16px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;color:var(--ink)}
-.fbar button.on{background:var(--yellow);border-color:var(--gold);color:#152230}
-.fta{width:100%;min-height:76px;border:1.5px solid var(--line);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.8;resize:vertical}
-.fta:focus{outline:0;border-color:var(--gold)}
-.note{margin:12px 0 0;font-size:11.6px;color:var(--ink2);line-height:1.8}
-.foot{font-size:11.6px;color:var(--ink2);margin:16px 0 0;line-height:1.9}
+.wk .kp{font-weight:700;min-width:76px;color:var(--ink)}
+.wk a{color:var(--ink);text-decoration:none;font-size:12.4px;font-weight:700;border-bottom:1.5px solid var(--red);padding-bottom:1px}
+.wk a:hover{color:var(--red)}
+.wk span.e{font-size:12px;color:var(--ink3)}
+.fbar{display:grid;grid-template-columns:repeat(3,1fr);border:1.5px solid var(--line);border-radius:6px;overflow:hidden;margin-bottom:16px}
+.fbar button{border:0;border-right:1.5px solid var(--line);background:#fff;color:#40566A;font-family:inherit;font-size:12.8px;font-weight:700;padding:10px 6px;min-height:44px;cursor:pointer;line-height:1.4}
+.fbar button:last-child{border-right:0}
+.fbar button:hover{background:#F4F7FA}
+.fbar button.on{background:var(--ink);color:#fff}
+.fta{display:block;width:100%;min-height:78px;border:1.5px solid var(--line);border-radius:5px;padding:10px 12px;font-family:inherit;font-size:14px;line-height:1.85;resize:vertical;color:var(--ink)}
+.fta:focus{outline:0;border-color:var(--ink)}
+.note{margin:12px 0 0;font-size:11.4px;color:var(--ink3);line-height:1.8}
+.backlinks{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0 0}
+.foot{font-size:11.4px;color:rgba(255,255,255,.4);margin:18px 0 0;padding-bottom:40px;line-height:1.95;max-width:70ch}
 
-@media (max-width:760px){
-  .app{padding:12px 13px 36px}
-  .topbar{padding:15px 14px 16px;border-radius:12px}
-  h1{font-size:22px;line-height:1.3}
-  .sub{font-size:12.2px;line-height:1.78}
-  .card{padding:15px 13px;border-radius:11px;margin-top:11px}
-  .ph{flex-wrap:wrap;gap:6px}
-  .ph h2{font-size:15px}
-  .ph .hint{flex-basis:100%;margin-left:0;font-size:11px}
-  .opt{font-size:12.6px;padding:7px 11px}
-  .input{max-width:none;font-size:16px}
-  .btn{font-size:14px;min-height:46px}
-  .sheet{padding:16px 14px 18px}
-  .sline{gap:10px 14px;font-size:11.4px}
+@media (max-width:820px){
+  .app{padding:0 12px}
+  .top{padding:20px 2px 0}
+  h1{font-size:23px;line-height:1.36}
+  .sub{font-size:12.2px;line-height:1.85;margin-top:11px}
+  .steps{gap:4px 16px;margin-top:17px}
+  .steps .st{font-size:10.6px;gap:5px}
+  .panel{margin-top:12px;padding:15px 14px;border-radius:4px}
+  .ph{font-size:14.6px;margin-bottom:13px}
+  .ph span{font-size:10.6px}
+  .seg .opt{font-size:12.3px;min-height:48px;padding:8px 5px}
+  .seg .opt span{font-size:10px}
+  .input{max-width:none;font-size:16px;min-height:46px}
+  .btn{font-size:14px;min-height:48px}
+  .btn.sm{min-height:40px;font-size:12.4px}
+  .row2 .btn{flex:1}
+  .sheet{padding:20px 15px 20px}
+  .st{font-size:19px;letter-spacing:.06em;margin-bottom:11px}
+  .sline{gap:7px 14px;font-size:11.2px;padding:8px 0}
   .sline u{min-width:52px}
-  .qt{font-size:14px;line-height:1.75}
-  .ops{grid-template-columns:1fr;gap:7px}
-  .blank input{min-width:120px;max-width:100%;flex:1}
-  .sc .big{font-size:30px}
+  .part{margin-top:19px}
+  .part-h h3{font-size:15px}
+  .qt{font-size:14.4px;line-height:1.85}
+  .ops{grid-template-columns:1fr;gap:2px}
+  .op{min-height:40px;font-size:13.6px}
+  .blank input{flex:1;min-width:0;max-width:none;font-size:16px}
+  .blank span{flex-basis:100%;order:2}
+  .work textarea{min-height:110px;font-size:15px}
+  .selfrow button{flex:1;min-height:42px}
+  .toolbar{flex-direction:column;align-items:stretch;gap:7px;padding:8px 10px 10px;border-radius:0}
+  .toolbar .prog{font-size:11.6px}
+  .toolbar .btns{gap:8px;margin-left:0}
+  .toolbar .btns .btn{flex:1}
+  #submitbtn{flex:2.2}
+  .score{padding:16px 16px}
+  .score .num{font-size:38px}
+  .score .tag{margin-left:0;font-size:12px}
+  .wk .kp{min-width:auto}
+  .fbar button{font-size:11.8px;min-height:46px;padding:8px 4px}
+  .backlinks .btn{flex:1}
 }
 @media print{
-  body{background:#fff}
-  .topbar,.card,.no-print,.foot,.shoot label,.shoot .snap-note{display:none!important}
+  body{background:#fff!important;color:#000;font-size:12px}
+  .top,.toolbar,.backlinks,.foot,.no-print,.shoot{display:none!important}
   .app{padding:0;max-width:none}
-  .sheet{box-shadow:none;border-radius:0;padding:0;margin:0}
-  .q{break-inside:avoid}
-  .work textarea{border:1px solid #bbb;min-height:110px}
-  .blank input{border-bottom:1px solid #333}
-  .fb{display:block!important}
+  .paper,.panel{box-shadow:none;border-radius:0}
+  .panel{padding:0;margin:10px 0 14px}
+  .sheet{padding:0}
+  .ops{grid-template-columns:1fr 1fr;gap:3px 20px}
+  .op{min-height:0;padding:1px 0;font-size:13px}
+  .ring{width:20px;height:20px;font-size:11px}
+  .qt{font-size:13.2px;line-height:1.8;margin:3px 0 6px}
+  .part{margin-top:16px}
+  .q{padding:8px 0 9px;break-inside:avoid;border-bottom:1px solid #E5E5E5}
+  .blank input{border-bottom:1px solid #333;min-width:150px;max-width:none;font-size:13px}
+  .work textarea{border:1px solid #bbb;min-height:96px;font-size:12px}
+  .selfrow{display:none}
+  .score{background:#fff;color:#000;border:1px solid #999}
+  .score .tag{color:#000;border-color:#999;background:none}
+  .score p{color:#333}
+  .sheet.marked::after{display:none}
+  .sheetfoot{font-size:9px}
 }
 </style>
 </head>
 <body>
 <div class="app">
 
-  <section class="topbar no-print">
-    <p class="brand">小布智能教学</p>
-    <h1>结课出卷 · <em>六年级数学</em></h1>
-    <p class="sub">学完一册先登记，再出一张卷子。卷面分三部分：选择题圈字母、填空题填结果、解答题写过程（可写在纸上拍照存档）。交卷当场判客观题，解答题对着参考答案自评，最后给分数、薄弱知识点和该回看的讲次。</p>
-  </section>
+  <header class="top">
+    <p class="brand"><span class="dot"></span>小布智能教学 · 结课自测</p>
+    <h1>六年级数学<span class="slash">／</span><span class="lt">结课出卷</span></h1>
+    <p class="sub">学完一册先登记，再出一张卷：选择题圈字母、填空题填结果、解答题写过程或拍照存档。交卷当场判客观题，解答题对照参考答案自评，最后给分数、薄弱知识点和该回看的讲次。</p>
+    <div class="steps" id="steps">
+      <span class="st on" data-s="1"><b>01</b>学习登记</span>
+      <span class="st" data-s="2"><b>02</b>出卷设置</span>
+      <span class="st" data-s="3"><b>03</b>交卷判分</span>
+    </div>
+  </header>
 
-  <section class="card no-print">
-    <div class="ph"><span class="n">01</span><h2>学习登记</h2><p class="hint">记在这台设备上</p></div>
+  <section class="panel no-print" id="regPanel">
+    <h2 class="ph"><b>01</b>学习登记<span>记在这台设备上</span></h2>
     <p class="lbl">我已经学完</p>
-    <div class="opts" id="booksel">
-      <button class="opt" data-book="A">六上 · 数与形（38 讲）</button>
-      <button class="opt" data-book="B">六下 · 式与体（20 讲）</button>
-      <button class="opt" data-book="AB">两册都学完了</button>
+    <div class="seg" id="booksel">
+      <button class="opt" data-book="A">六上 · 数与形<span>38 讲</span></button>
+      <button class="opt" data-book="B">六下 · 式与体<span>20 讲</span></button>
+      <button class="opt" data-book="AB">两册都学完<span>58 讲</span></button>
     </div>
     <p class="lbl">称呼（可不填）</p>
     <input class="input" id="who" placeholder="例如：小林妈妈" autocomplete="off">
-    <div class="row2"><button class="btn y" id="regbtn">登记并开始出卷</button></div>
+    <div class="row2"><button class="btn main" id="regbtn">登记并开始出卷</button></div>
     <div class="regbox" id="reginfo" hidden></div>
   </section>
 
-  <section class="card no-print" id="setup" style="display:none">
-    <div class="ph"><span class="n">02</span><h2>出卷设置</h2><p class="hint">按登记范围抽题</p></div>
-    <p class="reg" id="cap"></p>
+  <section class="panel no-print" id="setup" style="display:none">
+    <h2 class="ph"><b>02</b>出卷设置<span>按登记范围抽题</span></h2>
+    <p class="cap" id="cap"></p>
     <p class="lbl">题量</p>
-    <div class="opts" id="nsel">
-      <button class="opt" data-n="12">12 题 · 小测</button>
-      <button class="opt on" data-n="20">20 题 · 标准</button>
-      <button class="opt" data-n="30">30 题 · 加量</button>
+    <div class="seg" id="nsel">
+      <button class="opt" data-n="12">12 题<span>小测</span></button>
+      <button class="opt on" data-n="20">20 题<span>标准</span></button>
+      <button class="opt" data-n="30">30 题<span>加量</span></button>
     </div>
     <p class="lbl">难度</p>
-    <div class="opts" id="dsel">
+    <div class="seg" id="dsel">
       <button class="opt" data-d="1">基础为主</button>
       <button class="opt on" data-d="2">基础＋提高</button>
       <button class="opt" data-d="3">偏挑战</button>
     </div>
-    <div class="row2"><button class="btn" id="makebtn">生成试卷</button></div>
+    <div class="row2"><button class="btn main" id="makebtn">生成试卷</button></div>
   </section>
 
   <div id="sheetWrap" style="display:none">
-    <article class="sheet" id="sheet">
-      <div class="shead">
-        <p class="sk">沪教版 · 上海五四学制</p>
-        <h2 class="st">六年级数学 · 结课自测卷</h2>
-        <div class="sline">
-          <span>姓名 <u id="uName">　</u></span>
-          <span>日期 <u id="uDate">　</u></span>
-          <span>范围 <u id="uScope">　</u></span>
-          <span>满分 <u>100</u></span>
+    <div class="paper">
+      <article class="sheet" id="sheet">
+        <div class="shead">
+          <p class="sk">沪教版 · 上海五四学制</p>
+          <h2 class="st">六年级数学 · 结课自测卷</h2>
+          <div class="sline">
+            <span>姓名 <u id="uName">　</u></span>
+            <span>日期 <u id="uDate">　</u></span>
+            <span>范围 <u id="uScope">　</u></span>
+            <span>满分 <u>100</u></span>
+          </div>
         </div>
+        <div id="parts"></div>
+        <p class="sheetfoot">卷面只判结果，不计过程分；解答题对照参考答案自评。</p>
+      </article>
+    </div>
+    <div class="toolbar no-print" id="sheetBtns">
+      <span class="prog" id="progText">已答 0 / 0</span>
+      <div class="btns">
+        <button class="btn light sm" id="againbtn">换一张</button>
+        <button class="btn light sm" id="printbtn">打印</button>
+        <button class="btn accent" id="submitbtn">交卷判分</button>
       </div>
-      <div id="parts"></div>
-    </article>
-    <div class="row2 no-print" id="sheetBtns">
-      <button class="btn y" id="submitbtn">交卷判分</button>
-      <button class="btn ghost" id="printbtn">打印这张卷</button>
-      <button class="btn ghost" id="againbtn">换一张</button>
     </div>
   </div>
 
-  <section class="card" id="reportCard" style="display:none">
-    <div class="ph no-print"><span class="n">03</span><h2>成绩单</h2><p class="hint">客观题自动判，解答题自评</p></div>
-    <div class="sc"><span class="big" id="scoreBig">0</span><span class="of">/ 100</span><span class="tag" id="scoreTag"></span><p id="scoreWord"></p></div>
-    <p class="lbl no-print" style="margin-top:14px">薄弱知识点与建议回看</p>
+  <section class="panel" id="reportCard" style="display:none">
+    <h2 class="ph no-print"><b>03</b>成绩单<span>客观题自动判，解答题自评</span></h2>
+    <div class="score">
+      <span class="num"><span id="scoreBig">0</span><i>/ 100</i></span>
+      <span class="tag" id="scoreTag"></span>
+      <p id="scoreWord"></p>
+    </div>
+    <p class="lbl" style="margin-top:16px">薄弱知识点与建议回看</p>
     <ul class="wk" id="weakList"></ul>
   </section>
 
-  <section class="card no-print" id="fbCard" style="display:none">
-    <div class="ph"><span class="n">04</span><h2>这套卷好用吗</h2><p class="hint">你的反馈我下次能改</p></div>
+  <section class="panel no-print" id="fbCard" style="display:none">
+    <h2 class="ph"><b>04</b>这套卷好用吗<span>你的反馈我下次能改</span></h2>
     <p class="lbl">整体评价</p>
     <div class="fbar" id="fbBar">
       <button data-v="1">有用，还想再练</button>
@@ -218,13 +314,14 @@ h1 em{font-style:normal;color:var(--yellow)}
     </div>
     <p class="lbl">希望补充哪些知识点或题型</p>
     <textarea class="fta" id="fbText" placeholder="例如：多来点阴影面积的图形题；钟面角总是错；想要更长的应用题"></textarea>
-    <div class="row2"><button class="btn ghost" id="copyBtn">复制反馈，发给我</button><span class="note" id="copyTip"></span></div>
+    <div class="row2"><button class="btn line" id="copyBtn">复制反馈，发给我</button></div>
+    <p class="note" id="copyTip"></p>
   </section>
 
-  <div class="row2 no-print">
-    <a class="btn ghost" href="六年级数学合集-沪教版.html">回到第一册</a>
-    <a class="btn ghost" href="六年级数学合集-第二学期.html">回到第二册</a>
-  </div>
+  <nav class="backlinks no-print">
+    <a class="btn light sm" href="六年级数学合集-沪教版.html">回到第一册</a>
+    <a class="btn light sm" href="六年级数学合集-第二学期.html">回到第二册</a>
+  </nav>
   <p class="foot">题目按上海六上、六下期末与名校卷的常见考法编写，出处标在每题下方；同型题，不是原卷原题。判分只认结果，过程分不计。手写答案可以拍照存档，照片只留在本机，用来对照参考答案，不做自动识别。</p>
 </div>
 
@@ -320,7 +417,7 @@ if(reg){
   if(reg.who)$("who").value=reg.who;
   document.querySelectorAll("#booksel .opt").forEach(function(b){b.classList.toggle("on",b.dataset.book===state.book)});
   showReg(reg);
-  if(state.book){$("setup").style.display="block";capText();}
+  if(state.book){$("setup").style.display="block";capText();setStep(2);}
 }
 function showReg(r){
   var box=$("reginfo");box.hidden=false;
@@ -336,7 +433,7 @@ document.querySelectorAll("#booksel .opt").forEach(function(b){
 $("regbtn").onclick=function(){
   if(!state.book){alert("先选一下学完哪一册");return}
   saveReg({book:state.book,who:$("who").value.trim(),time:new Date().toISOString().slice(0,16).replace("T"," ")});
-  showReg(loadReg());$("setup").style.display="block";capText();
+  showReg(loadReg());$("setup").style.display="block";capText();setStep(2);
   $("setup").scrollIntoView({behavior:"smooth",block:"start"});
 };
 document.querySelectorAll("#nsel .opt").forEach(function(b){
@@ -389,8 +486,10 @@ function itemHTML(i,q,n){
       +'<label for="f'+i+'">拍照存下手写答案</label><img class="thumb" id="t'+i+'" alt="手写答案">'
       +'<span class="snap-note">照片只留在本机，对照答案用</span></div></div>';
   }
+  var stem=q.q;
+  if(q.t==="a"){stem=stem.replace(/，填数字）/g,"）").replace(/，只填数字）/g,"）").replace(/（填数字）/g,"").replace(/（只填数字）/g,"")}
   return '<div class="q" data-i="'+i+'"><div class="qn">'+n+'. <em>'+pts+' 分</em></div>'
-    +'<div class="qt"><span class="kpt">'+esc(q.k)+'</span>'+esc(q.q)+'</div>'+body
+    +'<div class="qt"><span class="kpt">'+esc(q.k)+'</span>'+esc(stem)+'</div>'+body
     +'<div class="fb" hidden></div></div>';
 }
 function render(){
@@ -411,16 +510,21 @@ function render(){
   $("reportCard").style.display="none";
   $("fbCard").style.display="none";
   $("submitbtn").disabled=false;
+  $("submitbtn").textContent="交卷判分";
+  $("regPanel").style.display="block";
+  $("setup").style.display="block";
+  $("sheet").classList.remove("marked");
+  updateProg();setStep(3);
 }
 function bindInputs(){
   document.querySelectorAll("#parts input[type=radio]").forEach(function(el){
-    el.onchange=function(){state.answers[el.name]=el.value};
+    el.onchange=function(){state.answers[el.name]=el.value;updateProg()};
   });
   document.querySelectorAll("#parts .blank input").forEach(function(el){
-    el.oninput=function(){state.answers[el.name]=el.value};
+    el.oninput=function(){state.answers[el.name]=el.value;updateProg()};
   });
   document.querySelectorAll("#parts .work textarea").forEach(function(el){
-    el.oninput=function(){state.answers[el.name]=el.value};
+    el.oninput=function(){state.answers[el.name]=el.value;updateProg()};
   });
   document.querySelectorAll("#parts input[type=file]").forEach(function(el){
     el.onchange=function(){
@@ -440,6 +544,8 @@ $("makebtn").onclick=function(){
   $("sheetWrap").scrollIntoView({behavior:"smooth",block:"start"});
 };
 $("submitbtn").onclick=function(){
+  var left=state.paper.length-answeredCount();
+  if(left>0 && !confirm("还有 "+left+" 道题没答，仍然交卷吗？")) return;
   state.result={};
   state.paper.forEach(function(q,i){
     if(q.t==="a")return;
@@ -477,7 +583,11 @@ $("submitbtn").onclick=function(){
     });
   });
   $("submitbtn").disabled=true;
-  updateReport();
+  $("submitbtn").textContent="已交卷";
+  $("regPanel").style.display="none";
+  $("setup").style.display="none";
+  $("sheet").classList.add("marked");
+  updateReport();setStep(3);
   $("reportCard").scrollIntoView({behavior:"smooth",block:"start"});
 };
 function stats(){
@@ -541,6 +651,25 @@ $("copyBtn").onclick=function(){
     document.body.removeChild(ta);
   }
 };
+
+function answeredCount(){
+  var n=0;
+  state.paper.forEach(function(q,i){var v=state.answers["q"+i];if(v!==undefined&&String(v).trim()!=="")n++});
+  return n;
+}
+function updateProg(){
+  var el=$("progText");if(!el)return;
+  var t=state.paper.length,a=answeredCount();
+  if(!t){el.textContent="";return}
+  el.innerHTML="已答 <b>"+a+"</b> / "+t+(a<t?" · 还有 "+(t-a)+" 题":" · 全部答完");
+}
+function setStep(n){
+  document.querySelectorAll("#steps .st").forEach(function(x){
+    var v=+x.getAttribute("data-s");
+    x.classList.toggle("on",v===n);
+    x.classList.toggle("done",v<n);
+  });
+}
 </script>
 </body>
 </html>
