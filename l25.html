@@ -52,10 +52,11 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
 .prompt{margin:0;font-size:16.5px;font-weight:700;line-height:1.65;min-height:3.2em}
 .prompt .sm{display:block;font-size:12.5px;font-weight:400;color:var(--ink2);margin-top:3px;line-height:1.7}
 .posno{position:absolute;top:0;right:0;background:var(--ink);color:#fff;font-family:var(--num);font-size:11px;font-weight:700;letter-spacing:.02em;padding:2px 9px;border-radius:0 8px 0 8px;z-index:3}
-.fig{position:relative;height:196px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:18px}
-.shot{position:absolute;inset:18px;display:flex;flex-direction:column;justify-content:center;gap:11px;opacity:0;visibility:hidden;transition:opacity .3s}
+.fig{position:relative;display:flex;align-items:center;min-height:196px;background:var(--paper);border:2px solid var(--ink);border-radius:10px;padding:18px}
+.shot{display:none;flex-direction:column;justify-content:center;gap:11px;width:100%;opacity:0}
 .shot:has(.rect){gap:4px}
-.fig[data-pos="1"] .shot[data-s="1"],.fig[data-pos="2"] .shot[data-s="2"],.fig[data-pos="3"] .shot[data-s="3"],.fig[data-pos="4"] .shot[data-s="4"]{opacity:1;visibility:visible}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.fig[data-pos="1"] .shot[data-s="1"],.fig[data-pos="2"] .shot[data-s="2"],.fig[data-pos="3"] .shot[data-s="3"],.fig[data-pos="4"] .shot[data-s="4"]{display:flex;animation:fadein .3s ease forwards}
 .rd{display:block;width:100%;height:auto}
 .mnum{font-size:11.5px;font-weight:700;line-height:1.5;text-align:center;color:#152230}
 .barwrap{display:flex;flex-direction:column;gap:9px}
@@ -132,7 +133,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
   .cols{grid-template-columns:1fr;gap:24px}
   .p1{padding-right:0;border-right:0;border-bottom:1px solid rgba(21,34,48,.11);padding-bottom:20px}
   .p2{padding-left:0}
-  .fig{height:186px;padding:14px}
+  .fig{min-height:186px;padding:14px}
   .shot{inset:14px;gap:9px}
   .bar{height:38px}
   .bar.mid{height:30px}
@@ -184,7 +185,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <p class="hint">左边看图，右边看话。点右边任何一步，左边的图就停在那一刻；点“朗读”会自己往下走。</p>
       <div class="stage">
         <p class="prompt" id="prompt" aria-live="polite"></p>
-        <div class="fig" id="fig" data-pos="1" style="height:214px" role="img" aria-label="扇形的面积的图示">
+        <div class="fig" id="fig" data-pos="1" style="min-height:214px" role="img" aria-label="扇形的面积的图示">
           <span class="posno" id="posno">第 1 步</span>
 
         <div class="shot" data-s="1"><svg viewBox="0 0 300 150" width="100%" height="100%" style="display:block" font-family="Noto Sans SC,PingFang SC,sans-serif"><circle cx="150" cy="62" r="56" fill="rgba(245,190,46,.08)" stroke="#152230" stroke-width="2"/><path d="M150 62 L150 6 A56 56 0 0 1 206 62 Z" fill="rgba(245,190,46,.72)" stroke="#C89B24" stroke-width="1.6"/><line x1="150" y1="6" x2="206" y2="62" stroke="#C89B24" stroke-width="1.4"/><text x="150" y="146" font-size="12" fill="#5A6B7C" text-anchor="middle" font-weight="400">扇形就是圆里被圆心角圈出来的那一块。</text></svg></div>
