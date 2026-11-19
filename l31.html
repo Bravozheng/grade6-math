@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>平均速度｜沪教版 六年级 交互课程</title>
+<title>环形面积｜沪教版 六年级 交互课程</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='4' fill='%23F5BE2E'/%3E%3Crect x='5' y='17' width='13' height='4' fill='%23152230'/%3E%3Crect x='5' y='25' width='8' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
@@ -166,16 +166,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <span class="sep">›</span>
       <span class="here">点 31</span>
     </nav>
-    <h1 class="ptitle">平均速度</h1>
-    <p class="pmeta">六年级第一学期 · 跨章专题</p>
+    <h1 class="ptitle">环形面积</h1>
+    <p class="pmeta">六年级第一学期 · 第四章 第 2 节</p>
   </header>
 
   <section class="zone zq">
     <div class="phead"><span class="label"><i>①</i>典型题型</span></div>
     <div class="problem">
-      <div class="q-tag">往返平均</div>
-      <p>上山 <b>3</b> 千米/时，下山 <b>6</b> 千米/时，上下山各 <b>12</b> 千米，平均速度是多少？</p>
-      <p class="cue">平均速度 = 总路程 ÷ 总时间，不是把两个速度平均一下。</p>
+      <div class="q-tag">花坛外的小路</div>
+      <p>一个圆形花坛，直径 <b>16</b> 米，花坛外面围着一条 <b>2</b> 米宽的小路。<span class="ask">小路的面积是多少平方米？</span></p>
+      <p class="cue">小路是“外圆挖掉内圆”剩下的一圈，先分别求出两个半径，再相减。</p>
     </div>
   </section>
 
@@ -185,17 +185,17 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <p class="hint">左边看图，右边看话。点右边任何一步，左边的图就停在那一刻；点“朗读”会自己往下走。</p>
       <div class="stage">
         <p class="prompt" id="prompt" aria-live="polite"></p>
-        <div class="fig" id="fig" data-pos="1" role="img" aria-label="平均速度的图示">
+        <div class="fig" id="fig" data-pos="1" style="min-height:252px" role="img" aria-label="环形面积的图示">
           <span class="posno" id="posno">第 1 步</span>
 
-        <div class="shot" data-s="1"><svg class="rd" viewBox="0 0 400 158" role="img" aria-label="上山与下山的时间条对比"><text x="88" y="44" font-size="12.5" fill="#152230">上山 4 小时</text><rect x="88" y="54" width="224" height="20" rx="3" fill="#F5BE2E"/><line x1="144" y1="54" x2="144" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="200" y1="54" x2="200" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="256" y1="54" x2="256" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><text x="88" y="100" font-size="12.5" fill="#152230">下山 2 小时</text><rect x="88" y="110" width="112" height="20" rx="3" fill="#0FA97C"/><line x1="144" y1="110" x2="144" y2="130" stroke="rgba(21,34,48,.26)" stroke-width="1"/><text x="200" y="148" text-anchor="middle" font-size="11.5" fill="#8FA3B2">两条一样长是路程，格子多少是时间</text></svg></div>
-        <div class="shot" data-s="2"><svg class="rd" viewBox="0 0 400 158" role="img" aria-label="上山与下山的时间条对比"><rect x="32" y="52" width="224" height="22" rx="3" fill="#F5BE2E"/><rect x="256" y="52" width="112" height="22" rx="3" fill="#0FA97C"/><line x1="88" y1="52" x2="88" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="144" y1="52" x2="144" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="200" y1="52" x2="200" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="256" y1="52" x2="256" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><line x1="312" y1="52" x2="312" y2="74" stroke="rgba(21,34,48,.26)" stroke-width="1"/><text x="126" y="94" font-size="11" fill="#4A5A67">4 小时</text><text x="276" y="94" font-size="11" fill="#0B6B4E">2 小时</text><text x="200" y="134" text-anchor="middle" font-size="11.5" fill="#8FA3B2">6 格 = 6 小时，两段路合起来就是总路程</text></svg></div>
-        <div class="shot" data-s="3"><div class="barwrap"><p class="blab">平均速度 = 总路程 ÷ 总时间</p><div class="nums"><span class="num">24 ÷ 6 = 4 千米/时</span></div></div><p class="cap">不是把两个速度平均。</p></div>
-        <div class="shot" data-s="4"><div class="barwrap"><p class="blab">为什么不是 4.5</p><div class="nums"><span class="num">(3 + 6) ÷ 2 = 4.5 ✗</span></div></div><p class="cap">上山时间更长，慢的那段占得更多。</p></div>
+        <div class="shot" data-s="1"><svg viewBox="0 0 300 206" width="100%" height="100%" style="display:block" font-family="Noto Sans SC,PingFang SC,sans-serif"><circle cx="150" cy="96" r="58" fill="rgba(245,190,46,.5)" stroke="#C89B24" stroke-width="1.6"/><circle cx="150" cy="96" r="48" fill="#fff" stroke="#152230" stroke-width="1.6"/><text x="150" y="18" font-size="11.5" fill="#5A6B7C" text-anchor="middle" font-weight="400">花坛直径 16 米，小路宽 2 米</text><text x="150" y="188" font-size="12" fill="#5A6B7C" text-anchor="middle" font-weight="400">看的是外圆减内圆，不是“一条边”。</text></svg></div>
+        <div class="shot" data-s="2"><svg viewBox="0 0 300 206" width="100%" height="100%" style="display:block" font-family="Noto Sans SC,PingFang SC,sans-serif"><circle cx="150" cy="96" r="58" fill="rgba(245,190,46,.16)" stroke="#C89B24" stroke-width="1.6"/><circle cx="150" cy="96" r="48" fill="rgba(245,190,46,.4)" stroke="#152230" stroke-width="1.6"/><text x="150" y="96" font-size="12.5" fill="#152230" text-anchor="middle" font-weight="700">内圆 r = 8</text><text x="150" y="188" font-size="12" fill="#5A6B7C" text-anchor="middle" font-weight="400">直径 16 ÷ 2 = 8，是小圆半径。</text></svg></div>
+        <div class="shot" data-s="3"><svg viewBox="0 0 300 206" width="100%" height="100%" style="display:block" font-family="Noto Sans SC,PingFang SC,sans-serif"><circle cx="150" cy="96" r="58" fill="rgba(245,190,46,.5)" stroke="#C89B24" stroke-width="1.6"/><circle cx="150" cy="96" r="48" fill="#fff" stroke="#152230" stroke-width="1.6"/><text x="150" y="22" font-size="12" fill="#152230" text-anchor="middle" font-weight="700">外圆 R = 8 + 2 = 10</text><text x="150" y="188" font-size="12" fill="#5A6B7C" text-anchor="middle" font-weight="400">小路宽 2 米，是加在半径上的。</text></svg></div>
+        <div class="shot" data-s="4"><svg viewBox="0 0 300 206" width="100%" height="100%" style="display:block" font-family="Noto Sans SC,PingFang SC,sans-serif"><circle cx="150" cy="96" r="58" fill="rgba(245,190,46,.66)" stroke="#C89B24" stroke-width="1.6"/><circle cx="150" cy="96" r="48" fill="#fff" stroke="#152230" stroke-width="1.6"/><text x="150" y="176" font-size="13" fill="#152230" text-anchor="middle" font-weight="700">3.14 × (10² − 8²) = 113.04</text><text x="150" y="196" font-size="11.5" fill="#5A6B7C" text-anchor="middle" font-weight="400">先平方，再相减，不是（10 − 8）²</text></svg></div>
         </div>
         <p class="fb" id="fb" aria-live="polite"></p>
-        <div class="slot"><div class="result" id="result">平均速度 4 千米/时</div></div>
-        <p class="legend"><span><i class="ly"></i>上山 4 小时</span><span><i class="lg"></i>下山 2 小时</span></p>
+        <div class="slot"><div class="result" id="result">113.04 平方米</div></div>
+        <p class="legend"><span><i class="ly"></i>小路（环）</span><span><i class="lg"></i>花坛（内圆）</span></p>
       </div>
     </section>
 
@@ -208,61 +208,61 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <ol class="steps" id="steps">
         <li class="step">
           <span class="sno">1</span>
-          <div class="mfig"><div class="nums"><span class="num">4 小时</span></div></div>
-          <p>两段路一样长，都是 12 千米，但上山花了 4 小时、下山只花 2 小时。</p>
+          <div class="mfig"><div class="nums"><span class="num">r = 8</span><span class="num">R = 10</span><span class="num">314 − 200.96</span><span class="num">113.04</span></div></div>
+          <p>花坛是里面的小圆，直径 16 米，半径就是 8 米。</p>
           <button class="say" data-i="0" aria-label="朗读第1步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">2</span>
-          <div class="mfig"><div class="nums"><span class="num">6 小时</span></div></div>
-          <p>合起来：总路程 24 千米，总时间 6 小时。</p>
+          <div class="mfig"><div class="nums"><span class="num">直径 16</span><span class="num">÷ 2</span><span class="num">半径 8</span></div></div>
+          <p>小路宽 2 米，是沿着半径往外加的，所以外圆半径 8 + 2 = 10 米。</p>
           <button class="say" data-i="1" aria-label="朗读第2步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">3</span>
-          <div class="mfig"><div class="nums"><span class="num">24 ÷ 6</span></div></div>
-          <p>平均速度 = 24 ÷ 6 = 4 千米/时。</p>
+          <div class="mfig"><div class="nums"><span class="num">8 + 2</span><span class="num">= 10</span></div></div>
+          <p>外圆面积 3.14 × 100 = 314，内圆面积 3.14 × 64 = 200.96，相减得 113.04。</p>
           <button class="say" data-i="2" aria-label="朗读第3步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">4</span>
-          <div class="mfig"><div class="nums"><span class="num">4.5 ✗</span></div></div>
-          <p>所以不能算成 (3 + 6) ÷ 2 = 4.5 —— 上山那 4 小时拖慢了平均。</p>
+          <div class="mfig"><div class="nums"><span class="num">10² − 8²</span><span class="num">= 36</span></div></div>
+          <p>也可以一步写：3.14 × (10² − 8²) = 3.14 × 36。注意是先平方再相减，不是 (10 − 8)² = 4。</p>
           <button class="say" data-i="3" aria-label="朗读第4步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
       </ol>
       <p class="voicehint" id="voiceHint">当前浏览器不支持语音朗读，文字内容与上面一致。</p>
-      <div class="note"><b>家长可以这样引领思路</b><span>让孩子先说“上山几小时、下山几小时”——时间不一样，两个速度就不能直接平均。</span></div>
+      <div class="note"><b>家长可以这样引领思路</b><span>最容易错的一步是“2 米宽”加在哪里——加在半径上，不是加在直径上。</span></div>
     </section>
   </div>
 
   <section class="zone zd">
     <div class="phead"><span class="label"><i>④</i>举一反三</span></div>
-    <p class="hint" style="max-width:52em">同一个“总路程 ÷ 总时间”，换成往返、先走后跑、走走停停，做法一样。</p>
+    <p class="hint" style="max-width:52em">同一个“外圆减内圆”，换成光盘、钢管、环形跑道，做法一样。</p>
     <div class="transfer">
       <div class="tcard">
-        <h3>往返</h3>
-        <p class="tsub">去 60 千米/时，回 40 千米/时，路程相同</p>
-        <div class="tv"><div class="nums"><span class="num">48 千米/时</span></div></div>
-        <p class="tn">总路程 ÷ 总时间 = 48。</p>
+        <h3>光盘</h3>
+        <p class="tsub">外半径 6 厘米，内半径 2 厘米</p>
+        <div class="tv"><div class="nums"><span class="num">100.48 平方厘米</span></div></div>
+        <p class="tn">3.14×(36−4) = 100.48。</p>
       </div>
       <div class="tcard">
-        <h3>先走后跑</h3>
-        <p class="tsub">走 2 小时、跑 1 小时，各 10 千米</p>
-        <div class="tv"><div class="nums"><span class="num">20 ÷ 3 ≈ 6.7</span></div></div>
-        <p class="tn">时间不同，不能平均。</p>
+        <h3>钢管</h3>
+        <p class="tsub">外直径 10 厘米，壁厚 1 厘米</p>
+        <div class="tv"><div class="nums"><span class="num">28.26 平方厘米</span></div></div>
+        <p class="tn">R=5、r=4：3.14×(25−16)。</p>
       </div>
       <div class="tcard">
-        <h3>走走停停</h3>
-        <p class="tsub">骑 3 小时、休息 1 小时</p>
-        <div class="tv"><div class="nums"><span class="num">休息也算总时间</span></div></div>
-        <p class="tn">停着的 1 小时照样计入。</p>
+        <h3>环形跑道</h3>
+        <p class="tsub">内圆半径 20 米，跑道宽 3 米</p>
+        <div class="tv"><div class="nums"><span class="num">405.06 平方米</span></div></div>
+        <p class="tn">3.14×(23²−20²) = 3.14×129。</p>
       </div>
       <div class="tcard">
-        <h3>上坡下坡</h3>
-        <p class="tsub">上 2 千米/时、下 4 千米/时，各 8 千米</p>
-        <div class="tv"><div class="nums"><span class="num">8/3 ≈ 2.7</span></div></div>
-        <p class="tn">总路程 16、总时间 6。</p>
+        <h3>半个环</h3>
+        <p class="tsub">外半径 6、内半径 4 的半圆环</p>
+        <div class="tv"><div class="nums"><span class="num">31.4 平方厘米</span></div></div>
+        <p class="tn">3.14×(36−16) ÷ 2 = 31.4。</p>
       </div>
     </div>
   </section>
@@ -278,7 +278,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
 <script>
 (function(){
   "use strict";
-  var TEXTS = ["两段路一样长，都是 12 千米，但上山花了 4 小时、下山只花 2 小时。", "合起来：总路程 24 千米，总时间 6 小时。", "平均速度 = 24 ÷ 6 = 4 千米/时。", "所以不能算成 (3 + 6) ÷ 2 = 4.5 —— 上山那 4 小时拖慢了平均。"], SUMMARY = ["用时不一样", "总时间 6 小时", "24 ÷ 6 = 4", "不是 4.5"], SPEAK = ["第一步，两段路一样长，都是十二千米，可上山花了四小时，下山只花两小时。", "第二步，合起来看，总路程是二十四千米，总时间是六小时。", "第三步，平均速度等于总路程除以总时间，二十四除以六，等于四千米每时。", "第四步，所以不能算成三加六除以二等于四点五，上山那四小时把平均速度拖慢了。"];
+  var TEXTS = ["花坛是里面的小圆，直径 16 米，半径就是 8 米。", "小路宽 2 米，是沿着半径往外加的，所以外圆半径 8 + 2 = 10 米。", "外圆面积 3.14 × 100 = 314，内圆面积 3.14 × 64 = 200.96，相减得 113.04。", "也可以一步写：3.14 × (10² − 8²) = 3.14 × 36。注意是先平方再相减，不是 (10 − 8)² = 4。"], SUMMARY = ["认两个圆", "内半径 8", "外半径 10", "113.04 平方米"], SPEAK = ["第一步，花坛是里面的小圆，直径十六米，半径八米。", "第二步，小路宽两米，是沿半径往外加的，所以外圆半径是十米。", "第三步，外圆面积三百一十四，内圆面积二百点九六，相减是一百一十三点零四平方米。", "第四步，也可以写成圆周率乘括号十的平方减八的平方，注意先平方再相减。"];
   var row = 0, running = false, cancelled = false;
   var fig = document.getElementById('fig'),
       promptEl = document.getElementById('prompt'),

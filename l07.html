@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>分数与除法｜沪教版 六年级 交互课程</title>
+<title>三个数的公因数｜沪教版 六年级 交互课程</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='4' fill='%23F5BE2E'/%3E%3Crect x='5' y='17' width='13' height='4' fill='%23152230'/%3E%3Crect x='5' y='25' width='8' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
@@ -166,16 +166,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <span class="sep">›</span>
       <span class="here">点 7</span>
     </nav>
-    <h1 class="ptitle">分数与除法</h1>
-    <p class="pmeta">六年级第一学期 · 第二章 第 1 节</p>
+    <h1 class="ptitle">三个数的公因数</h1>
+    <p class="pmeta">六年级第一学期 · 第一章 第 2 节</p>
   </header>
 
   <section class="zone zq">
     <div class="phead"><span class="label"><i>①</i>典型题型</span></div>
     <div class="problem">
-      <div class="q-tag">3 张饼 4 个人</div>
-      <p><b>3</b> 张饼平均分给 <b>4</b> 个人，每人分到几张？</p>
-      <p class="cue">除号换成分数线：被除数搬到上面，除数搬到下面。</p>
+      <div class="q-tag">12、18、30</div>
+      <p>求 <b>12、18、30</b> 的最大公因数和最小公倍数。<span class="ask">三个数怎么短除？</span></p>
+      <p class="cue">三个数一起短除：左边除数的乘积是最大公因数；左边的除数再乘底下剩下的全部，是最小公倍数。</p>
     </div>
   </section>
 
@@ -185,17 +185,19 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <p class="hint">左边看图，右边看话。点右边任何一步，左边的图就停在那一刻；点“朗读”会自己往下走。</p>
       <div class="stage">
         <p class="prompt" id="prompt" aria-live="polite"></p>
-        <div class="fig" id="fig" data-pos="1" role="img" aria-label="分数与除法的图示">
+        <div class="fig" id="fig" data-pos="1" style="min-height:238px" role="img" aria-label="三个数的公因数的图示">
           <span class="posno" id="posno">第 1 步</span>
 
-        <div class="shot" data-s="1"><div class="barwrap"><p class="blab">一张切 4 份，取 1 份</p><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div><p class="cap">一张饼的 1/4。</p></div>
-        <div class="shot" data-s="2"><div class="barwrap"><p class="blab">三张各取 1 份</p><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div><p class="cap">每人手里三小份。</p></div>
-        <div class="shot" data-s="3"><div class="barwrap"><p class="blab">三份合起来</p><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c"></span></div></div><p class="cap">3 个 1/4 = 3/4 张。</p></div>
-        <div class="shot" data-s="4"><div class="barwrap"><p class="blab">写成除法</p><div class="nums"><span class="num">3 ÷ 4 = 3/4</span></div></div><p class="cap">被除数 3 在上面，除数 4 在下面。</p></div>
+        <div class="shot" data-s="1"><p class="cap">三个数一起短除：先看都能被几整除。</p><pre class="tree">2 │  12  18  30
+3 │   6   9  15
+  │   2   3   5</pre></div>
+        <div class="shot" data-s="2"><p class="cap">左边两个除数乘起来，就是最大公因数。</p><div class="nums"><span class="num">2 × 3 = 6</span></div></div>
+        <div class="shot" data-s="3"><p class="cap">最小公倍数 = 除数 × 底下剩下的全部。</p><div class="nums"><span class="num">2 × 3 × 2 × 3 × 5 = 180</span></div></div>
+        <div class="shot" data-s="4"><p class="cap">验一验：180 ÷ 12 = 15，÷ 18 = 10，÷ 30 = 6，都能整除。</p><div class="nums"><span class="num">6 和 180</span></div></div>
         </div>
         <p class="fb" id="fb" aria-live="polite"></p>
-        <div class="slot"><div class="result" id="result">3 ÷ 4 = 3/4 张</div></div>
-        <p class="legend"><span><i class="ly"></i>每人拿到的</span><span><i class="lg"></i>还没分的</span></p>
+        <div class="slot"><div class="result" id="result">6 和 180</div></div>
+        <p class="legend"><span><i class="ly"></i>最大公因数</span><span><i class="lb"></i>最小公倍数</span></p>
       </div>
     </section>
 
@@ -208,61 +210,61 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
       <ol class="steps" id="steps">
         <li class="step">
           <span class="sno">1</span>
-          <div class="mfig"><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div>
-          <p>先看 1 张饼分给 4 人：一张切 4 份，每人就是 1/4 张。</p>
+          <div class="mfig"><div class="nums"><span class="num">÷2</span><span class="num">÷3</span></div></div>
+          <p>三个数排一行，找能同时整除它们的素数：12、18、30 都能被 2 除，得 6、9、15。</p>
           <button class="say" data-i="0" aria-label="朗读第1步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">2</span>
-          <div class="mfig"><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div>
-          <p>3 张饼每张都切 4 份，每人从每张拿 1 份。</p>
+          <div class="mfig"><div class="nums"><span class="num">2 × 3</span><span class="num">= 6</span></div></div>
+          <p>6、9、15 还能被 3 除，得 2、3、5，这三个再也找不到公共的因数了，停。</p>
           <button class="say" data-i="1" aria-label="朗读第2步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">3</span>
-          <div class="mfig"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c"></span></div></div>
-          <p>3 个 1/4 合起来，就是 3/4 张饼。</p>
+          <div class="mfig"><div class="nums"><span class="num">180</span></div></div>
+          <p>左边的除数 2 × 3 = 6，就是最大公因数。</p>
           <button class="say" data-i="2" aria-label="朗读第3步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
         <li class="step">
           <span class="sno">4</span>
-          <div class="mfig"><div class="nums"><span class="num">3/4</span></div></div>
-          <p>所以 3 ÷ 4 = 3/4：除号换成分数线，位置一点没变。</p>
+          <div class="mfig"><div class="nums"><span class="num">6 / 180</span></div></div>
+          <p>最小公倍数要把除数和底下剩下的全乘上：2 × 3 × 2 × 3 × 5 = 180。</p>
           <button class="say" data-i="3" aria-label="朗读第4步"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16.5 8.5c1.4 1.6 1.4 5.4 0 7"/></svg></button>
         </li>
       </ol>
       <p class="voicehint" id="voiceHint">当前浏览器不支持语音朗读，文字内容与上面一致。</p>
-      <div class="note"><b>家长可以这样引领思路</b><span>别急着讲“分数线就是除号”，先让孩子真的数一数三小份合起来是多少。</span></div>
+      <div class="note"><b>家长可以这样引领思路</b><span>最容易漏的是“底下剩下的也要乘”：最小公倍数不是只乘左边，底下的 2、3、5 一个都不能丢。</span></div>
     </section>
   </div>
 
   <section class="zone zd">
     <div class="phead"><span class="label"><i>④</i>举一反三</span></div>
-    <p class="hint" style="max-width:52em">同一件事——几样东西平均分给几个人——换成蛋糕、绳子、果汁，写法都一样。</p>
+    <p class="hint" style="max-width:52em">同一个“先一起除、再全乘”，换成分组、发车、铺砖，都是这件事。</p>
     <div class="transfer">
       <div class="tcard">
-        <h3>果汁</h3>
-        <p class="tsub">2 升分 5 杯</p>
-        <div class="tv"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div>
-        <p class="tn">2 ÷ 5 = 2/5 升一杯。</p>
+        <h3>分组</h3>
+        <p class="tsub">24、36、42 人分组，每组人数最多且相同</p>
+        <div class="tv"><div class="nums"><span class="num">6 人</span></div></div>
+        <p class="tn">最大公因数：2×3 = 6。</p>
       </div>
       <div class="tcard">
-        <h3>绳子</h3>
-        <p class="tsub">3 米分 4 段</p>
-        <div class="tv"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c"></span></div></div>
-        <p class="tn">3 ÷ 4 = 3/4 米一段。</p>
+        <h3>发车</h3>
+        <p class="tsub">三路车每 6、8、12 分钟一班，多久再同发</p>
+        <div class="tv"><div class="nums"><span class="num">24 分钟</span></div></div>
+        <p class="tn">最小公倍数 24。</p>
       </div>
       <div class="tcard">
-        <h3>蛋糕</h3>
-        <p class="tsub">1 个分 8 人</p>
-        <div class="tv"><div class="bar"><span class="c f"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span><span class="c"></span></div></div>
-        <p class="tn">1 ÷ 8 = 1/8 个。</p>
+        <h3>铺砖</h3>
+        <p class="tsub">长 18、宽 12 的地面用最大正方形砖</p>
+        <div class="tv"><div class="nums"><span class="num">6 分米</span></div></div>
+        <p class="tn">最大公因数 6。</p>
       </div>
       <div class="tcard">
-        <h3>时间</h3>
-        <p class="tsub">5 小时分 6 段</p>
-        <div class="tv"><div class="bar"><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c f"></span><span class="c"></span></div></div>
-        <p class="tn">5 ÷ 6 = 5/6 小时一段。</p>
+        <h3>两个数</h3>
+        <p class="tsub">8 和 12 的最大公因数、最小公倍数</p>
+        <div class="tv"><div class="nums"><span class="num">4 和 24</span></div></div>
+        <p class="tn">2×2=4；2×2×2×3=24。</p>
       </div>
     </div>
   </section>
@@ -278,7 +280,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1
 <script>
 (function(){
   "use strict";
-  var TEXTS = ["先看 1 张饼分给 4 人：一张切 4 份，每人就是 1/4 张。", "3 张饼每张都切 4 份，每人从每张拿 1 份。", "3 个 1/4 合起来，就是 3/4 张饼。", "所以 3 ÷ 4 = 3/4：除号换成分数线，位置一点没变。"], SUMMARY = ["一张取 1/4", "三张各取 1 份", "合起来 3/4", "3÷4=3/4"], SPEAK = ["第一步，一张饼切成四份，取其中一份，就是四分之一张。", "第二步，三张饼每张都切成四份，每人从每张拿一份。", "第三步，三个四分之一合起来，就是四分之三张饼。", "第四步，所以三除以四等于四分之三。除号换成分数线，被除数在上面，除数在下面。"];
+  var TEXTS = ["三个数排一行，找能同时整除它们的素数：12、18、30 都能被 2 除，得 6、9、15。", "6、9、15 还能被 3 除，得 2、3、5，这三个再也找不到公共的因数了，停。", "左边的除数 2 × 3 = 6，就是最大公因数。", "最小公倍数要把除数和底下剩下的全乘上：2 × 3 × 2 × 3 × 5 = 180。"], SUMMARY = ["三个一起短除", "左列相乘 = 6", "全部相乘 = 180", "验一验"], SPEAK = ["第一步，三个数排一行，先找能同时整除它们的素数，二可以，得到六、九、十五。", "第二步，六、九、十五还能同时被三除，得到二、三、五，到此为止。", "第三步，左边两个除数二和三，乘起来是六，这就是最大公因数。", "第四步，最小公倍数要把除数和底下剩下的都乘上，二乘三乘二乘三乘五，等于一百八十。"];
   var row = 0, running = false, cancelled = false;
   var fig = document.getElementById('fig'),
       promptEl = document.getElementById('prompt'),

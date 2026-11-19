@@ -70,6 +70,10 @@ h1 em{font-style:normal;background-image:linear-gradient(rgba(245,190,46,.55),rg
 .chip .n{font-family:var(--num);font-size:11.5px;opacity:.6;margin-left:3px}
 .meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 4px;font-size:12.5px;color:var(--ink2)}
 .meta .cnt{font-family:var(--num);letter-spacing:.02em}
+  .cntbox{display:flex;align-items:center;gap:8px}
+  .sdnote{font-size:12px;color:var(--ink2)}
+  .row .tags .stars{border:none;background:none;padding:0;font-family:var(--num);font-size:13px;letter-spacing:1.5px;color:#CBD5DE;margin-right:1px}
+  .row .tags .stars b{color:#C3922A;font-weight:400}
 .metr{display:flex;align-items:center;gap:12px}
 .ktoggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink2);border-radius:999px;padding:5px 12px;font-family:var(--sans);font-size:12.5px;font-weight:700;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
 .ktoggle:hover{border-color:var(--ink);color:var(--ink)}
@@ -141,7 +145,8 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
   .row .code{grid-area:c;align-self:start;padding-top:2px}
   .row .main{grid-area:t}
   .row .tags{grid-area:k;display:flex;justify-content:flex-start;margin-top:2px}
-  .row .tags span:not(.kb){display:none}
+  .row .tags span:not(.kb):not(.stars){display:none}
+  .row .tags .stars{font-size:11px;letter-spacing:1px}
   .row .tags .kb{font-size:10.5px;padding:0 6px;border-radius:4px}
   .box{height:50px}
   #q{font-size:15px}
@@ -185,7 +190,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
   </section>
 
   <div class="meta">
-    <span class="cnt" id="count">38 个难点与典型题型</span>
+    <div class="cntbox"><span class="cnt" id="count">38 个难点与典型题型</span><span class="sdnote">★ 越多越难</span></div>
     <div class="metr">
       <button class="ktoggle" id="keyOnly" type="button" aria-pressed="false">只看本册重点<span class="n" id="keyN">12</span></button>
       <button id="reset" type="button">清空条件</button>
@@ -229,50 +234,44 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
   ];
 
   var DATA = [
-    {no:"Z01", live:true, href:"l01.html", u:"Z", t:"整数和整除：什么叫“整除”", d:"18 块糖 3 人分完、4 人剩 2 块，谁算整除", tags:["概念"], a:"整除 余数 商是整数 除尽"},
-    {no:"Z02", live:true, href:"l02.html", u:"Z", t:"因数和倍数：一对互相依存的数", d:"12 块小正方形能摆几种长方形（因数成对）", tags:["概念"], a:"因数 倍数 相互依存"},
-    {no:"Z03", live:true, href:"l03.html", u:"Z", t:"能被 2、5 整除的数的特征", d:"24、35、40、57 里谁被 2 或 5 整除", tags:["规律"], a:"末尾 个位 偶数 特征"},
-    {no:"Z04", live:true, href:"l04.html", u:"Z", t:"素数与合数：为什么 1 不是素数", d:"7 块、12 块谁只能摆一条，1 为什么不是素数", tags:["概念"], a:"素数 合数 质数 1"},
-    {no:"Z05", live:true, href:"l05.html", u:"Z", t:"分解素因数：短除法与树状图", d:"把 60 拆成几个素数相乘，不重不漏", tags:["计算"], a:"分解素因数 短除法 树状图"},
-    {no:"Z06", live:true, href:"l06.html", u:"Z", t:"最大公因数与最小公倍数：一个取小，一个取大", d:"18 和 24 最多几人一组、最小公倍数", tags:["应用"], a:"最大公因数 最小公倍数 约分 通分"},
-
-    {no:"A01", live:true, href:"l07.html", u:"A", t:"分数与除法：为什么 a÷b 就是 a/b", d:"3 张饼 4 人分，每人几张（分数当商）", tags:["概念"], a:"分数与除法 分数线 分子 分母"},
-    {no:"A02", live:true, href:"l08.html", u:"A", t:"分数的基本性质：分子分母同乘同除，大小不变", d:"2/3、4/6、6/9 谁最大（同一条纸切三次）", tags:["概念"], a:"基本性质 同乘同除 不变"},
-    {no:"A03", live:true, href:"l09.html", u:"A", t:"约分与最简分数", d:"18/24 能不能写得更简单（约分）", tags:["计算"], a:"约分 最简分数 化简"},
-    {no:"A04", u:"A", key:true, live:true, href:"l10.html", t:"通分与大小比较：分母不一样怎么比", d:"5/6 和 7/9 谁涂得多（通分比大小）", tags:["计算"], a:"通分 大小比较 最小公倍数"},
-
-    {no:"B01", live:true, href:"l11.html", u:"B", t:"分数的加减法：先通分，再加减", d:"1/2 + 1/3 = 5/6 还是 2/5", tags:["计算"], a:"加法 减法 通分 混合"},
-    {no:"B02", u:"B", key:true, live:true, href:"l12.html", t:"分数的乘法：为什么越乘越小", d:"1/2 张纸折三下，为什么越乘越小", tags:["意义","图示"], a:"越乘越小 变小 折纸 纸 二分之一 三分之一 1/2 1/3 yuechengyuexiao ycyx"},
-    {no:"B03", u:"B", key:true, live:true, href:"l13.html", t:"分数的除法：为什么要颠倒相乘", d:"3/4 升果汁每 1/3 升一杯，能倒几杯", tags:["原理"], a:"颠倒 相乘 分数除法 倒数 包含几个 daoshu"},
-    {no:"B04", live:true, href:"l14.html", u:"B", t:"分数与小数的互化：什么时候化成小数更省事", d:"3/4 化成小数，1/3 为什么除不完", tags:["计算"], a:"互化 小数 循环小数"},
-
-    {no:"C01", live:true, href:"l15.html", u:"C", t:"比的意义：比和除法、分数是什么关系", d:"黄 3 份、绿 4 份，怎么表示两者关系", tags:["概念"], a:"比的意义 比值 除法 分数 三兄弟"},
-    {no:"C02", u:"C", key:true, live:true, href:"l16.html", t:"比的基本性质与化简比", d:"12 : 18 能写成更简单的整数比吗", tags:["计算"], a:"基本性质 化简 最简整数比 huajianbi"},
-    {no:"C03", live:true, href:"l17.html", u:"C", t:"比例：两个比相等，交叉相乘", d:"3 : 4 = 6 : 8 成立吗，9 : 12 呢", tags:["概念"], a:"比例 内项 外项 交叉相乘"},
-
-    {no:"D01", live:true, href:"l18.html", u:"D", t:"百分比的意义：为什么统一切成 100 份", d:"3/5、7/10、65/100 谁最大（化成百分数）", tags:["概念"], a:"百分比 百分数 100 意义"},
-    {no:"D02", live:true, href:"l19.html", u:"D", t:"百分比的应用（一）：折扣、成数、增长率", d:"200 元打八折多少，涨价一成多少", tags:["应用"], a:"折扣 八折 成数 增长率 zhekou"},
-    {no:"D03", live:true, href:"l20.html", u:"D", t:"百分比的应用（二）：利率、税率、合格率", d:"存 2000 元一年利息多少、18/20 的合格率", tags:["应用"], a:"利率 利息 税率 合格率 出勤率"},
-    {no:"D04", live:true, href:"l21.html", u:"D", t:"等可能事件：可能性怎么算成一个数", d:"掷一颗骰子，掷到 3、掷到偶数的可能性", tags:["概念"], a:"等可能事件 可能性 概率"},
-
-    {no:"G01", live:true, href:"l22.html", u:"G", t:"圆的周长：绕一圈的长度", d:"直径 6 米的花坛，沿边绕一圈多少米", tags:["计算","图示"], a:"圆的周长 绕一圈 直径 π 圆周率 3.14 yuanzhouzhang"},
-    {no:"G02", live:true, href:"l23.html", u:"G", t:"弧长：圆周长里的一段", d:"半径 6 厘米、圆心角 60° 的弧长是多少", tags:["计算","图示"], a:"弧长 圆弧 圆心角 60度 90度 huchang"},
-    {no:"G03", u:"G", key:true, live:true, href:"l24.html", t:"圆的面积：πr² 怎么来的", d:"半径 4 厘米的圆，面积多少平方厘米", tags:["原理","易错"], a:"圆的面积 半径平方 πr² 4乘4 yuanmiangji"},
-    {no:"G04", live:true, href:"l25.html", u:"G", t:"扇形的面积：圆的一部分", d:"半径 4 厘米、圆心角 90° 的扇形面积", tags:["计算","图示"], a:"扇形面积 圆心角 四分之一圆 shanxing"},
-    {no:"G05", u:"G", key:true, live:true, href:"l26.html", t:"阴影部分的面积：图形题先认块", d:"边长 4 厘米正方形减掉四分之一圆，剩多少", tags:["图形题","易错"], a:"阴影 图形题 组合图形 圆环 叶形 正方形 相减 yinying"},
-
-    {no:"T01", u:"T", key:true, live:true, href:"l27.html", t:"这 3/4 是谁的：先把“分的是谁”定下来", d:"男生 20 人，女生是男生的 3/4，女生几人", tags:["分的是谁"], a:"分的是谁 一整个 单位1 单位一 整体 谁是1 danwei1 跟谁比 四分之三"},
-    {no:"T02", u:"T", key:true, live:true, href:"l28.html", t:"第二次，分的是谁：连续两次取", d:"女生占 1/2，其中 1/4 会弹琴，占全班几分之几", tags:["分两次","易错"], a:"连续 两次 换对象 果汁 巧克力 单位1变 第二次 分开"},
-    {no:"T03", live:true, href:"l29.html", u:"T", t:"“多了几分之几”和“是几分之几”不一样", d:"女生比男生多 1/4，20 人的 1/4 是多少", tags:["易错"], a:"多几分之几 是几分之几 增加 减少"},
-    {no:"T04", live:true, href:"l30.html", u:"T", t:"分数、比、百分数：同一个数三种写法怎么互化", d:"3/4、3 : 4、75% 是不是同一个数", tags:["易错"], a:"分数 比 百分数 互化 三张脸 75% 三种写法"},
-    {no:"T05", live:true, href:"l31.html", u:"T", t:"平均速度：为什么不是速度的平均", d:"上山 3、下山 6 千米/时，各 12 千米求平均", tags:["拓展","易错"], a:"平均速度 速度 往返 总时间 pingjunsudu"},
-    {no:"T06", live:true, href:"l32.html", u:"T", t:"相遇问题：两个人一起把路走完", d:"相距 300 米，每秒 4 米与 6 米，几秒相遇", tags:["拓展","应用"], a:"相遇 相向 同时出发 路程和"},
-    {no:"C04", u:"C", key:true, live:true, href:"l33.html", t:"三项连比：两个比怎么合成一个", d:"科技:美术 2:3、美术:体育 4:5，共 105 人各几人", tags:["连比","应用"], a:"连比 三项比 按比例分配 配比 三个比 lianbi 合成连比"},
-    {no:"G06", u:"G", key:true, live:true, href:"l34.html", t:"环形面积：外圆减内圆", d:"直径 16 米花坛，外面 2 米宽小路，面积多少", tags:["图形题","易错"], a:"圆环 环形 环形面积 小路 圆环面积 huanxing 外圆 内圆"},
-    {no:"B05", u:"B", key:true, live:true, href:"l35.html", t:"分数混合运算：先看顺序，再找简便", d:"3/4×12 + 3/4×8 怎么简算，5/6÷2/3 怎么化", tags:["计算","易错"], a:"混合运算 简算 简便计算 分配律 运算顺序 提取公因数 hunheyunsuan"},
-    {no:"D05", u:"D", key:true, live:true, href:"l36.html", t:"先涨后降，为什么回不去原价", d:"100 元先涨 10% 再降 10%，最后是 99 元", tags:["两次变化","易错"], a:"先涨后降 涨价 降价 涨百分之十 两次百分比 99 涨降 zhangjia"},
-    {no:"A05", live:true, href:"l37.html", u:"A", t:"倒数与带分数、假分数：2 3/4 的倒数怎么求", d:"2 3/4 化成 11/4，倒数是 4/11", tags:["概念"], a:"倒数 带分数 假分数 互化 0.4 5/8 daoshu"},
-    {no:"Z07", live:true, href:"l38.html", u:"Z", t:"三个数的最大公因数与最小公倍数", d:"12、18、30 一起短除，得 6 和 180", tags:["计算","应用"], a:"短除 三个数 最大公因数 最小公倍数 分组 发车 duanchu"}
+    {no:"P01", u:"Z", live:true, r:3, href:"l01.html", t:"整数和整除：什么叫“整除”", d:"18 块糖 3 人分完、4 人剩 2 块，谁算整除", tags:["概念"], a:"整除 余数 商是整数 除尽"},
+    {no:"P02", u:"Z", live:true, r:3, href:"l02.html", t:"因数和倍数：一对互相依存的数", d:"12 块小正方形能摆几种长方形（因数成对）", tags:["概念"], a:"因数 倍数 相互依存"},
+    {no:"P03", u:"Z", live:true, r:3, href:"l03.html", t:"能被 2、5 整除的数的特征", d:"24、35、40、57 里谁被 2 或 5 整除", tags:["规律"], a:"末尾 个位 偶数 特征"},
+    {no:"P04", u:"Z", live:true, r:3, href:"l04.html", t:"素数与合数：为什么 1 不是素数", d:"7 块、12 块谁只能摆一条，1 为什么不是素数", tags:["概念"], a:"素数 合数 质数 1"},
+    {no:"P05", u:"Z", live:true, r:3, href:"l05.html", t:"分解素因数：短除法与树状图", d:"把 60 拆成几个素数相乘，不重不漏", tags:["计算"], a:"分解素因数 短除法 树状图"},
+    {no:"P06", u:"Z", live:true, r:4, href:"l06.html", t:"最大公因数与最小公倍数：一个取小，一个取大", d:"18 和 24 最多几人一组、最小公倍数", tags:["应用"], a:"最大公因数 最小公倍数 约分 通分"},
+    {no:"P07", u:"Z", live:true, r:4, href:"l07.html", t:"三个数的最大公因数与最小公倍数", d:"12、18、30 一起短除，得 6 和 180", tags:["计算","应用"], a:"短除 三个数 最大公因数 最小公倍数 分组 发车 duanchu"},
+    {no:"P08", u:"A", live:true, r:3, href:"l08.html", t:"分数与除法：为什么 a÷b 就是 a/b", d:"3 张饼 4 人分，每人几张（分数当商）", tags:["概念"], a:"分数与除法 分数线 分子 分母"},
+    {no:"P09", u:"A", live:true, r:3, href:"l09.html", t:"分数的基本性质：分子分母同乘同除，大小不变", d:"2/3、4/6、6/9 谁最大（同一条纸切三次）", tags:["概念"], a:"基本性质 同乘同除 不变"},
+    {no:"P10", u:"A", live:true, r:3, href:"l10.html", t:"约分与最简分数", d:"18/24 能不能写得更简单（约分）", tags:["计算"], a:"约分 最简分数 化简"},
+    {no:"P11", u:"A", live:true, r:4, href:"l11.html", t:"倒数与带分数、假分数：2 3/4 的倒数怎么求", d:"2 3/4 化成 11/4，倒数是 4/11", tags:["概念"], a:"倒数 带分数 假分数 互化 0.4 5/8 daoshu"},
+    {no:"P12", u:"A", key:true, live:true, r:4, href:"l12.html", t:"通分与大小比较：分母不一样怎么比", d:"5/6 和 7/9 谁涂得多（通分比大小）", tags:["计算"], a:"通分 大小比较 最小公倍数"},
+    {no:"P13", u:"B", live:true, r:3, href:"l13.html", t:"分数的加减法：先通分，再加减", d:"1/2 + 1/3 = 5/6 还是 2/5", tags:["计算"], a:"加法 减法 通分 混合"},
+    {no:"P14", u:"B", key:true, live:true, r:4, href:"l12.html", t:"分数的乘法：为什么越乘越小", d:"1/2 张纸折三下，为什么越乘越小", tags:["意义","图示"], a:"越乘越小 变小 折纸 纸 二分之一 三分之一 1/2 1/3 yuechengyuexiao ycyx"},
+    {no:"P15", u:"B", key:true, live:true, r:5, href:"l15.html", t:"分数的除法：为什么要颠倒相乘", d:"3/4 升果汁每 1/3 升一杯，能倒几杯", tags:["原理"], a:"颠倒 相乘 分数除法 倒数 包含几个 daoshu"},
+    {no:"P16", u:"B", live:true, r:3, href:"l16.html", t:"分数与小数的互化：什么时候化成小数更省事", d:"3/4 化成小数，1/3 为什么除不完", tags:["计算"], a:"互化 小数 循环小数"},
+    {no:"P17", u:"B", key:true, live:true, r:5, href:"l17.html", t:"分数混合运算：先看顺序，再找简便", d:"3/4×12 + 3/4×8 怎么简算，5/6÷2/3 怎么化", tags:["计算","易错"], a:"混合运算 简算 简便计算 分配律 运算顺序 提取公因数 hunheyunsuan"},
+    {no:"P18", u:"C", live:true, r:4, href:"l18.html", t:"比的意义：比和除法、分数是什么关系", d:"黄 3 份、绿 4 份，怎么表示两者关系", tags:["概念"], a:"比的意义 比值 除法 分数 三兄弟"},
+    {no:"P19", u:"C", key:true, live:true, r:4, href:"l19.html", t:"比的基本性质与化简比", d:"12 : 18 能写成更简单的整数比吗", tags:["计算"], a:"基本性质 化简 最简整数比 huajianbi"},
+    {no:"P20", u:"C", live:true, r:5, href:"l20.html", t:"比例：两个比相等，交叉相乘", d:"3 : 4 = 6 : 8 成立吗，9 : 12 呢", tags:["概念"], a:"比例 内项 外项 交叉相乘"},
+    {no:"P21", u:"C", key:true, live:true, r:5, href:"l21.html", t:"三项连比：两个比怎么合成一个", d:"科技:美术 2:3、美术:体育 4:5，共 105 人各几人", tags:["连比","应用"], a:"连比 三项比 按比例分配 配比 三个比 lianbi 合成连比"},
+    {no:"P22", u:"D", live:true, r:3, href:"l22.html", t:"百分比的意义：为什么统一切成 100 份", d:"3/5、7/10、65/100 谁最大（化成百分数）", tags:["概念"], a:"百分比 百分数 100 意义"},
+    {no:"P23", u:"D", live:true, r:4, href:"l23.html", t:"百分比的应用（一）：折扣、成数、增长率", d:"200 元打八折多少，涨价一成多少", tags:["应用"], a:"折扣 八折 成数 增长率 zhekou"},
+    {no:"P24", u:"D", live:true, r:4, href:"l24.html", t:"百分比的应用（二）：利率、税率、合格率", d:"存 2000 元一年利息多少、18/20 的合格率", tags:["应用"], a:"利率 利息 税率 合格率 出勤率"},
+    {no:"P25", u:"D", key:true, live:true, r:5, href:"l25.html", t:"先涨后降，为什么回不去原价", d:"100 元先涨 10% 再降 10%，最后是 99 元", tags:["两次变化","易错"], a:"先涨后降 涨价 降价 涨百分之十 两次百分比 99 涨降 zhangjia"},
+    {no:"P26", u:"D", live:true, r:3, href:"l26.html", t:"等可能事件：可能性怎么算成一个数", d:"掷一颗骰子，掷到 3、掷到偶数的可能性", tags:["概念"], a:"等可能事件 可能性 概率"},
+    {no:"P27", u:"G", live:true, r:3, href:"l27.html", t:"圆的周长：绕一圈的长度", d:"直径 6 米的花坛，沿边绕一圈多少米", tags:["计算","图示"], a:"圆的周长 绕一圈 直径 π 圆周率 3.14 yuanzhouzhang"},
+    {no:"P28", u:"G", live:true, r:4, href:"l28.html", t:"弧长：圆周长里的一段", d:"半径 6 厘米、圆心角 60° 的弧长是多少", tags:["计算","图示"], a:"弧长 圆弧 圆心角 60度 90度 huchang"},
+    {no:"P29", u:"G", key:true, live:true, r:4, href:"l29.html", t:"圆的面积：πr² 怎么来的", d:"半径 4 厘米的圆，面积多少平方厘米", tags:["原理","易错"], a:"圆的面积 半径平方 πr² 4乘4 yuanmiangji"},
+    {no:"P30", u:"G", live:true, r:4, href:"l30.html", t:"扇形的面积：圆的一部分", d:"半径 4 厘米、圆心角 90° 的扇形面积", tags:["计算","图示"], a:"扇形面积 圆心角 四分之一圆 shanxing"},
+    {no:"P31", u:"G", key:true, live:true, r:5, href:"l31.html", t:"环形面积：外圆减内圆", d:"直径 16 米花坛，外面 2 米宽小路，面积多少", tags:["图形题","易错"], a:"圆环 环形 环形面积 小路 圆环面积 huanxing 外圆 内圆"},
+    {no:"P32", u:"G", key:true, live:true, r:5, href:"l32.html", t:"阴影部分的面积：图形题先认块", d:"边长 4 厘米正方形减掉四分之一圆，剩多少", tags:["图形题","易错"], a:"阴影 图形题 组合图形 圆环 叶形 正方形 相减 yinying"},
+    {no:"P33", u:"T", key:true, live:true, r:5, href:"l33.html", t:"这 3/4 是谁的：先把“分的是谁”定下来", d:"男生 20 人，女生是男生的 3/4，女生几人", tags:["分的是谁"], a:"分的是谁 一整个 单位1 单位一 整体 谁是1 danwei1 跟谁比 四分之三"},
+    {no:"P34", u:"T", key:true, live:true, r:5, href:"l34.html", t:"第二次，分的是谁：连续两次取", d:"女生占 1/2，其中 1/4 会弹琴，占全班几分之几", tags:["分两次","易错"], a:"连续 两次 换对象 果汁 巧克力 单位1变 第二次 分开"},
+    {no:"P35", u:"T", live:true, r:5, href:"l35.html", t:"“多了几分之几”和“是几分之几”不一样", d:"女生比男生多 1/4，20 人的 1/4 是多少", tags:["易错"], a:"多几分之几 是几分之几 增加 减少"},
+    {no:"P36", u:"T", live:true, r:4, href:"l36.html", t:"分数、比、百分数：同一个数三种写法怎么互化", d:"3/4、3 : 4、75% 是不是同一个数", tags:["易错"], a:"分数 比 百分数 互化 三张脸 75% 三种写法"},
+    {no:"P37", u:"T", live:true, r:4, href:"l37.html", t:"平均速度：为什么不是速度的平均", d:"上山 3、下山 6 千米/时，各 12 千米求平均", tags:["拓展","易错"], a:"平均速度 速度 往返 总时间 pingjunsudu"},
+    {no:"P38", u:"T", live:true, r:5, href:"l38.html", t:"相遇问题：两个人一起把路走完", d:"相距 300 米，每秒 4 米与 6 米，几秒相遇", tags:["拓展","应用"], a:"相遇 相向 同时出发 路程和"},
   ];
   DATA.forEach(function(it, i){ it.p = i + 1; });;
 
@@ -312,6 +311,14 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
     return {d:it, unit:unit, hay:hay, hv:hv, tl:it.t, dl:it.d, al:(it.a || "")};
   });
 
+  function stars(r){
+    r = r || 3;
+    var full = "", rest = "";
+    for(var i = 0; i < r; i++) full += "\u2605";
+    for(var j = r; j < 5; j++) rest += "\u2606";
+    return '<span class="stars" title="难度 ' + r + ' 星"><b>' + full + '</b>' + rest + '</span>';
+  }
+
   /* ---------- 渲染 ---------- */
   var list = document.getElementById("list");
   var tpl = ITEMS.map(function(it){
@@ -322,7 +329,7 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
     return {it:it, html:'<' + tag + ' class="' + cls + '" id="p' + i.p + '" data-no="p' + i.p + '"' + attr + '>'
       + '<span class="code">' + i.p + '<small>六上</small></span>'
       + '<div class="main"><h3>' + i.t + '</h3><p>' + i.d + '</p></div>'
-      + '<div class="tags">' + (i.key ? '<span class="kb">本册重点</span>' : '') + i.tags.map(function(t){ return '<span>' + t + '</span>'; }).join("") + '</div>'
+      + '<div class="tags">' + stars(i.r) + (i.key ? '<span class="kb">本册重点</span>' : '') + i.tags.map(function(t){ return '<span>' + t + '</span>'; }).join("") + '</div>'
       + '</' + tag + '>'};
   });
 
