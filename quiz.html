@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>结课出卷 · 六年级数学</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='3' fill='%23152230'/%3E%3Crect x='5' y='15' width='14' height='3' fill='%23F5BE2E'/%3E%3Crect x='5' y='21' width='9' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{--ink:#152230;--ink2:#5A6B7C;--line:#D7E1E9;--paper:#fff;--bg:#E9EEF3;--yellow:#F5BE2E;--gold:#C89B24;--green:#0FA97C;--red:#C8503C;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --num:"Space Grotesk","Noto Sans SC",ui-sans-serif,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased}
+.app{max-width:960px;margin:0 auto;padding:clamp(18px,3vw,30px) clamp(16px,4vw,32px) 56px}
+.topbar{background:var(--ink);border-radius:14px;padding:clamp(20px,3vw,30px);color:#fff}
+.brand{margin:0 0 9px;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
+.brand::before{content:"";width:14px;height:3px;background:var(--yellow);border-radius:2px}
+h1{margin:0;font-size:clamp(24px,3.2vw,34px);font-weight:900;line-height:1.24;letter-spacing:-.01em}
+h1 em{font-style:normal;color:var(--yellow)}
+.sub{margin:11px 0 0;font-size:13px;line-height:1.85;color:rgba(255,255,255,.72);max-width:60ch}
+.card{background:var(--paper);border-radius:12px;padding:clamp(16px,2.4vw,22px);margin-top:14px;box-shadow:0 1px 0 rgba(21,34,48,.06)}
+.card.on{border:1.5px solid rgba(21,34,48,.14)}
+.ph{display:flex;align-items:baseline;gap:9px;margin:0 0 12px;padding-bottom:9px;border-bottom:1.5px solid rgba(21,34,48,.16)}
+.ph .n{font-family:var(--num);font-size:11.5px;font-weight:700;color:#fff;background:var(--ink);border-radius:4px;padding:1px 6px}
+.ph h2{margin:0;font-size:16.5px;font-weight:900}
+.ph .hint{margin:0;font-size:11.8px;color:var(--ink2);margin-left:auto}
+.lbl{font-size:12.5px;color:var(--ink2);margin:0 0 6px;font-weight:700}
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.opt{border:1.5px solid var(--line);background:#fff;border-radius:8px;padding:8px 14px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--ink);cursor:pointer}
+.opt.on{background:var(--yellow);border-color:var(--gold);color:#152230}
+.input{width:100%;max-width:300px;border:1.5px solid var(--line);border-radius:8px;padding:9px 12px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+.input:focus{outline:0;border-color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;border:0;border-radius:9px;background:var(--ink);color:#fff;font-family:inherit;font-size:15px;font-weight:900;padding:12px 22px;cursor:pointer;min-height:46px}
+.btn:hover{background:#23374D}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:rgba(245,190,46,.3)}
+.btn.y{background:var(--yellow);color:#152230}
+.btn.y:hover{background:#E9AE1C}
+.btn:disabled{opacity:.45;cursor:default}
+.row2{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.reg{margin:0;font-size:12.8px;color:var(--ink2);line-height:1.8}
+.reg b{color:var(--ink)}
+.paper{margin-top:16px}
+.qbox{background:#fff;border-radius:12px;padding:16px 18px 14px;margin-bottom:10px;border:1px solid rgba(21,34,48,.08)}
+.qhead{display:flex;align-items:flex-start;gap:9px;margin:0 0 8px}
+.qno{font-family:var(--num);font-size:13px;font-weight:700;color:var(--ink2);min-width:22px;padding-top:2px}
+.qtx{flex:1;min-width:0}
+.qtx .tag{display:inline-block;font-size:10.6px;font-weight:700;color:#4A5C6E;background:#EDF1F5;border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px}
+.qtx p{margin:0;font-size:14.6px;line-height:1.8;font-weight:500}
+.qopts{display:flex;flex-direction:column;gap:7px;margin:10px 0 0 31px}
+.qopt{display:flex;align-items:center;gap:9px;font-size:14px;cursor:pointer;padding:4px 6px;border-radius:7px}
+.qopt:hover{background:rgba(245,190,46,.14)}
+.qopt input{width:17px;height:17px;accent-color:#152230}
+.sbox{display:flex;align-items:center;gap:9px;margin:10px 0 0 31px}
+.sbox span{font-size:12.8px;color:var(--ink2)}
+.sbox input{width:130px;border:1.5px solid var(--line);border-radius:8px;padding:7px 10px;font-family:inherit;font-size:14.5px;color:var(--ink)}
+.sbox input:focus{outline:0;border-color:var(--gold)}
+.ans{margin:12px 0 0 31px;padding-top:11px;border-top:1px dashed rgba(21,34,48,.16);font-size:13px;line-height:1.85;color:var(--ink2)}
+.ans b{color:var(--ink)}
+.ans .ok{color:var(--green);font-weight:900}
+.ans .no{color:var(--red);font-weight:900}
+.ans .src{display:block;margin-top:6px;font-size:11px;color:#8595A4}
+.score{background:var(--ink);color:#fff;border-radius:12px;padding:20px 22px;margin-top:16px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.score .big{font-family:var(--num);font-size:34px;font-weight:700;line-height:1}
+.score .tot{font-family:var(--num);font-size:15px;color:rgba(255,255,255,.6)}
+.score .rate{font-size:14px;font-weight:900;color:var(--yellow);margin-left:auto}
+.score p{margin:8px 0 0;flex-basis:100%;font-size:12.8px;color:rgba(255,255,255,.72);line-height:1.8}
+.regbox{background:rgba(15,169,124,.1);border:1px solid rgba(15,169,124,.35);border-radius:10px;padding:11px 14px;font-size:12.8px;color:#0B5E47;line-height:1.8;margin-top:12px}
+.note{margin:14px 0 0;font-size:11.8px;color:var(--ink2);line-height:1.8}
+.footlink{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
+.foot{font-size:11.6px;color:var(--ink2);margin:16px 0 0;line-height:1.9}
+@media (max-width:760px){
+  .app{padding:12px 13px 36px}
+  .topbar{padding:15px 14px 16px;border-radius:12px}
+  h1{font-size:22px;line-height:1.3}
+  .sub{font-size:12.2px;line-height:1.78}
+  .card{padding:15px 13px;border-radius:11px;margin-top:11px}
+  .ph{flex-wrap:wrap;gap:6px}
+  .ph h2{font-size:15px;white-space:nowrap;flex:none}
+  .ph .n{flex:none}
+  .ph .hint{flex-basis:100%;margin-left:0;font-size:11px;margin-top:3px}
+  .opt{font-size:12.6px;padding:7px 11px}
+  .input{max-width:none;font-size:16px}
+  .btn{font-size:14px;min-height:46px}
+  .qtx p{font-size:14px;line-height:1.75}
+  .qbox{padding:14px 13px 12px}
+  .qopts,.sbox,.ans{margin-left:0}
+  .score .big{font-size:28px}
+}
+@media print{
+  body{background:#fff}
+  .topbar{background:#fff;color:var(--ink);border:1px solid var(--ink);padding:16px}
+  .sub{color:var(--ink2)}
+  .card,.qbox{box-shadow:none;border:1px solid #ccc;break-inside:avoid-page}
+  .no-print{display:none!important}
+  .qbox{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <section class="topbar">
+    <p class="brand">小布智能教学</p>
+    <h1>结课出卷 · <em>六年级数学</em></h1>
+    <p class="sub">学完一册，在这里登记，出一张卷子自测。题目按真实考卷的考法编写，交卷当场出分，每题带答案、解析和出处。答错的题会单独列出来，方便回头补那几讲。</p>
+  </section>
+
+  <!-- 登记 -->
+  <section class="card">
+    <div class="ph"><span class="n">01</span><h2>学习登记</h2><p class="hint">记在这台设备上，下次打开还在</p></div>
+    <p class="lbl">我已经学完</p>
+    <div class="opts" id="booksel">
+      <button class="opt" data-book="A">六上 · 数与形（38 讲）</button>
+      <button class="opt" data-book="B">六下 · 式与体（20 讲）</button>
+      <button class="opt" data-book="AB">两册都学完了</button>
+    </div>
+    <p class="lbl">称呼（可不填）</p>
+    <input class="input" id="who" placeholder="例如：小林妈妈" autocomplete="off">
+    <div class="row2"><button class="btn y" id="regbtn">登记并开始出卷</button></div>
+    <div class="regbox" id="reginfo" hidden></div>
+  </section>
+
+  <!-- 出卷设置 -->
+  <section class="card" id="setup" style="display:none">
+    <div class="ph"><span class="n">02</span><h2>出卷设置</h2><p class="hint">按登记范围抽题，不会重复同一道</p></div>
+    <p class="reg" id="cap"></p>
+    <p class="lbl">题量</p>
+    <div class="opts" id="nsel">
+      <button class="opt" data-n="10">10 题 · 小测</button>
+      <button class="opt on" data-n="20">20 题 · 标准</button>
+      <button class="opt" data-n="30">30 题 · 加量</button>
+    </div>
+    <p class="lbl">难度</p>
+    <div class="opts" id="dsel">
+      <button class="opt" data-d="1">基础为主</button>
+      <button class="opt on" data-d="2">基础＋提高</button>
+      <button class="opt" data-d="3">偏挑战</button>
+    </div>
+    <div class="row2"><button class="btn" id="makebtn">生成试卷</button><button class="btn ghost" id="printbtn" style="display:none">打印这张卷</button></div>
+  </section>
+
+  <section class="paper" id="paper"></section>
+  <div class="score" id="score" style="display:none"></div>
+  <div class="row2 no-print" id="after" style="display:none">
+    <button class="btn ghost" id="redobtn">只重做错题</button>
+    <button class="btn ghost" id="againbtn">重新出一张</button>
+  </div>
+
+  <div class="footlink no-print">
+    <a class="btn ghost" href="六年级数学合集-沪教版.html">回到第一册</a>
+    <a class="btn ghost" href="六年级数学合集-第二学期.html">回到第二册</a>
+  </div>
+  <p class="foot">题目按上海六上、六下期末与名校卷的常见考法编写，出处标在每题下方；同型题，不是原卷原题。判分只认答案，过程分不计，所以做错的题请对照解析再看一遍。</p>
+</div>
+
+<script>
+var BANK=[
+{b:"A",d:1,k:"整除",t:"c",q:"下列各组数中，前一个数能被后一个数整除的是：",o:["12 和 8","15 和 5","7 和 14","20 和 6"],a:"1",x:"15÷5=3，没有余数，是整除；12÷8 有余数，7÷14 不够除，20÷6 有余数。",s:"同型题 · 市西初中 2025 学年六上期末（整除）"},
+{b:"A",d:1,k:"公因数",t:"c",q:"18 和 24 的最大公因数是：",o:["2","3","6","12"],a:"2",x:"18=2×3×3，24=2×2×2×3，公共的质因数取 2×3=6。",s:"同型题 · 华育中学 2024 学年六上期末（公因数）"},
+{b:"A",d:1,k:"公倍数",t:"c",q:"6 和 8 的最小公倍数是：",o:["12","24","48","14"],a:"1",x:"6 的倍数 6、12、18、24；8 的倍数 8、16、24，最小的公共倍数 24。",s:"同型题 · 闵行区 2024 学年六上期末（公倍数）"},
+{b:"A",d:2,k:"质数",t:"c",q:"20 以内的质数一共有几个：",o:["6 个","7 个","8 个","9 个"],a:"2",x:"2、3、5、7、11、13、17、19，共 8 个。1 不是质数，容易被误算进去。",s:"同型题 · 徐汇区 2024 学年六上期末（质数与合数）"},
+{b:"A",d:1,k:"约分",t:"c",q:"把 36/48 化成最简分数是：",o:["3/4","2/3","6/8","9/12"],a:"0",x:"36 和 48 的最大公因数是 12，36÷12=3，48÷12=4，得 3/4。6/8 和 9/12 都没约到底。",s:"同型题 · 杨浦区 2024 学年六上期末（约分）"},
+{b:"A",d:2,k:"分数比较",t:"f",q:"比较大小：5/6 和 7/9，填 > 或 <（填符号）",a:">",x:"通分到 18：5/6=15/18，7/9=14/18，15 比 14 大，所以 5/6 > 7/9。",s:"同型题 · 静安区 2024 学年六上期末（分数大小）"},
+{b:"A",d:1,k:"分数加法",t:"f",q:"1/2 + 1/3 = ？（填分数，如 5/6）",a:"5/6",x:"通分成 6：3/6+2/6=5/6。分母不同不能直接加分子。",s:"同型题 · 浦东新区 2024 学年六上期末（分数加减）"},
+{b:"A",d:2,k:"分数乘法",t:"f",q:"3/4 × 8/9 = ？（填最简分数）",a:"2/3",x:"先约分：3 和 9 约掉 3，8 和 4 约掉 4，剩 (1/1)×(2/3)=2/3。",s:"同型题 · 黄浦区 2024 学年六上期末（分数乘法）"},
+{b:"A",d:2,k:"分数除法",t:"f",q:"2/3 ÷ 4/9 = ？（填最简分数或小数）",a:"3/2",x:"除以一个分数等于乘它的倒数：2/3 × 9/4 = 18/12 = 3/2。",s:"同型题 · 长宁区 2024 学年六上期末（分数除法）"},
+{b:"A",d:1,k:"化简比",t:"c",q:"把 0.6 : 0.9 化成最简整数比：",o:["2 : 3","3 : 2","6 : 9","1 : 1.5"],a:"0",x:"前后项同时乘 10 得 6 : 9，再同时除以 3 得 2 : 3。",s:"同型题 · 普陀区 2024 学年六上期末（化简比）"},
+{b:"A",d:2,k:"按比分配",t:"f",q:"60 个苹果按 2 : 3 分给甲、乙，甲分到几个？（填数字）",a:"24",x:"总份数 2+3=5，一份 60÷5=12 个，甲占 2 份，12×2=24 个。",s:"同型题 · 虹口区 2024 学年六上期末（按比分配）"},
+{b:"A",d:1,k:"百分数",t:"f",q:"25 的 40% 是多少？（填数字）",a:"10",x:"求一个数的百分之几用乘法：25×0.4=10。",s:"同型题 · 宝山区 2024 学年六上期末（百分数应用）"},
+{b:"A",d:1,k:"折扣",t:"f",q:"原价 200 元的衣服打八折，现价多少元？（填数字）",a:"160",x:"八折就是原价的 80%：200×0.8=160 元。",s:"同型题 · 嘉定区 2024 学年六上期末（折扣）"},
+{b:"A",d:2,k:"利息",t:"f",q:"存 5000 元，年利率 2%，存一年可得利息多少元？（填数字）",a:"100",x:"利息=本金×利率×时间：5000×2%×1=100 元。",s:"同型题 · 松江区 2024 学年六上期末（利率）"},
+{b:"A",d:1,k:"圆周长",t:"f",q:"半径 3 厘米的圆，周长是多少厘米？（π 取 3.14，填数字）",a:"18.84",x:"C=2πr=2×3.14×3=18.84 厘米。注意周长用半径一次，不是半径平方。",s:"同型题 · 青浦区 2024 学年六上期末（圆周长）"},
+{b:"A",d:2,k:"圆面积",t:"f",q:"直径 10 米的圆，面积是多少平方米？（π 取 3.14，填数字）",a:"78.5",x:"先求半径 10÷2=5 米，再算面积 3.14×5×5=78.5 平方米。直接用 10 算会错 4 倍。",s:"同型题 · 市西初中 2025 学年六上期末（圆面积）"},
+{b:"A",d:3,k:"扇形面积",t:"f",q:"半径 6 厘米、圆心角 60° 的扇形，面积是多少平方厘米？（π 取 3.14，填数字）",a:"18.84",x:"6 个 60° 扇形拼成一个整圆，整圆 3.14×36=113.04，除以 6 得 18.84。",s:"同型题 · 华育中学 2024 学年六上期末（扇形面积）"},
+{b:"A",d:3,k:"环形面积",t:"f",q:"外半径 5 厘米、内半径 3 厘米的圆环，面积是多少平方厘米？（π 取 3.14，填数字）",a:"50.24",x:"圆环面积=π(R²−r²)=3.14×(25−9)=3.14×16=50.24。",s:"同型题 · 徐汇区 2024 学年六上期末（环形面积）"},
+{b:"B",d:1,k:"有理数加法",t:"f",q:"−5 + 8 = ？（填数字）",a:"3",x:"异号相加，取绝对值大的符号：8 的绝对值大，结果为正，8−5=3。",s:"同型题 · 上外浦东附中 2024 学年六下期末（有理数加法）"},
+{b:"B",d:1,k:"有理数乘除",t:"f",q:"(−6) × (−4) = ？（填数字）",a:"24",x:"两个负号相乘得正，6×4=24。符号先定，再算数值。",s:"同型题 · 存志学校 2024 学年六下期末（有理数乘除）"},
+{b:"B",d:2,k:"乘方",t:"f",q:"(−2)³ = ？（填数字）",a:"-8",x:"三个 −2 相乘，负号有奇数个，结果是负：2×2×2=8，所以是 −8。",s:"同型题 · 莘松中学 2025 学年六下期末（乘方）"},
+{b:"B",d:1,k:"绝对值",t:"f",q:"|−7| = ？（填数字）",a:"7",x:"绝对值是数轴上到 0 的距离，−7 到 0 有 7 格，所以是 7。",s:"同型题 · 闵行区 2024 学年六下期末（绝对值）"},
+{b:"B",d:2,k:"数轴",t:"f",q:"比 −3 大 5 的数是？（填数字）",a:"2",x:"−3 往右走 5 格：−3+5=2。",s:"同型题 · 徐汇区 2024 学年六下期末（数轴与有理数）"},
+{b:"B",d:1,k:"一元一次方程",t:"f",q:"解方程 2x + 5 = 17，x = ？（填数字）",a:"6",x:"两边先减 5 得 2x=12，再除以 2 得 x=6。移项要变号。",s:"同型题 · 顾村实验学校 2024 学年六下期末（方程）"},
+{b:"B",d:2,k:"去分母",t:"f",q:"解方程 x/3 + 1 = 4，x = ？（填数字）",a:"9",x:"先减 1 得 x/3=3，两边乘 3 得 x=9。",s:"同型题 · 华东师大二附中附属初中 2025 学年六下期末（解方程）"},
+{b:"B",d:2,k:"不等式",t:"f",q:"解不等式 2x − 3 > 5，解集是 x > ？（只填数字）",a:"4",x:"两边加 3 得 2x>8，除以 2 得 x>4。除以正数不等号方向不变。",s:"同型题 · 杨浦区 2024 学年六下期末（不等式）"},
+{b:"B",d:2,k:"行程",t:"f",q:"甲每小时 60 千米、乙每小时 40 千米，同时从两地相向而行，2 小时相遇，两地相距多少千米？（填数字）",a:"200",x:"相向而行速度相加：(60+40)×2=200 千米。",s:"同型题 · 上外浦东附中 2024 学年六下期末（行程）"},
+{b:"B",d:3,k:"利润",t:"f",q:"一件商品成本 80 元，标价 120 元，打八折卖出，利润是多少元？（填数字）",a:"16",x:"售价 120×0.8=96，利润 96−80=16 元。打折打的是标价，不是成本。",s:"同型题 · 莘松中学 2025 学年六下期末（折扣与利润）"},
+{b:"B",d:1,k:"线段",t:"f",q:"线段 AB 长 12 厘米，M 是 AB 的中点，AM 长多少厘米？（填数字）",a:"6",x:"中点把线段分成相等的两半：12÷2=6。",s:"同型题 · 存志学校 2024 学年六下期末（线段中点）"},
+{b:"B",d:2,k:"度分秒",t:"f",q:"32°15′ + 27°45′ = ？（填如 60° 或 60°0′）",a:"60°",x:"15′+45′=60′=1°，32+27+1=60°，所以是 60°。满 60 分要进位。",s:"同型题 · 华东师大二附中附属初中 2025 学年六下期末（角的计算）"},
+{b:"B",d:2,k:"角平分线",t:"f",q:"∠AOB=80°，OC 平分 ∠AOB，∠AOC 是多少度？（只填数字）",a:"40",x:"角平分线把角分成相等的两份：80÷2=40°。",s:"同型题 · 顾村实验学校 2024 学年六下期末（角平分线）"},
+{b:"B",d:1,k:"余角补角",t:"f",q:"35° 的补角是多少度？（只填数字）",a:"145",x:"互补两角和 180°：180−35=145°。余角是加 90°，别混。",s:"同型题 · 闵行区 2024 学年六下期末（补角）"},
+{b:"B",d:3,k:"钟面角",t:"f",q:"3 点 30 分，时针与分针的夹角是多少度？（只填数字）",a:"75",x:"分针指 6，是 180°；时针在 3 和 4 之间，3 点 30 分走了 3×30+0.5×30=105°，180−105=75°。",s:"同型题 · 徐汇区 2024 学年六下期末（钟面角）"},
+{b:"B",d:1,k:"长方体",t:"c",q:"一个长方体有几条棱：",o:["6 条","8 条","12 条","16 条"],a:"2",x:"长方体有 8 个顶点、12 条棱、6 个面。棱是顶点之间的边。",s:"同型题 · 存志学校 2024 学年六下期末（长方体的棱）"},
+{b:"B",d:2,k:"表面积",t:"f",q:"长 5 厘米、宽 4 厘米、高 3 厘米的长方体，表面积是多少平方厘米？（填数字）",a:"94",x:"2×(5×4+5×3+4×3)=2×(20+15+12)=94。三组面各两个。",s:"同型题 · 莘松中学 2025 学年六下期末（长方体表面积）"},
+{b:"B",d:1,k:"体积",t:"f",q:"长 5 厘米、宽 4 厘米、高 3 厘米的长方体，体积是多少立方厘米？（填数字）",a:"60",x:"体积=长×宽×高=5×4×3=60。",s:"同型题 · 顾村实验学校 2024 学年六下期末（长方体体积）"},
+{b:"A",d:2,k:"分数应用",t:"f",q:"一本书共 120 页，已经看了全书的 3/8，还剩多少页没看？（填数字）",a:"75",x:"看了 120×3/8=45 页，剩下 120−45=75 页。先求看了多少，再减。",s:"同型题 · 建平西校 2024 学年六上期末（分数应用）"},
+{b:"A",d:1,k:"百分数应用",t:"f",q:"某班 40 人，男生占 55%，女生有多少人？（填数字）",a:"18",x:"女生占 1−55%=45%，40×0.45=18 人。也可先算男生 22 人再减。",s:"同型题 · 静安区 2024 学年六上期末（百分数应用）"},
+{b:"A",d:2,k:"比的应用",t:"f",q:"甲、乙两数的比是 3 : 5，甲是 15，乙是多少？（填数字）",a:"25",x:"甲 3 份是 15，一份是 5；乙 5 份就是 5×5=25。",s:"同型题 · 虹口区 2024 学年六上期末（比的应用）"},
+{b:"A",d:1,k:"圆周长应用",t:"f",q:"一个圆形花坛直径 8 米，绕它走一圈是多少米？（π 取 3.14，填数字）",a:"25.12",x:"周长=πd=3.14×8=25.12 米。给的是直径，直接乘 π，不用先除以 2。",s:"同型题 · 浦东新区 2024 学年六上期末（圆周长）"},
+{b:"A",d:3,k:"组合图形",t:"f",q:"一个长 8 厘米、宽 4 厘米的长方形，一端接一个半径 4 厘米的半圆，整个图形面积是多少平方厘米？（π 取 3.14，填数字）",a:"57.12",x:"长方形 8×4=32，半圆 3.14×16÷2=25.12，合计 57.12 平方厘米。长方形宽正好等于半圆半径，接得上。",s:"同型题 · 徐汇区 2024 学年六上期末（组合图形）"},
+{b:"A",d:2,k:"分数除法应用",t:"f",q:"一根 12 米长的绳子，每 3/4 米剪一段，能剪成多少段？（填数字）",a:"16",x:"12÷3/4=12×4/3=16 段。除以分数等于乘倒数。",s:"同型题 · 长宁区 2024 学年六上期末（分数除法）"},
+{b:"A",d:1,k:"折扣逆算",t:"f",q:"一件衣服打八折后卖 160 元，原价是多少元？（填数字）",a:"200",x:"现价=原价×0.8，所以原价=160÷0.8=200 元。",s:"同型题 · 宝山区 2024 学年六上期末（折扣逆算）"},
+{b:"B",d:1,k:"有理数减法",t:"f",q:"−3 − (−7) = ？（填数字）",a:"4",x:"减去一个负数等于加上它的相反数：−3+7=4。",s:"同型题 · 上外浦东附中 2024 学年六下期末（有理数减法）"},
+{b:"B",d:2,k:"绝对值比较",t:"f",q:"比较大小：|−5| 和 3，填 > 或 <（填符号）",a:">",x:"|−5|=5，5 比 3 大，所以填 >。负数加绝对值后要看数值本身。",s:"同型题 · 存志学校 2024 学年六下期末（绝对值）"},
+{b:"B",d:2,k:"方程应用",t:"f",q:"某数的 3 倍减去 5 等于 16，这个数是多少？（填数字）",a:"7",x:"设这个数是 x：3x−5=16，3x=21，x=7。",s:"同型题 · 莘松中学 2025 学年六下期末（列方程解应用题）"},
+{b:"B",d:3,k:"不等式应用",t:"f",q:"x 的 2 倍加 1 小于 9，x 能取的最大整数是多少？（填数字）",a:"3",x:"2x+1<9，2x<8，x<4，小于 4 的最大整数是 3。注意问的是整数。",s:"同型题 · 华东师大二附中附属初中 2025 学年六下期末（不等式）"},
+{b:"B",d:3,k:"追及问题",t:"f",q:"甲每秒跑 5 米，乙每秒跑 3 米，乙在甲前面 40 米，甲追几秒能追上乙？（填数字）",a:"20",x:"追及用速度差：每秒追近 5−3=2 米，40÷2=20 秒。",s:"同型题 · 杨浦区 2024 学年六下期末（追及问题）"},
+{b:"B",d:1,k:"余角",t:"f",q:"∠1 与 ∠2 互余，∠1=28°，∠2 是多少度？（只填数字）",a:"62",x:"互余两角和 90°：90−28=62°。互补是 180°，别用错。",s:"同型题 · 闵行区 2024 学年六下期末（余角）"},
+{b:"B",d:2,k:"棱长总和",t:"f",q:"长 5 厘米、宽 4 厘米、高 3 厘米的长方体，所有棱的长度和是多少厘米？（填数字）",a:"48",x:"长、宽、高各 4 条：4×(5+4+3)=4×12=48 厘米。",s:"同型题 · 顾村实验学校 2024 学年六下期末（棱长总和）"},
+{b:"B",d:1,k:"线段和差",t:"f",q:"线段 AB 长 10 厘米，点 C 在线段 AB 上，AC 长 4 厘米，BC 长多少厘米？（填数字）",a:"6",x:"C 在 AB 中间，BC=AB−AC=10−4=6 厘米。",s:"同型题 · 徐汇区 2024 学年六下期末（线段的差）"}
+];
+
+var REGKEY="g6math.reg";
+var state={book:"",n:20,d:2,paper:[],answers:{},done:false};
+
+function $(id){return document.getElementById(id)}
+function norm(s){
+  s=String(s==null?"":s).trim().toLowerCase();
+  s=s.replace(/[\uFF01-\uFF5E]/g,function(c){return String.fromCharCode(c.charCodeAt(0)-0xFEE0)});
+  s=s.replace(/\s/g,"").replace(/，|,/g,"").replace(/：/g,":").replace(/／/g,"/").replace(/。/g,"").replace(/°/g,"");
+  return s;
+}
+function same(a,b){
+  a=norm(a);b=norm(b);
+  if(a===b)return true;
+  var x=parseFloat(a),y=parseFloat(b);
+  if(!isNaN(x)&&!isNaN(y)&&Math.abs(x-y)<0.011)return true;
+  return false;
+}
+function saveReg(b,who){
+  try{localStorage.setItem(REGKEY,JSON.stringify({book:b,who:who,time:new Date().toISOString().slice(0,16).replace("T"," ")}))}catch(e){}
+}
+function loadReg(){try{return JSON.parse(localStorage.getItem(REGKEY)||"null")}catch(e){return null}}
+
+var reg=loadReg();
+if(reg){
+  state.book=reg.book||"";
+  if(reg.who)$("who").value=reg.who;
+  document.querySelectorAll("#booksel .opt").forEach(function(b){b.classList.toggle("on",b.dataset.book===state.book)});
+  showReg(reg);
+  if(state.book){$("setup").style.display="block";capText();}
+}
+function showReg(r){
+  var names={A:"六上 · 数与形",B:"六下 · 式与体",AB:"两册都学完"};
+  var box=$("reginfo");
+  box.hidden=false;
+  box.innerHTML="已登记：<b>"+(names[r.book]||"未选择")+"</b>"+(r.who?"，称呼 <b>"+r.who+"</b>":"")+"　登记时间 "+r.time+"。可以直接出卷，也可以在下面改。";
+}
+
+document.querySelectorAll("#booksel .opt").forEach(function(b){
+  b.onclick=function(){
+    state.book=b.dataset.book;
+    document.querySelectorAll("#booksel .opt").forEach(function(x){x.classList.toggle("on",x===b)});
+    capText();
+  };
+});
+$("regbtn").onclick=function(){
+  if(!state.book){alert("先选一下学完哪一册");return}
+  var who=$("who").value.trim();
+  saveReg(state.book,who);
+  showReg(loadReg());
+  $("setup").style.display="block";
+  capText();
+  $("setup").scrollIntoView({behavior:"smooth",block:"start"});
+};
+document.querySelectorAll("#nsel .opt").forEach(function(b){
+  b.onclick=function(){state.n=+b.dataset.n;document.querySelectorAll("#nsel .opt").forEach(function(x){x.classList.toggle("on",x===b)})};
+});
+document.querySelectorAll("#dsel .opt").forEach(function(b){
+  b.onclick=function(){state.d=+b.dataset.d;document.querySelectorAll("#dsel .opt").forEach(function(x){x.classList.toggle("on",x===b)})};
+});
+
+function pool(){
+  var books=state.book==="AB"?["A","B"]:[state.book];
+  return BANK.filter(function(q){return books.indexOf(q.b)>-1});
+}
+function take(arr,n){var a=arr.slice();var out=[];while(out.length<n&&a.length){out.push(a.splice(Math.floor(Math.random()*a.length),1)[0])}return out}
+function build(n){
+  var p=pool();
+  var want1=Math.round(n*(state.d===1?0.7:state.d===2?0.4:0.2));
+  var want3=Math.round(n*(state.d===1?0:state.d===2?0.2:0.5));
+  var easy=take(p.filter(function(q){return q.d===1}),want1);
+  var hard=take(p.filter(function(q){return q.d===3}),want3);
+  var mid=take(p.filter(function(q){return q.d===2}),n-easy.length-hard.length);
+  var out=easy.concat(mid).concat(hard);
+  var more=n-out.length;
+  if(more>0){
+    var used=new Set(out);
+    out=out.concat(take(p.filter(function(q){return !used.has(q)}),more));
+  }
+  out.sort(function(){return Math.random()-0.5});
+  return out.slice(0,n);
+}
+function capText(){
+  var c=pool().length;
+  var el=$("cap");
+  if(el)el.textContent="当前范围题库共 "+c+" 题；要的题量超过时会按可用题数出卷。";
+  document.querySelectorAll("#nsel .opt").forEach(function(b){
+    b.disabled=(+b.dataset.n>c);
+    b.style.opacity=(+b.dataset.n>c)?.45:"";
+    b.style.cursor=(+b.dataset.n>c)?"default":"";
+  });
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")}
+
+function render(){
+  var paper=state.paper;
+  var html="";
+  paper.forEach(function(q,i){
+    html+='<article class="qbox" data-i="'+i+'">';
+    html+='<div class="qhead"><span class="qno">'+(i+1)+'.</span><div class="qtx"><p><span class="tag">'+esc(q.k)+'</span>'+esc(q.q)+'</p></div></div>';
+    if(q.t==="c"){
+      html+='<div class="qopts">';
+      "ABCD".split("").forEach(function(L,j){
+        html+='<label class="qopt"><input type="radio" name="q'+i+'" value="'+j+'"><span>'+L+"．"+esc(q.o[j])+'</span></label>';
+      });
+      html+='</div>';
+    }else{
+      html+='<div class="sbox"><input class="ansinput" name="q'+i+'" placeholder="在这里写答案" autocomplete="off"><span>只填结果，不用写过程</span></div>';
+    }
+    html+='<div class="ans" hidden></div>';
+    html+='</article>';
+  });
+  $("paper").innerHTML=html;
+  $("paper").querySelectorAll("input").forEach(function(el){
+    el.onchange=function(){state.answers[el.name]=el.value};
+    el.oninput=function(){state.answers[el.name]=el.value};
+  });
+  $("printbtn").style.display="inline-flex";
+}
+function answerOf(q,i){return state.answers["q"+i]}
+
+$("makebtn").onclick=function(){
+  if(!state.book){alert("先在 01 里选学完哪一册并登记");return}
+  var cap=pool().length;
+  state.paper=build(Math.min(state.n,cap));
+  state.answers={};
+  state.done=false;
+  $("score").style.display="none";
+  $("after").style.display="none";
+  render();
+  $("paper").scrollIntoView({behavior:"smooth",block:"start"});
+  var row=document.createElement("div");
+  row.className="row2 no-print";
+  row.innerHTML='<button class="btn y" id="submitbtn">交卷看分</button>';
+  $("paper").appendChild(row);
+  $("submitbtn").onclick=submit;
+};
+function submit(){
+  var ok=0,rows="",wrong=[];
+  state.paper.forEach(function(q,i){
+    var box=$("paper").querySelector('.qbox[data-i="'+i+'"] .ans');
+    var v=answerOf(q,i);
+    var right;
+    if(q.t==="c")right=(v!==undefined&&String(v)===String(q.a));
+    else right=same(v,q.a);
+    if(right)ok++;else wrong.push(i+1);
+    var mine;
+    if(q.t==="c")mine=v!==undefined?"ABCD".split("")[+v]: "（未答）";
+    else mine=(v&&String(v).trim())||"（未答）";
+    var rightTxt=q.t==="c"?"ABCD".split("")[+q.a]+"．"+q.o[+q.a]:q.a;
+    box.hidden=false;
+    box.innerHTML=(right?'<span class="ok">✓ 答对</span>':'<span class="no">✗ 答错</span>')+
+      '　你的答案：<b>'+esc(mine)+'</b>　正确答案：<b>'+esc(rightTxt)+'</b><br>'+esc(q.x)+
+      '<span class="src">'+esc(q.s)+'</span>';
+  });
+  var total=state.paper.length,rate=ok/total;
+  var word=rate>=0.9?"扎实，这一册可以往下走了":rate>=0.75?"基本扎实，个别知识点还要回头看":"还有明显缺口，建议先按错题找到对应讲次补一遍";
+  var sc=$("score");
+  sc.style.display="flex";
+  sc.innerHTML='<span class="big">'+ok+'</span><span class="tot">/ '+total+' 题</span><span class="rate">'+(rate*100).toFixed(0)+'%</span><p>'+word+(wrong.length?"。错在第 "+wrong.join("、")+" 题，点下面「只重做错题」再练一遍。":"。全对。")+'</p>';
+  $("after").style.display="flex";
+  $("submitbtn").disabled=true;
+  $("score").scrollIntoView({behavior:"smooth",block:"center"});
+}
+$("redobtn").onclick=function(){
+  var wrongI=[];
+  state.paper.forEach(function(q,i){
+    var v=answerOf(q,i);var right=q.t==="c"?(v!==undefined&&String(v)===String(q.a)):same(v,q.a);
+    if(!right)wrongI.push(q);
+  });
+  if(!wrongI.length){alert("没有错题");return}
+  state.paper=wrongI;state.answers={};state.done=false;
+  $("score").style.display="none";$("after").style.display="none";
+  render();
+  var row=document.createElement("div");row.className="row2 no-print";
+  row.innerHTML='<button class="btn y" id="submitbtn">交卷看分</button>';
+  $("paper").appendChild(row);$("submitbtn").onclick=submit;
+  $("paper").scrollIntoView({behavior:"smooth",block:"start"});
+};
+$("againbtn").onclick=function(){ $("makebtn").click() };
+$("printbtn").onclick=function(){window.print()};
+</script>
+</body>
+</html>
