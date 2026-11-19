@@ -137,6 +137,23 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
 .hits img{height:16px;width:auto;border-radius:3px;vertical-align:middle}
 .hits .dim{color:#A6B3BF;font-size:10.4px}
 
+/* 结课自测 */
+.testbox{margin-top:18px;background:var(--paper);border:1px solid var(--line);border-left:6px solid var(--yellow);
+  border-radius:10px;padding:24px 26px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.testbox .tbk{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.08em;color:var(--ink2);
+  background:#F3F7FA;border:1px solid var(--line);border-radius:3px;padding:3px 8px}
+.testbox h2{font-size:23px;font-weight:900;color:var(--ink);margin:10px 0 9px;line-height:1.2;letter-spacing:.01em}
+.testbox ul{list-style:none;margin:0;padding:0;display:flex;gap:16px;flex-wrap:wrap}
+.testbox li{font-size:12.4px;color:var(--ink2);line-height:1.6}
+.testbox li::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--gold);
+  margin-right:6px;vertical-align:2px}
+.tbb{flex:0 0 auto;background:var(--yellow);color:var(--ink);border-radius:8px;font-family:inherit;font-size:15px;
+  font-weight:900;padding:15px 26px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;
+  transition:transform .18s ease,background .18s ease}
+.tbb:hover{background:#FFCB45}
+.tbb:active{transform:translateY(1px)}
+
+
 @media (max-width:760px){
   .head{display:block}
   h1{white-space:normal;font-size:clamp(24px,6.2vw,30px)}
@@ -191,6 +208,10 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
   .nextbox{padding:18px 15px;gap:13px}
   .nextbox h2{font-size:18.5px}
   .nxb{min-height:46px;font-size:14.5px;padding:13px 18px}
+  .testbox{flex-direction:column;align-items:stretch;gap:16px;padding:20px 18px}
+  .testbox h2{font-size:19px}
+  .testbox ul{gap:6px;flex-direction:column}
+  .tbb{width:100%;padding:14px 18px;font-size:14.5px}
   .foot{font-size:11.4px}
   .toast{font-size:12px;bottom:18px}
 }
@@ -252,7 +273,20 @@ mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;fon
     <a class="nxb" id="nxb" href="index2.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">去看第二学期</a>
   </section>
 
-  <footer class="foot">沪教版（上海，五四学制）· 六年级第一学期 · 38 个难点与典型题型 · 标“拓展”的是延伸内容，不属于教材原节<br><a class="nx" href="quiz.html">这一册学完了？登记一下，出一张卷子自测</a><br><span class="hits">本页访问 <img src="https://hitscounter.dev/api/hit?url=g6m-b1&color=%23152230&style=flat-square&timezone=Asia%2FShanghai" alt="本页访问次数" height="16" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="dim">（今日 / 累计，仅计打开次数）</span></span></footer>
+  <section class="testbox">
+    <div>
+      <span class="tbk">最后一环 · 自测</span>
+      <h2>学完这一册，出一张卷子</h2>
+      <ul>
+        <li>按这一册的卡点出题，题量自己选</li>
+        <li>交卷自动判分</li>
+        <li>薄弱处点一下，跳回那一讲</li>
+      </ul>
+    </div>
+    <a class="tbb" href="quiz.html">登记并开始出卷</a>
+  </section>
+
+  <footer class="foot">沪教版（上海，五四学制）· 六年级第一学期 · 38 个难点与典型题型 · 标“拓展”的是延伸内容，不属于教材原节<br><span class="hits">本页访问 <img src="https://hitscounter.dev/api/hit?url=g6m-b1&color=%23152230&style=flat-square&timezone=Asia%2FShanghai" alt="本页访问次数" height="16" loading="lazy" onerror="this.parentNode.style.display='none'"><span class="dim">（今日 / 累计，仅计打开次数）</span></span></footer>
 </div>
 
 <div class="toast" id="toast"></div>
