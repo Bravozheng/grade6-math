@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>六年级数学 · 第二学期｜沪教版 交互课程合集</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23fff'/%3E%3Crect x='5' y='9' width='22' height='3' fill='%23152230'/%3E%3Crect x='5' y='15' width='14' height='3' fill='%23F5BE2E'/%3E%3Crect x='5' y='21' width='9' height='3' fill='%230FA97C'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+:root{
+  --ink:#152230; --ink2:#5A6B7C; --line:#D7E1E9; --paper:#fff;
+  --bg:#E9EEF3; --yellow:#F5BE2E; --gold:#C89B24; --green:#0FA97C; --mark:#FFE9A8;
+  --sans:"Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+  --num:"Space Grotesk","Noto Sans SC",ui-sans-serif,sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background-color:var(--bg);
+  color:var(--ink);font-family:var(--sans);line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+.app{max-width:960px;margin:0 auto;padding:clamp(18px,3vw,30px) clamp(16px,4vw,32px) clamp(30px,5vh,50px)}
+
+/* 头部 */
+.topbar{position:relative;overflow:hidden}
+.head,.search{position:relative;z-index:1}
+.topbar{background:var(--ink);border-radius:14px;padding:clamp(20px,3vw,30px) clamp(18px,3vw,30px) clamp(16px,2.4vw,22px);margin-bottom:clamp(18px,2.6vh,24px)}
+.head{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,5vw,56px);
+  background:none;border-radius:0;padding:0;margin:0}
+.head h1{color:#fff}
+.head h1 em{background-image:none;color:var(--yellow)}
+.head .ver{background:transparent;border-color:rgba(255,255,255,.42);color:#fff}
+.head .ver b{color:#fff}
+.head .focus b{background:var(--yellow);color:#152230}
+.head .ver span{color:rgba(255,255,255,.6);border-left-color:rgba(255,255,255,.2)}
+.head .focus p{color:rgba(255,255,255,.8)}
+.hl{min-width:0}
+.brand{margin:0 0 9px;font-size:12.5px;font-weight:700;letter-spacing:.22em;color:rgba(255,255,255,.6);display:flex;align-items:center;gap:8px}
+.brand::before{content:"";width:14px;height:3px;background:var(--yellow);border-radius:2px}
+h1{margin:0;font-size:clamp(26px,3.4vw,38px);line-height:1.2;font-weight:900;letter-spacing:-.02em;white-space:nowrap}
+h1 em{font-style:normal;background-image:linear-gradient(rgba(245,190,46,.55),rgba(245,190,46,.55));background-repeat:no-repeat;background-size:100% .42em;background-position:0 92%;padding:0 2px}
+.ver{display:inline-flex;align-items:center;gap:8px;margin-top:11px;font-size:12.5px;color:var(--ink);border:1.5px solid var(--ink);border-radius:999px;padding:5px 13px;background:var(--paper)}
+.ver b{font-weight:900;letter-spacing:.02em}
+.ver span{color:var(--ink2);font-weight:500;border-left:1px solid var(--line);padding-left:8px}
+.focus{flex:0 1 322px;min-width:0;margin:0;padding:2px 14px 2px 0;border-right:3px solid var(--yellow);text-align:right}
+.focus b{display:inline-block;font-size:11.5px;color:#7A5A0E;background:rgba(245,190,46,.38);border-radius:5px;padding:1px 7px;font-weight:900;margin-bottom:5px}
+.focus b.b2{margin-top:11px}
+.focus p{margin:0;font-size:12.8px;line-height:1.85;color:var(--ink)}
+
+/* 搜索 */
+.search{position:relative;margin-top:clamp(16px,2.6vh,22px);padding-top:clamp(14px,2.2vh,18px)}
+.search::before{content:"";position:absolute;left:0;right:0;top:-1px;height:8px;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.26),rgba(255,255,255,.26)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.34) 0 1.5px,transparent 1.5px 240px),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.16) 0 1px,transparent 1px 48px);
+  background-repeat:no-repeat,repeat-x,repeat-x;
+  background-size:100% 1px,100% 8px,100% 5px;
+  background-position:0 7px,0 0,0 0}
+.box{display:flex;align-items:center;gap:10px;background:var(--paper);border:0;border-radius:10px;padding:0 12px;height:52px;box-shadow:0 2px 0 rgba(0,0,0,.18)}
+.box svg{width:17px;height:17px;flex:none;color:var(--ink2)}
+#q{flex:1;min-width:0;border:0;outline:0;background:transparent;font-family:var(--sans);font-size:15px;color:var(--ink);height:100%}
+#q::placeholder{color:#8FA0AF}
+.sbtn{flex:none;border:0;border-radius:7px;background:var(--ink);color:#fff;font-family:var(--sans);font-size:12.5px;font-weight:700;padding:7px 14px;cursor:pointer;transition:background .15s}
+.sbtn:hover{background:#23374D}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{border:1.5px solid rgba(255,255,255,.30);background:transparent;color:rgba(255,255,255,.85);border-radius:999px;padding:6px 13px;font-family:var(--sans);font-size:13px;font-weight:700;cursor:pointer;transition:border-color .15s,color .15s,background .15s}
+.chip:hover{border-color:#fff;color:#fff}
+.chip.on{background:var(--yellow);border-color:var(--yellow);color:#152230}
+.chip .n{font-family:var(--num);font-size:11.5px;opacity:.6;margin-left:3px}
+.meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 4px;font-size:12.5px;color:var(--ink2)}
+.meta .cnt{font-family:var(--num);letter-spacing:.02em}
+  .cntbox{display:flex;align-items:center;gap:8px}
+  .sdnote{font-size:12px;color:var(--ink2)}
+  .row .tags .stars{border:none;background:none;padding:0;font-family:var(--num);font-size:13px;letter-spacing:1.5px;color:#CBD5DE;margin-right:1px}
+  .row .tags .stars b{color:#C3922A;font-weight:400}
+.metr{display:flex;align-items:center;gap:12px}
+.ktoggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--line);background:var(--paper);color:var(--ink2);border-radius:999px;padding:5px 12px;font-family:var(--sans);font-size:12.5px;font-weight:700;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.ktoggle:hover{border-color:var(--ink);color:var(--ink)}
+.ktoggle[aria-pressed="true"]{background:rgba(245,190,46,.34);border-color:rgba(200,155,36,.85);color:#7A5A0E}
+.ktoggle .n{font-family:var(--num);font-size:11.5px;opacity:.75}
+#reset{display:none;border:0;background:transparent;color:var(--ink2);font-family:var(--sans);font-size:12.5px;text-decoration:underline;cursor:pointer;padding:0}
+#reset:hover{color:var(--ink)}
+
+/* 列表 */
+main{margin-top:6px}
+.grp{margin-top:clamp(18px,3vh,26px)}
+.grp-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:0 2px 9px;border-bottom:1.5px solid rgba(21,34,48,.35)}
+.grp-h .idx{font-family:var(--num);font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.grp-h .unit{font-size:11.5px;color:#7A8794;border:1px solid var(--line);border-radius:5px;padding:1px 7px;background:rgba(255,255,255,.7)}
+.grp-h h2{margin:0;font-size:16.5px;font-weight:900;letter-spacing:.01em}
+.grp-h .lead{margin:0;font-size:12.5px;color:var(--ink2);flex:1 1 16em}
+
+.row{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 10px 13px 8px;border-bottom:1px solid var(--line);text-decoration:none;color:inherit;position:relative;transition:background .15s}
+.row:hover{background:rgba(255,255,255,.75)}
+.row .code{font-family:var(--num);font-size:16px;font-weight:700;line-height:1.15;color:var(--ink);letter-spacing:.02em;text-align:center}
+.row .code small{display:block;font-family:var(--sans);font-size:10px;font-weight:400;color:#8C9CAA;letter-spacing:0;margin-top:2px;line-height:1.2}
+.row.live .code{color:var(--ink)}
+.row h3{margin:0;font-size:15px;font-weight:700;line-height:1.55}
+.row p{margin:2px 0 0;font-size:12.5px;color:var(--ink2);line-height:1.65}
+.row .tags{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.row .tags span{font-size:11.5px;color:var(--ink2);border:1px solid var(--line);border-radius:5px;padding:1px 6px;white-space:nowrap;background:var(--paper)}
+.row .tags .kb{font-weight:700;color:#7A5A0E;border-color:rgba(200,155,36,.75);background:rgba(245,190,46,.34)}
+.row.live{border-bottom-color:rgba(15,169,124,.35)}
+.row.live::before{content:"";position:absolute;left:-2px;top:50%;width:3px;height:26px;transform:translateY(-50%);background:var(--green);border-radius:2px}
+.row.is-hit{background:rgba(245,190,46,.26);box-shadow:inset 3px 0 0 var(--yellow)}
+.row{text-align:left}
+.row.soon{cursor:pointer}
+mark{background:var(--mark);color:var(--ink);padding:0 1px;border-radius:2px;font-weight:inherit}
+.hiderow{display:none}
+
+/* 空状态 */
+.empty{display:none;padding:clamp(26px,5vh,44px) 0;text-align:center}
+.empty.on{display:block}
+.empty .t{font-size:17px;font-weight:900;margin:0 0 6px}
+.empty .d{font-size:13px;color:var(--ink2);margin:0 0 16px}
+.empty .sg{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+
+/* toast */
+.toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);background:var(--ink);color:#fff;font-size:13px;padding:9px 16px;border-radius:999px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:88vw;text-align:center;z-index:9}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+/* 下一册 */
+.nextbox{margin-top:clamp(30px,5vh,48px);padding:26px 26px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:space-between;gap:26px}
+.nxt{min-width:0}
+.nxk{display:inline-block;font-size:11.5px;font-weight:900;color:var(--ink);background:var(--yellow);padding:3px 9px;border-radius:3px}
+.nextbox h2{color:#fff;font-size:26px;font-weight:900;letter-spacing:.01em;margin:11px 0 7px;line-height:1.15}
+.nextbox p{color:rgba(255,255,255,.64);font-size:13.5px;line-height:1.7;margin:0;max-width:38ch}
+.nxb{flex:0 0 auto;background:#fff;color:var(--ink);border:0;border-radius:8px;font-family:inherit;font-size:15.5px;font-weight:900;padding:16px 30px;cursor:pointer;transition:background .18s ease,transform .18s ease}
+.nxb:hover:not([disabled]){background:var(--yellow)}
+.nxb[disabled]{background:#fff;color:#66788A;cursor:default;box-shadow:inset 0 0 0 1.5px rgba(21,34,48,.14)}
+.nxb:active{transform:translateY(1px)}
+.foot{margin-top:16px;font-size:12px;color:var(--ink2);line-height:1.8}
+.foot b{color:var(--ink);font-weight:700}
+.foot .nx{display:inline-block;margin-top:8px;color:var(--ink);border-bottom:1.5px solid var(--yellow);font-weight:700}
+
+@media (max-width:760px){
+  .head{display:block}
+  h1{white-space:normal;font-size:clamp(24px,6.2vw,30px)}
+  .focus{flex:none;margin-top:15px;padding:12px 0 12px 13px;border-right:0;border-left:3px solid var(--yellow);text-align:left}
+  .nextbox{flex-direction:column;align-items:stretch;gap:16px;padding:22px 20px}
+  .nextbox h2{font-size:22px}
+  .nxb{width:100%;padding:15px 20px;font-size:15px}
+  .row{grid-template-columns:46px minmax(0,1fr);grid-template-areas:"c t" "... k";row-gap:4px;padding:13px 6px}
+  .row .code{grid-area:c;align-self:start;padding-top:2px}
+  .row .main{grid-area:t}
+  .row .tags{grid-area:k;display:flex;justify-content:flex-start;margin-top:2px}
+  .row .tags span:not(.kb):not(.stars){display:none}
+  .row .tags .stars{font-size:11px;letter-spacing:1px}
+  .row .tags .kb{font-size:10.5px;padding:0 6px;border-radius:4px}
+  .box{height:50px}
+  #q{font-size:15px}
+  .sbtn{padding:7px 11px;font-size:12px}
+  .grp-h .idx{order:1}
+  .grp-h h2{order:2}
+  .grp-h .unit{order:3}
+  .grp-h .lead{order:5;flex-basis:100%}
+  .empty .sg{justify-content:flex-start}
+}
+@media (max-width:760px){.deco{opacity:.6}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <section class="topbar">
+  <header class="head">
+    <div class="hl">
+      <p class="brand">小布智能教学</p>
+      <h1>六年级数学 · <em>第二学期</em></h1>
+      <div class="ver"><b>沪教版</b><span>上海 · 五四学制 · 六年级第二学期</span></div>
+    </div>
+    <div class="focus">
+      <b>本册重点</b>
+      <p>四章一条线：有理数把“方向”搬进数里，方程与不等式接着用字母算，线段与角是图形语言，长方体把平面推到空间。</p>
+      <b class="b2">难点在哪</b>
+      <p>符号方向最容易反：乘除负数要变向、移项要变号；钟面角漏掉时针那 0.5°；长方体里的异面棱看不出来。</p>
+    </div>
+  </header>
+
+  <div class="search">
+    <div class="box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 L21 21"/></svg>
+      <input id="q" type="search" placeholder="搜题型、易错点，如负负得正" autocomplete="off" spellcheck="false" aria-label="搜索本册内容">
+      <button class="sbtn" id="sbtn" type="button">搜索</button>
+    </div>
+    <div class="chips" id="chips" role="tablist" aria-label="按知识块筛选"></div>
+  </div>
+  </section>
+
+  <div class="meta">
+    <div class="cntbox"><span class="cnt" id="count">20 个难点与典型题型</span><span class="sdnote">★ 越多越难</span></div>
+    <div class="metr">
+      <button class="ktoggle" id="keyOnly" type="button" aria-pressed="false">只看本册重点<span class="n" id="keyN">12</span></button>
+      <button id="reset" type="button">清空条件</button>
+    </div>
+  </div>
+
+  <main id="list"></main>
+
+  <div class="empty" id="empty">
+    <p class="t">这一册里没有匹配的内容</p>
+    <p class="d">试试少打几个字，或者用同义词。下面几个词一定搜得到。</p>
+    <div class="sg" id="sug"></div>
+  </div>
+
+  <section class="nextbox">
+    <div class="nxt">
+      <span class="nxk">上一册</span>
+      <h2>六年级第一学期</h2>
+      <p>数的整除、分数、比和比例、圆和扇形，38 个难点与典型题型。</p>
+    </div>
+    <a class="nxb" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center">回到第一册</a>
+  </section>
+
+  <footer class="foot">沪教版（上海，五四学制）· 六年级第二学期 · 20 个难点与典型题型 · 与第一册同一套编号，点 39 起接着排</footer>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+  "use strict";
+
+  var UNITS = [
+    {k:"R", n:"有理数", s:"有理数", unit:"第五章", lead:"0 是分界点，左边是负数；加减看方向，乘除看符号。"},
+    {k:"E", n:"一次方程与不等式", s:"方程·不等式", unit:"第六章", lead:"方程找那一个数，不等式找一片数。"},
+    {k:"G", n:"线段与角", s:"线段与角", unit:"第七章", lead:"长度看线段，度数看角，都先画图。"},
+    {k:"S", n:"长方体", s:"长方体", unit:"第八章", lead:"8 顶点、12 棱、6 面，先数清再计算。"}
+  ];
+
+  var DATA = [
+    {no:"P39", u:"R", live:true, r:3, href:"l39.html", t:"负数的意义：0 左边还有什么", d:"3℃ 降到 5℃，中午几度？数轴上 −2 在哪", tags:["数轴","概念"], a:"负数 数轴 正负 温度 电梯 零下 fushu 往左 往右"},
+    {no:"P40", u:"R", key:true, live:true, r:4, href:"l40.html", t:"相反数与绝对值：|−3| 和 −|3| 差在哪", d:"|−3| 等于几，−|3| 又等于几", tags:["绝对值","易错"], a:"绝对值 相反数 距离 竖线 jueduizhi 符号 取反"},
+    {no:"P41", u:"R", key:true, live:true, r:4, href:"l41.html", t:"有理数加法：−3 + 5 为什么等于 2", d:"−3 加上 5，结果取正还是取负", tags:["加减","计算"], a:"有理数加法 异号 同号 减负 数轴加法 收支 温度"},
+    {no:"P42", u:"R", key:true, live:true, r:5, href:"l42.html", t:"有理数乘除：负负为什么得正", d:"(−3) × (−4) 为什么是 +12", tags:["符号","易错"], a:"负负得正 乘除 符号 奇数个负号 除法 fuhao 盈亏"},
+    {no:"P43", u:"R", key:true, live:true, r:5, href:"l43.html", t:"乘方：−2² 和 (−2)² 不一样", d:"−2³ 与 (−2)³ 差在哪，−2² 呢", tags:["乘方","易错"], a:"乘方 底数 括号 平方 立方 混合运算 顺序 chengfang"},
+    {no:"P44", u:"E", live:true, r:3, href:"l44.html", t:"方程与方程的解：x = 3 是不是解", d:"2x + 1 = 7，x = 3 代进去成立吗", tags:["概念","检验"], a:"方程 解 未知数 等式 检验 代入 fangcheng"},
+    {no:"P45", u:"E", live:true, r:4, href:"l45.html", t:"一元一次方程：移项为什么变号", d:"3x − 5 = 7，先加 5 还是先减 7", tags:["移项","计算"], a:"移项 变号 天平 系数化一 一元一次方程 yixiang"},
+    {no:"P46", u:"E", key:true, live:true, r:5, href:"l46.html", t:"去分母与去括号：每一项都要乘", d:"(1/2)x − 1/3 = 1，右边那个 1 要不要乘 6", tags:["分数方程","易错"], a:"去分母 去括号 最小公倍数 漏乘 变号 分数方程"},
+    {no:"P47", u:"E", key:true, live:true, r:5, href:"l47.html", t:"行程问题：相遇看速度和，追及看速度差", d:"60 千米相向而行，几小时相遇", tags:["应用","方程"], a:"行程 相遇 追及 速度和 速度差 环形跑道 火车过桥 xingcheng"},
+    {no:"P48", u:"E", live:true, r:4, href:"l48.html", t:"打折与利润：利润率除的是成本", d:"打八折卖 240 元，原价多少", tags:["应用","销售"], a:"打折 折扣 利润 利润率 成本 售价 原价 dazhe"},
+    {no:"P49", u:"E", key:true, live:true, r:4, href:"l49.html", t:"一元一次不等式：解集怎么画", d:"2x − 3 &gt; 5，数轴空心还是实心", tags:["不等式","数轴"], a:"不等式 解集 空心 实心 变向 负数 budengshi"},
+    {no:"P50", u:"E", key:true, live:true, r:5, href:"l50.html", t:"二元一次方程组：先消掉一个未知数", d:"鸡兔同笼 35 头 94 脚，各几只", tags:["方程组","应用"], a:"方程组 消元 代入 鸡兔同笼 二元 eryuanyici"},
+    {no:"P51", u:"G", live:true, r:3, href:"l51.html", t:"线段与中点：一半和部分怎么用", d:"AB = 10，M 中点，AN = 3，NB 多长", tags:["线段","计算"], a:"线段 中点 和差 画图 xianduan 一半 部分"},
+    {no:"P52", u:"G", key:true, live:true, r:4, href:"l52.html", t:"度分秒换算：六十进制不是十进制", d:"32.5° 化成度分是多少", tags:["角","换算"], a:"度分秒 六十进制 换算 角度 借位 dufenmiao"},
+    {no:"P53", u:"G", live:true, r:4, href:"l53.html", t:"角的平分线：几等分就除以几", d:"∠AOB = 80°，OC 平分，∠AOC 多少", tags:["角","平分"], a:"角平分线 平分 角度 pingfen 折纸 方位"},
+    {no:"P54", u:"G", live:true, r:4, href:"l54.html", t:"余角与补角：两者永远差 90°", d:"余角比补角小多少，和这个角有关吗", tags:["角","互余互补"], a:"余角 补角 互余 互补 90 度 180 度 yujiao"},
+    {no:"P55", u:"G", key:true, live:true, r:5, href:"l55.html", t:"钟面夹角：时针每分钟也走 0.5°", d:"3 点 20 分，两针夹角多少度", tags:["钟面","易错"], a:"钟面角 时针 分针 夹角 追及 zhongmian 0.5"},
+    {no:"P56", u:"S", live:true, r:3, href:"l56.html", t:"长方体的元素：8 顶点 12 棱 6 面", d:"12 条棱分几组，棱长总和怎么算", tags:["长方体","概念"], a:"长方体 顶点 棱 面 棱长总和 changfangti"},
+    {no:"P57", u:"S", key:true, live:true, r:4, href:"l57.html", t:"棱与面的位置关系：平行还是异面", d:"AB 与 DC 什么关系，AD 与底面呢", tags:["长方体","位置关系"], a:"平行 垂直 异面 棱 面 长方体 pingxing chui"},
+    {no:"P58", u:"S", key:true, live:true, r:4, href:"l58.html", t:"表面积与体积：切一刀只增面积", d:"长 5 宽 4 高 3，表面积和体积各多少", tags:["表面积","体积"], a:"表面积 体积 切割 无盖 单位 biaomianji tiji"},
+  ];
+  DATA.forEach(function(it){ it.p = parseInt(it.no.replace("P", ""), 10); });;
+
+  var SUGGEST = ["负负得正","移项","钟面角","鸡兔同笼","度分秒","表面积"];
+
+  /* ---------- 搜索：归一化 + 模糊 ---------- */
+  var IGNORE = /[\s\u3000，。、；：？！,.;:?!（）()《》【】“”‘’·\-—\/×÷+=%~]/;
+  function strip(s){ return (s || "").replace(IGNORE, ""); }
+  function scan(q, raw){
+    if(!q) return null;
+    var idx = [], qi = 0;
+    for(var i = 0; i < raw.length && qi < q.length; i++){
+      var ch = raw.charAt(i);
+      if(IGNORE.test(ch)) continue;
+      if(ch.toLowerCase() === q.charAt(qi)){ idx.push(i); qi++; }
+    }
+    return qi === q.length ? idx : null;
+  }
+  function contiguous(idx){
+    for(var i = 1; i < idx.length; i++){ if(idx[i] !== idx[i-1] + 1) return false; }
+    return true;
+  }
+  function mark(text, idx){
+    if(!idx || !idx.length) return text;
+    var out = "", last = 0;
+    idx.forEach(function(p){
+      if(p >= last){ out += text.slice(last, p) + "<mark>" + text.charAt(p) + "</mark>"; last = p + 1; }
+    });
+    return out + text.slice(last);
+  }
+
+  var ITEMS = DATA.map(function(it){
+    var unit = UNITS.filter(function(u){ return u.k === it.u; })[0];
+    var hay = "点" + it.p + " 第" + it.p + "点 " + it.t + " " + it.d + " " + it.tags.join(" ") + " " + (it.a || "") + " " + unit.n + " " + unit.unit + (it.key ? " 本册重点 重点" : "");
+    /* 版本词单独放：避免“人/教/版”这类字被拼成才匹配出假结果 */
+    var hv = "沪教版 上海 五四学制 六上 六年级第一学期 六上数学";
+    return {d:it, unit:unit, hay:hay, hv:hv, tl:it.t, dl:it.d, al:(it.a || "")};
+  });
+
+  function stars(r){
+    r = r || 3;
+    var full = "", rest = "";
+    for(var i = 0; i < r; i++) full += "\u2605";
+    for(var j = r; j < 5; j++) rest += "\u2606";
+    return '<span class="stars" title="难度 ' + r + ' 星"><b>' + full + '</b>' + rest + '</span>';
+  }
+
+  /* ---------- 渲染 ---------- */
+  var list = document.getElementById("list");
+  var tpl = ITEMS.map(function(it){
+    var i = it.d;
+    var tag = i.live ? "a" : "div";
+    var cls = "row" + (i.live ? " live" : " soon");
+    var attr = i.live ? ' href="' + i.href + '"' : '';
+    return {it:it, html:'<' + tag + ' class="' + cls + '" id="p' + i.p + '" data-no="p' + i.p + '"' + attr + '>'
+      + '<span class="code">' + i.p + '<small>六下</small></span>'
+      + '<div class="main"><h3>' + i.t + '</h3><p>' + i.d + '</p></div>'
+      + '<div class="tags">' + stars(i.r) + (i.key ? '<span class="kb">本册重点</span>' : '') + i.tags.map(function(t){ return '<span>' + t + '</span>'; }).join("") + '</div>'
+      + '</' + tag + '>'};
+  });
+
+  var groups = [];
+  UNITS.forEach(function(u){
+    var rows = tpl.filter(function(x){ return x.it.d.u === u.k; });
+    var g = document.createElement("section");
+    g.className = "grp";
+    g.dataset.unit = u.k;
+    g.innerHTML = '<div class="grp-h"><h2>' + u.n
+      + '</h2><span class="unit">' + u.unit + '</span><p class="lead">' + u.lead + '</p></div>'
+      + rows.map(function(x){ return x.html; }).join("");
+    list.appendChild(g);
+    groups.push(g);
+  });
+
+
+  /* ---------- 筛选 chip ---------- */
+  var chips = document.getElementById("chips");
+  var curUnit = "ALL";
+  function buildChips(){
+    var all = {k:"ALL", n:"全部", c:DATA.length};
+    var arr = [all].concat(UNITS.map(function(u){
+      return {k:u.k, n:u.s, c:DATA.filter(function(x){ return x.u === u.k; }).length};
+    }));
+    chips.innerHTML = arr.map(function(c){
+      return '<button class="chip' + (c.k === curUnit ? " on" : "") + '" data-u="' + c.k + '" role="tab" aria-selected="' + (c.k === curUnit) + '">'
+        + c.n + '<span class="n">' + c.c + '</span></button>';
+    }).join("");
+  }
+  chips.addEventListener("click", function(e){
+    var b = e.target.closest(".chip");
+    if(!b) return;
+    curUnit = b.dataset.u;
+    buildChips();
+    apply();
+  });
+
+  /* ---------- 应用筛选/搜索 ---------- */
+  var qEl = document.getElementById("q");
+  var countEl = document.getElementById("count");
+  var resetEl = document.getElementById("reset");
+  var emptyEl = document.getElementById("empty");
+  var sugs = document.getElementById("sug");
+  sugs.innerHTML = SUGGEST.map(function(s){ return '<button class="chip" data-sug="1">' + s + '</button>'; }).join("");
+  sugs.addEventListener("click", function(e){
+    var b = e.target.closest(".chip");
+    if(!b) return;
+    qEl.value = b.textContent;
+    qEl.focus();
+    apply();
+  });
+
+  var rows = Array.prototype.slice.call(document.querySelectorAll(".row"));
+  var keyOnly = false;
+  var keyBtn = document.getElementById("keyOnly");
+  var keyN = document.getElementById("keyN");
+  var keyTotal = DATA.filter(function(x){ return x.key; }).length;
+  keyN.textContent = keyTotal;
+  keyBtn.addEventListener("click", function(){
+    keyOnly = !keyOnly;
+    keyBtn.setAttribute("aria-pressed", keyOnly ? "true" : "false");
+    apply();
+  });
+
+  function apply(){
+    var raw = qEl.value.trim();
+    var tokens = raw.split(/\s+/).filter(Boolean).map(function(t){ return strip(t).toLowerCase(); });
+    var shown = 0;
+
+    rows.forEach(function(row){
+      var it = ITEMS.filter(function(x){ return 'p' + x.d.p === row.dataset.no; })[0];
+      var unitOk = (curUnit === "ALL" || it.d.u === curUnit);
+      var keyOk = (!keyOnly || !!it.d.key);
+      var hit = true, score = 0, tIdx = null, dIdx = null;
+
+      var numQ = raw.match(/^(?:点|第)?\s*(\d{1,2})\s*(?:点)?$/);
+      if(numQ){
+        hit = (it.d.p === parseInt(numQ[1], 10));
+        if(hit) score = 4;
+      } else if(tokens.length){
+        hit = tokens.every(function(tk){ return scan(tk, it.hay) !== null || scan(tk, it.hv) !== null; });
+        if(hit){
+          tokens.forEach(function(tk){
+            var a = scan(tk, it.tl), b = scan(tk, it.dl);
+            if(a){ score += 2; if(tIdx === null) tIdx = a; }
+            if(b){ score += 1; if(dIdx === null) dIdx = b; }
+            if(tIdx && contiguous(tIdx)) score += 1;
+          });
+        }
+      }
+
+      var show = unitOk && keyOk && hit;
+      row.classList.toggle("hiderow", !show);
+      if(show) shown++;
+
+      var h3 = row.querySelector("h3"), p = row.querySelector("p");
+      h3.innerHTML = mark(it.tl, tIdx);
+      p.innerHTML = mark(it.dl, dIdx);
+    });
+
+    groups.forEach(function(g){
+      var any = Array.prototype.slice.call(g.querySelectorAll(".row")).some(function(r){ return !r.classList.contains("hiderow"); });
+      g.style.display = any ? "" : "none";
+    });
+
+    countEl.textContent = (tokens.length || curUnit !== "ALL" || keyOnly)
+      ? (keyOnly && !tokens.length && curUnit === "ALL" ? "本册重点 " + shown + " 个" : "筛出 " + shown + " 个")
+      : "20 个难点与典型题型";
+    resetEl.style.display = (tokens.length || curUnit !== "ALL" || keyOnly) ? "inline" : "none";
+    var dEl = emptyEl.querySelector(".d");
+    dEl.textContent = (shown === 0 && /分数|百分数|圆|扇形|整除|人教版|全国版/.test(raw))
+      ? "本册是沪教版六年级第二学期：分数、圆、整除都在第一册里，切到第一册再搜。"
+      : "试试少打几个字，或者用同义词。下面几个词一定搜得到。";
+    emptyEl.classList.toggle("on", shown === 0);
+  }
+
+  var timer = null;
+  qEl.addEventListener("input", function(){
+    clearTimeout(timer);
+    timer = setTimeout(apply, 90);
+  });
+  qEl.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ qEl.value = ""; apply(); }
+    if(e.key === "Enter"){ e.preventDefault(); apply(); qEl.blur(); }
+  });
+  var sBtn = document.getElementById("sbtn");
+  if(sBtn){
+    sBtn.addEventListener("click", function(){
+      clearTimeout(timer);
+      apply();
+    });
+  }
+  resetEl.addEventListener("click", function(){
+    qEl.value = ""; curUnit = "ALL"; keyOnly = false;
+    keyBtn.setAttribute("aria-pressed", "false");
+    buildChips(); apply(); qEl.focus();
+  });
+
+  /* ---------- 下一册：待更新，不可点 ---------- */
+
+  var toastEl = document.getElementById("toast");
+  var tt = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("on");
+    clearTimeout(tt);
+    tt = setTimeout(function(){ toastEl.classList.remove("on"); }, 2200);
+  }
+
+  rows.forEach(function(row){
+    if(row.classList.contains("live")) return;
+    row.addEventListener("click", function(e){
+      e.preventDefault();
+      var it = DATA.filter(function(x){ return 'p' + x.p === row.dataset.no; })[0];
+      toast("点 " + it.p + "「" + it.t.split("：")[0] + "」还没上线，正在排期。");
+    });
+  });
+
+  /* ---------- 快捷聚焦 ---------- */
+  document.addEventListener("keydown", function(e){
+    if(e.key === "/" && document.activeElement !== qEl){ e.preventDefault(); qEl.focus(); }
+  });
+
+  function jumpToHash(){
+    var h = (location.hash || "").replace("#", "");
+    if(!h) return;
+    var row = document.querySelector('.row[data-no="' + h + '"]');
+    if(!row){
+      /* 兼容旧链接：#B02 这类字母号仍能定位到对应的“点” */
+      var old = DATA.filter(function(x){ return x.no === h; })[0];
+      if(old) row = document.querySelector('.row[data-no="p' + old.p + '"]');
+    }
+    if(!row) return;
+    if(curUnit !== "ALL"){ curUnit = "ALL"; buildChips(); apply(); }
+    setTimeout(function(){
+      row.scrollIntoView({block:"center"});
+      row.classList.add("is-hit");
+      setTimeout(function(){ row.classList.remove("is-hit"); }, 2800);
+    }, 80);
+  }
+  window.addEventListener("hashchange", jumpToHash);
+
+  buildChips();
+  apply();
+  jumpToHash();
+})();
+</script>
+</body>
+</html>
